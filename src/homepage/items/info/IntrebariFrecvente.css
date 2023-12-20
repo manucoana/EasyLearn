@@ -1,0 +1,15 @@
+.intrebari-frecvente{
+    margin-bottom: 60px;
+}
+.text-intrebari{
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 1.5em; 
+}
+
+.intrebare{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+}

@@ -1,0 +1,8 @@
+.footer-app {
+    background-color: #0d114d;
+    padding: 20px;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

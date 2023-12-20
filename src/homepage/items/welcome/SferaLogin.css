@@ -1,0 +1,9 @@
+.decor-sfera {
+  padding: 10%;
+  position: absolute;
+  right: 0;
+  width: max-content;
+  height: max-content;
+  background-color: #fff;
+  border-radius: 50%;
+}

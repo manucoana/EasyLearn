@@ -1,0 +1,24 @@
+.welcome-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.decor-sfera {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10%;
+}
+
+.butoane-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  margin-top: 5%;
+}

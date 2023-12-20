@@ -1,0 +1,9 @@
+.butoane-student {
+    position: fixed;
+    left: 50px;
+    bottom: 50px;
+  }
+  
+  .butoane-student > * {
+    margin-bottom: 25px;
+  }

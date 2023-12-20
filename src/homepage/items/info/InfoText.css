@@ -1,0 +1,18 @@
+.info-text-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #0d114d;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    color: #0d114d;
+    font-size: 1.5em;
+    line-height: 1.4;
+  }
+  

@@ -1,0 +1,14 @@
+.nav-student {
+    height: 60px;
+}
+
+.sfer {
+    background-color: white;
+    padding: 10%;
+    position: absolute;
+    right: 0;
+    width: max-content;
+    height: max-content;
+    border-radius: 50%;
+    margin-right: 60px;
+}

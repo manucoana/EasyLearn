@@ -1,0 +1,13 @@
+.buton-profil {
+    width: 531px;
+    height: 100px;
+    background-color: #0d114d;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: none; 
+  }

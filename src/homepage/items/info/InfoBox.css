@@ -1,0 +1,19 @@
+.info-box {
+    width: 350px;
+    height: 400px;
+    border-radius: 20px;
+    margin: 30px;
+    background-color: #454545;
+}
+
+.info-box-a {
+    background: #4D72DD;
+}
+
+.info-box-b {
+    background-color: #141B76;
+}
+
+.info-box-c {
+    background-color: #0d114d;
+}
