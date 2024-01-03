@@ -10,4 +10,21 @@
     cursor: pointer;
     border: none;
     margin-bottom: 10px;
+    background-color:  #00305f;
+}
+
+
+.buton-reutilizabil-1 {
+    background-color: #4d72dd;
+}
+
+.buton-reutilizabil-2 {
+    background-color: #141b76;
+}
+
+.buton-reutilizabil-3 {
+    background-color: #0d114d
+}
+.buton-reutilizabil:hover {
+    animation: pulse 1s infinite;
 }

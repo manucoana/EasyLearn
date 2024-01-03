@@ -51,9 +51,9 @@ const Student = ({ email }) => {
             <div className="panou-student">
               <Titlu />
               <div className="butoane-student">
-                <ButonReutilizabil onClick={() => handleButtonClick("PaginaStudiu")} text="SPRE PAGINA DE STUDIU" color="#4d72dd" />
-                <ButonReutilizabil onClick={() => handleButtonClick("ListaAnunturi")} text="LISTA ANUNTURI" color="#141b76" />
-                <ButonReutilizabil onClick={() => handleButtonClick("Profil")} text="PROFIL" color="#0d114d" />
+                <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => handleButtonClick("PaginaStudiu")} text="SPRE PAGINA DE STUDIU"  />
+                <ButonReutilizabil className="buton-reutilizabil-2" onClick={() => handleButtonClick("ListaAnunturi")} text="LISTA ANUNTURI"  />
+                <ButonReutilizabil className="buton-reutilizabil-3" onClick={() => handleButtonClick("Profil")} text="PROFIL" />
               </div>
             </div>
             <Sfera />

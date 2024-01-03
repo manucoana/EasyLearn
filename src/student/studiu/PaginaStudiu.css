@@ -2,12 +2,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
   background-color: #0D114D;
 }
 
 .logo-items {
-  padding: 20px;
   background-color: #0D114D;
 }
 
