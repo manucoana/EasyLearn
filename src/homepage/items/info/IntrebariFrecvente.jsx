@@ -1,17 +1,22 @@
 import React from "react";
 import "./IntrebariFrecvente.css"
+import TextReutilizabil from "../../../text/TextReutilizabil";
 
 const IntrebariFrecvente = () => {
   return (
     <div className="intrebari-frecvente">
-        <h1 className="text-intrebari">Intrebari Frecvente</h1>
+        <TextReutilizabil className="text-intrebari" text="Intrebari Frecvente" fontSize="1.87em"/>
         <div className="intrebare"></div>
+        <div className="raspuns"></div>
+        <br></br>
         <div className="intrebare"></div>
+        <div className="raspuns"></div>
+        <br></br>
         <div className="intrebare"></div>
+        <div className="raspuns"></div>
+        <br></br>
         <div className="intrebare"></div>
-        <div className="intrebare"></div>
-        <div className="intrebare"></div>
-        <div className="intrebare"></div>
+        <div className="raspuns"></div>
     </div>
   );
 };

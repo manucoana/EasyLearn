@@ -1,29 +1,29 @@
 import React from 'react';
-import LogoComponent from '../../../imagini/LogoComponent';
-import ButonLogin from '../../../login/form/butoane/login/ButonLogin';
-import ButonInregistrare from '../../../login/form/butoane/inregistrare/ButonInregistrare';
 
-const SferaLogin = ({ setShowTestComponent, setShowHeader, handleLogin, renderError, setShowRegister }) => {
-  const handleButtonClick = () => {
-    setShowTestComponent(true);
+import LogoComponent from '../../../imagini/logo/LogoComponent';
+import Sfera from '../../../layout/decor/Sfera';
+import ButonAutentificare from '../../../butoane/ButonAutentificare';
+
+
+const SferaLogin = ({ setShowLoginComponent, setShowHeader, setShowRegister}) => {
+  const handleLoginClick = () => {
+    setShowLoginComponent(true);
     setShowHeader(false);
   };
 
-  const handleButton2Click = () => {
+  const handleRegisterClick = () => {
     setShowRegister(true);
     setShowHeader(false);
   };
 
   return (
-    <div className="decor-sfera">
-      <div className='logo'>
-        <LogoComponent />
+    <Sfera>
+        <LogoComponent/>
+      <div className='butoane-homepage'>
+        <ButonAutentificare onClick={handleLoginClick} color="#141B76" text="Log In" />
+        <ButonAutentificare onClick={handleRegisterClick} color="#16165b" text="Înregistrare" />
       </div>
-      <div className='butoane-main'>
-        <ButonLogin onClick={handleButtonClick} />
-        <ButonInregistrare onClick={handleButton2Click} />
-      </div>
-    </div>
+    </Sfera>
   );
 };
 

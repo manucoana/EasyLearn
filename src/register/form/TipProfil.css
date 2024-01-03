@@ -1,0 +1,23 @@
+.selectare-container{
+    margin: 5%;
+}
+.container-butoane-descriere {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-buton-elev,
+.div-buton-profesor {
+    padding: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+@media (max-width: 600px) {
+    .container-butoane-descriere {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+

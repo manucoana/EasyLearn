@@ -1,57 +1,68 @@
 import React, { useState, useEffect } from "react";
-
 import { Profil } from "../profil/Profil";
-import "./Student.css"
-import ButoaneStudent from "./butoane/ButoaneStudent";
-import Header from "../homepage/items/header/Header";
-import Footer from "../homepage/items/footer/Footer";
+import "./Student.css";
+import Titlu from "../text/Titlu";
+import PaginaStudiu from "./studiu/PaginaStudiu";
+import ListaAnunturi from "./anunturi/ListaAnunturi";
+import DefaultLayout from "../layout/DefaultLayout";
+import ButonReutilizabil from "../butoane/ButonReutilizabil";
+import Sfera from "../layout/decor/Sfera";
 
-export const Student = ({ email }) => {
-  const [showProfil, setShowProfil] = useState(false);
+const Student = ({ email }) => {
+  const [activePage, setActivePage] = useState("");
 
-  const handleProfilButtonClick = () => {
-    setShowProfil(true);
-    window.history.pushState({ page: "Profil" }, "Profil", "/profil");
+  const handleButtonClick = (page) => {
+    setActivePage(page);
+    window.history.pushState({ page: page }, page, `/student/${page.toLowerCase()}`);
   };
 
-  const handleProfilClose = () => {
-    setShowProfil(false);
-    window.history.back();
+  const handleClose = () => {
+    setActivePage("");
+    window.history.pushState({}, "", "/student");
   };
 
   useEffect(() => {
+    const handlePopState = (event) => {
+      if (event.state && event.state.page) {
+        setActivePage(event.state.page);
+      } else {
+        setActivePage("");
+      }
+    };
+
     window.addEventListener("popstate", handlePopState);
+
     return () => {
       window.removeEventListener("popstate", handlePopState);
     };
   }, []);
 
-  const handlePopState = (event) => {
-    if (event.state && event.state.page === "Profil") {
-      setShowProfil(true);
-    } else {
-      setShowProfil(false);
+  const renderContent = () => {
+    switch (activePage) {
+      case "Profil":
+        return <Profil email={email} handleProfilClose={handleClose} />;
+      case "PaginaStudiu":
+        return <PaginaStudiu email={email} handlePaginaStudiuClose={handleClose} />;
+      case "ListaAnunturi":
+        return <ListaAnunturi handleListaAnunturiClose={handleClose} />;
+      default:
+        return (
+          <div className="student-items">
+            <div className="panou-student">
+              <Titlu />
+              <div className="butoane-student">
+                <ButonReutilizabil onClick={() => handleButtonClick("PaginaStudiu")} text="SPRE PAGINA DE STUDIU" color="#4d72dd" />
+                <ButonReutilizabil onClick={() => handleButtonClick("ListaAnunturi")} text="LISTA ANUNTURI" color="#141b76" />
+                <ButonReutilizabil onClick={() => handleButtonClick("Profil")} text="PROFIL" color="#0d114d" />
+              </div>
+            </div>
+            <Sfera />
+          </div>
+        );
     }
   };
 
-  return (
-    <>
-    <div>
-    <Header/>
-    <nav className="nav-student"></nav>
-      {showProfil && <Profil email={email} handleProfilClose={handleProfilClose} />}
-      {!showProfil && (
-        <div className="student-items">
-          <div className="sfer">
-            <ButoaneStudent onClick={handleProfilButtonClick}></ButoaneStudent>
-            
-            </div>
-        </div>
-      )}
-      
-      </div>
-    </>
-  );
+  return <DefaultLayout>{renderContent()}</DefaultLayout>;
 };
 
 export default Student;

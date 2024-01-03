@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Profil.css";
 import axios from "axios";
+import Sfera from "../layout/decor/Sfera";
+import TextReutilizabil from "../text/TextReutilizabil";
 
 export const Profil = ({ email }) => {
   const [userData, setUserData] = useState({});
@@ -16,7 +18,7 @@ export const Profil = ({ email }) => {
       })
       .catch((error) => {
         console.log(error);
-        setErrorMessages({ message: "Error retrieving profile" });
+        setErrorMessages({ message: "Error" });
       });
   }, [email]);
 
@@ -44,7 +46,7 @@ export const Profil = ({ email }) => {
   
   const renderForm = () => (
     <div className="profil-container">
-      <h2>Profil</h2>
+      <TextReutilizabil text="CONTACT" fontSize="1.87em"/>
       <div className="profile-image">
         {userData.imageUrl && <img src={userData.imageUrl} alt="Profile" />}
         <input type="file" onChange={handleFileUpload} />
@@ -60,12 +62,12 @@ export const Profil = ({ email }) => {
     </div>
   );
   
-  
-
   return (
-    <div className="pr-container">
+    <div className="profil-items">
       <div className="top-bar"></div>
       {renderForm()}
+      <Sfera/>
     </div>
+
   );
 };

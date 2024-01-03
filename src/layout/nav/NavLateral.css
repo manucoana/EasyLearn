@@ -1,0 +1,42 @@
+.nav-lateral {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100%;
+    background-color: #141B76;
+    padding-top: 120px;
+    transition: right 0.3s ease;
+  }
+  
+  .nav-lateral.open {
+    right: 0;
+  }
+  
+  .nav-lateral ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-lateral li {
+    margin-bottom: 20px;
+  }
+  
+  .nav-lateral a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+  }
+  .nav-lateral a:hover {
+    color: #007bff; 
+  }
+  

@@ -1,19 +1,30 @@
-.profil-container {
-  padding: 100px;
+.profil-items {
   text-align: left;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f8f8f8;
-  margin-top: 5%;
-  margin-left: 20%;
-  margin-right: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
 }
+
 .profile-image {
   text-align: left;
 }
 
 .profile-image img {
-  width: 200px; 
-  height: auto; 
+  width: 200px;
+  height: auto;
+}
+
+.profile-details p {
+  position: relative;
+}
+
+.profile-details p::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 150%;
+  height: 1px;
+  background-color: #0d114d;
 }

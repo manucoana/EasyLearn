@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Login } from "./Login";
-
 import Student from "../student/Student";
 
 const LoginHandler = () => {
@@ -21,19 +20,14 @@ const LoginHandler = () => {
   };
 
   return (
-    <div className="Test">
+    <div className="login-handler">
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
-      ) : !showStudentComponent ? (
-        <div>
-          <button onClick={handleButtonClick}>Go to Student Component</button>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
       ) : (
-      <Student/>
+        showStudentComponent && <Student />
       )}
     </div>
   );
 };
 
-export default LoginHandler
+export default LoginHandler;

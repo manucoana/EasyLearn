@@ -1,0 +1,26 @@
+.buton-sferic {
+    border: 0;
+    background-color: #f2f3f4;
+    border-radius: 50%;
+    width: 270px;
+    height: 250px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.buton-sferic:hover {
+    animation: pulse 1s infinite;
+}
+
+@media (max-width: 600px) {
+    .buton-sferic-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.text-buton-sferic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0D114D;
+}

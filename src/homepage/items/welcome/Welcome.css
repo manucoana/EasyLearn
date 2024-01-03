@@ -2,23 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 30px;
+  padding-bottom: 150px;
 }
 
-.decor-sfera {
-  position: relative;
-  width: fit-content;
-  height: fit-content;
-  background-color: #fff;
-  border-radius: 50%;
-  padding: 10%;
-}
-
-.butoane-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.logo {
-  margin-top: 5%;
+@media (max-width: 500px) {
+  .welcome-home {
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.5);
+  }
 }

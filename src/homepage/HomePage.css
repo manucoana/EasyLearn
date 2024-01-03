@@ -1,7 +1,10 @@
 .homepage-items {
-    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
-.nav-homepage {
-    height: 60px;
+@media (max-width: 600px) {
+    .homepage-items {
+        justify-content: flex-start;
+    }
 }

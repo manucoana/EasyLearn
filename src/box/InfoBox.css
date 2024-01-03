@@ -1,0 +1,28 @@
+.info-box {
+    width: 400px;
+    height: 350px;
+    border-radius: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #0D114D;
+    border: 1px solid #f2f3f4;
+}
+
+.info-box-1 {
+    width: 300px;
+    height: 350px;
+}
+
+.info-box-2 {
+    width: 300px;
+    height: 350px;
+}
+
+.info-box-3 {
+    background-color: #0D114D;
+    width: 350px;
+    height: 250px;
+}

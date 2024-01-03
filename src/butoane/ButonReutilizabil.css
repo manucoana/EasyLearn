@@ -1,0 +1,13 @@
+.buton-reutilizabil {
+    width: 530px;
+    height: 100px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f2f3f4;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+}

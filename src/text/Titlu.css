@@ -1,0 +1,15 @@
+.container-titlu {
+  text-align: left;
+}
+
+.titlu {
+  font-size: 3em;
+  color: #0D114D;
+  font-family: Helvetica;
+}
+
+.subtitlu {
+  font-size: 1.87em;
+  color: #fff;
+  font-family: Helvetica;
+}

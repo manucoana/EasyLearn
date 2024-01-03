@@ -1,14 +1,14 @@
 import React from 'react';
 import './Welcome.css';
-import Titlu from './Titlu';
+import Titlu from '../../../text/Titlu';
 import SferaLogin from './SferaLogin';
 
-const Welcome = ({ setShowTestComponent, setShowHeader, handleLogin, renderError, setShowRegister }) => {
+const Welcome = ({ setShowLoginComponent, setShowHeader, handleLogin, renderError, setShowRegister }) => {
   return (
     <div className='welcome-home'>
       <Titlu />
       <SferaLogin
-        setShowTestComponent={setShowTestComponent}
+        setShowLoginComponent={setShowLoginComponent}
         setShowHeader={setShowHeader}
         handleLogin={handleLogin}
         renderError={renderError}

@@ -1,0 +1,13 @@
+.buton-autentificare {
+    margin-top: 25px;
+    width: 250px;
+    height: 45px;
+    color: #f2f3f4;
+    border: none;
+    border-radius: 70px;
+    cursor: pointer;
+}
+
+.buton-autentificare:hover {
+    animation: pulse 1s infinite;
+}
