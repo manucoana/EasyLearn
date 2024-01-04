@@ -1,16 +1,20 @@
-.info-box-items{
-    background-color: #0D114D;
+@import '../../../design/VariabileDesign.css';
+
+.info-box-items {
+    background-color: var(--albastru-fundal);
     padding: 30px;
 }
+
 .info-box-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.titlu-beneficii{
-    font-size: 1.5em;
+
+.titlu-beneficii {
+    font-size: var(--font-size-titlu-mic 1.5em);
     text-align: center;
-    color: #f2f3f4;
+    color: var(--alb);
     margin: 5%;
 }
 
@@ -24,19 +28,14 @@
 .titlu-info-box,
 .descriere-platforma,
 .descriere-platforma p {
-    color: #f2f3f4;
+    color: var(--alb);
     text-align: left;
     margin: 5%;
 }
 
-.info-box h2 {
-    font-size: 1.4em; 
-    margin-bottom: 8px;
-}
-
 .info-box p {
-    font-size: 1em;
-    margin: 0; 
+    font-size:  var(--font-size-text-mic);
+    margin: 0;
 }
 
 @media (max-width: 600px) {

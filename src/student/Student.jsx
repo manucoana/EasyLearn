@@ -7,6 +7,7 @@ import ListaAnunturi from "./anunturi/ListaAnunturi";
 import DefaultLayout from "../layout/DefaultLayout";
 import ButonReutilizabil from "../butoane/ButonReutilizabil";
 import Sfera from "../layout/decor/Sfera";
+import LogoComponent from "../imagini/logo/LogoComponent";
 
 const Student = ({ email }) => {
   const [activePage, setActivePage] = useState("");
@@ -56,7 +57,9 @@ const Student = ({ email }) => {
                 <ButonReutilizabil className="buton-reutilizabil-3" onClick={() => handleButtonClick("Profil")} text="PROFIL" />
               </div>
             </div>
-            <Sfera />
+            <Sfera>
+              <LogoComponent/>
+            </Sfera>
           </div>
         );
     }

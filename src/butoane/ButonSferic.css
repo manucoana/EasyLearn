@@ -1,6 +1,8 @@
+@import '../design/VariabileDesign.css';
+
 .buton-sferic {
     border: 0;
-    background-color: #f2f3f4;
+    background-color: var(alb);
     border-radius: 50%;
     width: 270px;
     height: 250px;
@@ -22,5 +24,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0D114D;
+    color: var(--albastru-inchis);
 }

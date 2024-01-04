@@ -1,13 +1,24 @@
-.form-inregistrare {
-    background-color: white;
+@import '../../design/VariabileDesign.css';
+
+.form-inregistrare-items {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 70px;
-    border-radius: 70px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.form-inregistrare {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: var(--alb);
+    padding: 30px;
+    padding-top: 5px;
+    width: 50%;
+    margin-top: 2%;
+    border: 10px solid var(--albastru-fundal);
+}
+
+.inregistrare-text {
+    text-align: left;
 }

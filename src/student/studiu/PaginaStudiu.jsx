@@ -50,38 +50,38 @@ const PaginaStudiu = ({ email, onClick }) => {
             default:
                 return (
                     <div className="logo-items">
-                        <LogoComponent/>
-                    <div className="pagina-studiu-items">
-                        <div className="lectii-teme-teste">
-                            <InfoBox onClick={() => handleButtonClick("Lectii")} className="info-box-1">
-                                <div>
-                                    <TextReutilizabil className="lectii" text="Lectii" fontSize="2em" color="#f2f3f4" />
-                                    <IconLectii />
-                                </div>
-                            </InfoBox>
+                        <LogoComponent />
+                        <div className="pagina-studiu-items">
+                            <div className="lectii-teme-teste">
+                                <InfoBox onClick={() => handleButtonClick("Lectii")} className="info-box-1">
+                                    <div>
+                                        <TextReutilizabil className="lectii" text="Lectii" fontSize="2em" color="#f2f3f4" />
+                                        <IconLectii />
+                                    </div>
+                                </InfoBox>
 
-                            <InfoBox onClick={() => handleButtonClick("Teme")} className="info-box-1">
-                                <div>
-                                    <TextReutilizabil className="teme" text="Teme" fontSize="2em" color="#f2f3f4" />
-                                    <IconTeme />
-                                </div>
-                            </InfoBox>
+                                <InfoBox onClick={() => handleButtonClick("Teme")} className="info-box-1">
+                                    <div>
+                                        <TextReutilizabil className="teme" text="Teme" fontSize="2em" color="#f2f3f4" />
+                                        <IconTeme />
+                                    </div>
+                                </InfoBox>
 
-                            <InfoBox onClick={() => handleButtonClick("Teste")} className="info-box-1">
-                                <div>
-                                    <TextReutilizabil className="teste" text="Teste" fontSize="2em" color="#f2f3f4" />
-                                    <IconTeste />
-                                </div>
-                            </InfoBox>
+                                <InfoBox onClick={() => handleButtonClick("Teste")} className="info-box-1">
+                                    <div>
+                                        <TextReutilizabil className="teste" text="Teste" fontSize="2em" color="#f2f3f4" />
+                                        <IconTeste />
+                                    </div>
+                                </InfoBox>
+                            </div>
+
                         </div>
-                        
-                    </div>
                     </div>
                 );
         }
     };
     return (
-        <div>
+        <div className="studiu-items">
             {renderContent()}
         </div>
     );

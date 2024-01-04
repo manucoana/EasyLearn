@@ -1,3 +1,5 @@
+@import '../design/VariabileDesign.css';
+
 .profil-items {
   text-align: left;
   display: flex;
@@ -26,5 +28,5 @@
   left: 0;
   width: 150%;
   height: 1px;
-  background-color: #0d114d;
+  background-color: var(--albastru-fundal);
 }

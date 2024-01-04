@@ -1,0 +1,23 @@
+:root {
+  /* Culori */
+  --albastru-inchis: #080C44;
+  --albastru-fundal: #0D114D;
+  --albastru-mediu: #141B76;
+  --albastru-deschis: #4d72dd;
+  --culoare-fundal: #DDDDDF;
+  --alb: #f2f3f4;
+  --culoare-albastru2: #00305f;
+
+  /* Fonturi */
+  --font-principal: 'Arial', sans-serif, 'Helvetica';
+
+  /* Dimensiuni font */
+  --font-size-titlu-mare: 3em;
+  --font-size-titlu-mic: 1.5em;
+  --font-size-text-mare: 1.87em;
+  --font-size-text-mic: 0.93em;
+
+  /* Margini și padding-uri */
+  --padding-element: 10px;
+  --margin-element: 10px;
+}

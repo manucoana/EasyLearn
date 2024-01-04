@@ -1,10 +1,12 @@
+@import '../../design/VariabileDesign.css';
+
 .nav-lateral {
     position: fixed;
     top: 0;
     right: -350px;
     width: 350px;
     height: 100%;
-    background-color: #141B76;
+    background-color: var(--albastru-mediu);
     padding-top: 120px;
     transition: right 0.3s ease;
   }
@@ -24,7 +26,7 @@
   
   .nav-lateral a {
     text-decoration: none;
-    color: #fff;
+    color: var(--alb);
     font-size: 18px;
   }
   
@@ -34,9 +36,9 @@
     right: 20px;
     cursor: pointer;
     font-size: 24px;
-    color: #fff;
+    color: var(--alb);
   }
   .nav-lateral a:hover {
-    color: #007bff; 
+    color: var(--albastru-deschis); 
   }
   

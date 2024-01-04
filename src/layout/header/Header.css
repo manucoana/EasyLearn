@@ -1,5 +1,7 @@
+@import '../../design/VariabileDesign.css';
+
 .header-app{
-  background-color: #0d114d;
+  background-color: var(--albastru-inchis);
   padding: 20px;
   height: 60px;
   display: flex;

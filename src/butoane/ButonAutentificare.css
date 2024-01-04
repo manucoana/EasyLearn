@@ -1,8 +1,10 @@
+@import '../design/VariabileDesign.css';
+
 .buton-autentificare {
     margin-top: 25px;
     width: 250px;
     height: 45px;
-    color: #f2f3f4;
+    color: var(--alb);
     border: none;
     border-radius: 70px;
     cursor: pointer;
