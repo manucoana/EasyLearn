@@ -5,7 +5,7 @@ import {
   LISTA_ANUNTURI,
 } from "../constante/ButonConstant"
 
-const ListaAnunturi = ({ onClick }) => {
+const ListaAnunturi = () => {
 
   const listaAnunturi = LISTA_ANUNTURI;
 
@@ -20,7 +20,7 @@ const ListaAnunturi = ({ onClick }) => {
         setVisibleAnnouncements(data);
 
       } catch (error) {
-        console.error("Error fetching visible announcements:", error);
+        console.error("Eroare la anunturi:", error);
       }
     };
 
@@ -39,7 +39,7 @@ const ListaAnunturi = ({ onClick }) => {
           {visibleAnnouncements.map((announcement, index) => (
             <li
               key={announcement.id_anunt}
-              className={index % 2 === 0 ? "even" : "odd"} 
+              className={index % 2 === 0 ? "par" : "impar"} 
             >
               <strong>Nume:</strong> {announcement.nume}
               <br />

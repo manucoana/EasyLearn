@@ -2,6 +2,7 @@ import React from "react";
 import "./ButonAutentificare.css";
 
 const ButonAutentificare = ({ className, onClick, text }) => {
+    
     const handleClick = () => {
         if (onClick) {
             onClick();

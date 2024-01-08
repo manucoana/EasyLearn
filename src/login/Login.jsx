@@ -38,7 +38,7 @@ export const Login = () => {
         } else {
           setErrorMessages({
             name: "email",
-            message: "User type not recognized",
+            message: "Tip de utilizator neidentificat",
           });
         }
       } else {
@@ -51,7 +51,7 @@ export const Login = () => {
       console.error(error);
       setErrorMessages({
         name: "email",
-        message: "Completati campurile obligatorii!",
+        message: "Email sau parola invalide!",
       });
     } finally {
       setIsLoading(false);

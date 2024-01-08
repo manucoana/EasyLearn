@@ -1,13 +1,10 @@
 import React from "react";
 import "./ButonReutilizabil.css";
 
-const ButonReutilizabil = ({ onClick, text, color, className }) => {
-  const buttonStyle = {
-    backgroundColor: color,
-  };
+const ButonReutilizabil = ({ onClick, text, className }) => {
 
   return (
-    <button className={`buton-reutilizabil ${className}`} style={buttonStyle} onClick={onClick}>
+    <button className={`buton-reutilizabil ${className}`} onClick={onClick}>
       {text}
     </button>
   );

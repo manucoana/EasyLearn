@@ -19,10 +19,10 @@
     
 }
 
-.lista-anunturi-items ul li.even {
+.lista-anunturi-items ul li.par {
     background-color: #f0f0f0;
 }
 
-.lista-anunturi-items ul li.odd {
+.lista-anunturi-items ul li.impar {
     background-color: #ffffff;
 }

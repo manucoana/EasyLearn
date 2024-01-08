@@ -19,7 +19,7 @@ const EleviiMei = ({ email }) => {
             })
             .catch((error) => {
                 console.log(error);
-                setErrorMessages({ message: "Error fetching user data" });
+                setErrorMessages({ message: "Eroare la preluarea datelor din profil" });
             });
     }, [email]);
 
@@ -34,7 +34,7 @@ const EleviiMei = ({ email }) => {
                 })
                 .catch((error) => {
                     console.log(error);
-                    setErrorMessages({ message: "Error fetching eleviInfo data" });
+                    setErrorMessages({ message: "Eroare la preluarea datelor din elevi" });
                 });
         }
     }, [userData.nume]);

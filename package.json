@@ -26,11 +26,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build -r https://github.com/manucoana/EasyLearn.git",
+    "deploy": "gh-pages -b main -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://manucoana.github.io/EasyLearn/",
+  "homepage": "https://manucoana.github.io/EasyLearn",
   "eslintConfig": {
     "extends": [
       "react-app",

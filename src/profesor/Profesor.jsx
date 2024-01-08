@@ -5,8 +5,18 @@ import DefaultLayout from "../layout/DefaultLayout";
 import NavigareElev from "../piese/elev/NavigarePagina";
 import Titlu from "../text/Titlu";
 import Sfera from "../layout/decor/Sfera";
+import {
+  ELEVII_MEI,
+  LISTA_ANUNTURI,
+  PROFIL
+} from "../constante/ButonConstant"
 
 const Profesor = ({ email }) => {
+
+  const eleviiMei = ELEVII_MEI;
+  const listaAnunturi = LISTA_ANUNTURI;
+  const profil = PROFIL;
+
   const [activePage, setActivePage] = useState("");
 
   const handleButtonClick = (page) => {
@@ -33,9 +43,9 @@ const Profesor = ({ email }) => {
         <div className='profesor-items'>
           <div className="panou-profesor">
             <Titlu />
-            <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => handleButtonClick("EleviiMei")} text="ELEVII MEI" />
-            <ButonReutilizabil className="buton-reutilizabil-2" onClick={() => handleButtonClick("ListaAnunturi")} text="LISTA ANUNTURI" />
-            <ButonReutilizabil className="buton-reutilizabil-3" onClick={() => handleButtonClick("Profil")} text="PROFIL" />
+            <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => handleButtonClick("EleviiMei")} text={eleviiMei} />
+            <ButonReutilizabil className="buton-reutilizabil-2" onClick={() => handleButtonClick("ListaAnunturi")} text={listaAnunturi} />
+            <ButonReutilizabil className="buton-reutilizabil-3" onClick={() => handleButtonClick("Profil")} text={profil} />
           </div>
           <Sfera />
         </div>

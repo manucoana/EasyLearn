@@ -109,7 +109,7 @@ app.get('/api/profil/:email', (req, res) => {
 
   connection.query(sql, values, (error, results) => {
     if (error) {
-      console.error('Error querying database: ', error);
+      console.error('Eroare la interogarea bazei de date: ', error);
       res.status(500).send('Internal Server Error');
     } else if (results.length > 0) {
       res.status(200).send(results[0]);
@@ -130,8 +130,8 @@ app.get("/api/vizibilitate", (req, res) => {
       console.error("Eroare la interogarea bazei de date: ", error);
       res.status(500).send("Internal Server Error");
     } else if (results.length === 0) {
-      console.log("Invalid");
-      res.status(401).send("Invalid");
+      console.log("Unauthorized");
+      res.status(401).send("Unauthorized");
     } else {
       res.setHeader("Content-Type", "application/json");
       res.status(200).send(JSON.stringify(results));
@@ -149,8 +149,8 @@ app.get("/api/elevi/:nume_profesor", (req, res) => {
       console.error("Eroare la interogarea bazei de date: ", error);
       res.status(500).send("Internal Server Error");
     } else if (results.length === 0) {
-      console.log("Invalid");
-      res.status(401).send("Invalid");
+      console.log("Unauthorized");
+      res.status(401).send("Unauthorized");
     } else {
       res.setHeader("Content-Type", "application/json");
       res.status(200).send(JSON.stringify(results));
@@ -170,10 +170,10 @@ app.post("/api/login", (req, res) => {
       console.error("Eroare la interogarea bazei de date: ", error);
       res.status(500).send("Internal Server Error");
     } else if (results.length === 0) {
-      console.log("Invalid email or password");
+      console.log("Email sau parola invalide");
       res.status(401).send("Invalid email or password");
     } else {
-      console.log("Login successful");
+      console.log("Login realizat cu succes");
       res.status(200).send(results);
     }
   });
