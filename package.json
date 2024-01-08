@@ -30,7 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://github.com/manucoana/EasyLearn",
+  "homepage": "https://manucoana.github.io/EasyLearn/",
   "eslintConfig": {
     "extends": [
       "react-app",
