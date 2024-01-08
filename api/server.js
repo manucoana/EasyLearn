@@ -28,11 +28,14 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "proiect",
-  database: "mydb",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
 });
 
 connection.connect((error) => {
@@ -117,7 +120,7 @@ app.get('/api/profil/:email', (req, res) => {
 });
 
 app.get("/api/vizibilitate", (req, res) => {
-  const vizibilitate= req.params.email;
+  const vizibilitate = req.params.email;
 
   const sql = getVizibilitate(vizibilitate);
   const values = [vizibilitate];

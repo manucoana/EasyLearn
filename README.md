@@ -27,4 +27,4 @@ EasyLearn este o aplicație de e-learning dedicată elevilor și profesorilor.
 - **Profil:**
   - Date despre utilizator și editarea lor.
 
-**Funcționalitatea pentru profesori este în curs de implementare**
+**Proiect în curs de implementare**
