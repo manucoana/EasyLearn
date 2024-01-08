@@ -1,0 +1,35 @@
+@import '../design/VariabileDesign.css';
+
+.text-reutilizabil {
+    font-family: Helvetica;
+    text-align: left;
+}
+
+.text-reutilizabil-1{
+    font-size: 3rem;
+    color: var(--albastru-inchis);
+}
+
+.text-reutilizabil-2{
+    font-size: 1.87rem;
+    color: var(--alb);
+    font-family: Helvetica;
+}
+
+.text-reutilizabil-3{
+    font-size: 1.87rem;
+    color: var(--albastru-inchis);
+    font-family: Helvetica;
+}
+
+.text-reutilizabil-4{
+    font-size: 0.93rem;
+    color: var(--albastru-inchis);
+    font-family: Helvetica;
+}
+
+.text-reutilizabil-5{
+    font-size: 2em;
+    color: var(--albastru-inchis);
+    font-family: Helvetica;
+}

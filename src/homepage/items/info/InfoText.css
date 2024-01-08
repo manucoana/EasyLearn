@@ -1,3 +1,7 @@
 .info-text-items{
     padding: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

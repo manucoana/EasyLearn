@@ -6,7 +6,10 @@
   --albastru-deschis: #4d72dd;
   --culoare-fundal: #DDDDDF;
   --alb: #f2f3f4;
+  --alb-pur: white;
+  --alb-prafos: #EFEFEF;
   --culoare-albastru2: #00305f;
+  --gri: #707070;
 
   /* Fonturi */
   --font-principal: 'Arial', sans-serif, 'Helvetica';
@@ -20,4 +23,7 @@
   /* Margini și padding-uri */
   --padding-element: 10px;
   --margin-element: 10px;
+
+  /* Border*/
+  --border-standard: 2px solid var(--gri);
 }

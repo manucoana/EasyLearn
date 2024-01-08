@@ -1,20 +1,9 @@
 @import '../../../design/VariabileDesign.css';
 
 .intrebari-frecvente {
-    padding: 30px;
+    padding: 150px;
     background-color: var(--albastru-fundal);
+    display: flex;
+    flex-direction: column;
 }
 
-.text-intrebari {
-    text-align: left;
-    margin-bottom: 30px;
-    font-size: 1.5em;
-}
-
-.intrebare,
-.raspuns {
-    width: 100%;
-    height: 100px;
-    background-color: #f4f4f4;
-    border: 1px solid rgba(0, 0, 0, .125);
-}

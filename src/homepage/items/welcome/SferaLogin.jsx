@@ -1,11 +1,14 @@
 import React from 'react';
-
-import LogoComponent from '../../../imagini/logo/LogoComponent';
 import Sfera from '../../../layout/decor/Sfera';
 import ButonAutentificare from '../../../butoane/ButonAutentificare';
+import { LOG_IN, INREGISTRARE } from "../../../constante/ButonConstant";
 
 
-const SferaLogin = ({ setShowLoginComponent, setShowHeader, setShowRegister}) => {
+const SferaLogin = ({ setShowLoginComponent, setShowHeader, setShowRegister }) => {
+
+  const logIn = LOG_IN;
+  const inregistrare = INREGISTRARE;
+
   const handleLoginClick = () => {
     setShowLoginComponent(true);
     setShowHeader(false);
@@ -18,10 +21,9 @@ const SferaLogin = ({ setShowLoginComponent, setShowHeader, setShowRegister}) =>
 
   return (
     <Sfera>
-        <LogoComponent/>
       <div className='butoane-homepage'>
-        <ButonAutentificare onClick={handleLoginClick} color="#141B76" text="Log In" />
-        <ButonAutentificare onClick={handleRegisterClick} color="#16165b" text="Înregistrare" />
+        <ButonAutentificare className="buton-autentificare-login" onClick={handleLoginClick} text={logIn} />
+        <ButonAutentificare className="buton-autentificare-inregistrare" onClick={handleRegisterClick} text={inregistrare} />
       </div>
     </Sfera>
   );

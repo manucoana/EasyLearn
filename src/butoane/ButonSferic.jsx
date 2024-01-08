@@ -1,7 +1,8 @@
 import React from "react";
-import "./ButonSferic.css"; 
+import "./ButonSferic.css";
 import IconElev from "../imagini/icons/IconElev";
 import IconProfesor from "../imagini/icons/IconProfesor";
+import TextReutilizabil from "../text/TextReutilizabil";
 
 const ButonSferic = ({ tip, onSelect }) => {
   const handleClick = () => {
@@ -13,7 +14,9 @@ const ButonSferic = ({ tip, onSelect }) => {
       <button className="buton-sferic" onClick={handleClick}>
         {tip === "Elev" ? <IconElev /> : <IconProfesor />}
       </button>
-      <h1 className="text-buton-sferic">{tip}</h1>
+      <div className="text-buton-sferic">
+      <TextReutilizabil className="text-reutilizabil-3" text={tip} />
+      </div>
     </div>
   );
 };

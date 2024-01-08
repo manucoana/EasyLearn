@@ -13,3 +13,11 @@
 .buton-autentificare:hover {
     animation: pulse 1s infinite;
 }
+
+.buton-autentificare-login{
+    background-color: var(--albastru-mediu);
+}
+
+.buton-autentificare-inregistrare{
+    background-color: var(--albastru-inchis);
+}

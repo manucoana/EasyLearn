@@ -1,34 +1,32 @@
-.studiu-layout {
-    width: 70%;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+@import '../../design/VariabileDesign.css';
 
-.section-title {
-    font-size: 24px;
-    margin-bottom: 16px;
+.studiu-layout {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
 }
 
 .list-view {
     list-style: none;
     padding: 0;
+    width: 100%;
 }
 
 .list-item {
-    background-color: #fff;
+    background-color: white;
     border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    margin-bottom: 12px;
-    padding: 16px;
     cursor: pointer;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding: 30px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .list-item:hover {
-    background-color: #f5f5f5;
+    background-color: var(--alb);
     transform: scale(1.02);
 }
 

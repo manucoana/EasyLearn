@@ -1,6 +1,6 @@
 @import '../../../design/VariabileDesign.css';
 
-.info-box-items {
+.info-items {
     background-color: var(--albastru-fundal);
     padding: 30px;
 }
@@ -9,20 +9,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.titlu-beneficii {
-    font-size: var(--font-size-titlu-mic 1.5em);
-    text-align: center;
-    color: var(--alb);
-    margin: 5%;
-}
-
-@media (max-width: 600px) {
-    .info-box-container {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 .titlu-info-box,
@@ -39,9 +25,16 @@
 }
 
 @media (max-width: 600px) {
-    .info-box {
+    .info-box-container {
         width: 100%;
         margin: 20px 0;
         transform: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .info-items {
+        flex-direction: column;
+        align-items: center;
     }
 }

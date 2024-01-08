@@ -1,18 +1,10 @@
 import React from "react";
+import "./TextReutilizabil.css"
 
-const TextReutilizabil =  ({ text, color, fontSize, textAlign }) => {
-
-
-    const textStyle = {
-        color: color || "#0D114D",
-        fontSize: fontSize || "1em",
-        textAlign: textAlign || "left",
-        
-    };
-
+const TextReutilizabil = ({ className, text }) => {
     return (
-        <div className="container-text">
-            <h1 className="text" style={textStyle}>
+        <div className="text">
+            <h1 className={`text-reutilizabil ${className}`}>
                 {text}
             </h1>
         </div>

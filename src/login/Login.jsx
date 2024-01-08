@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Login.css";
 import { Register } from "../register/Register";
 import FormLogin from "./form/FormLogin";
 import Student from "../student/Student";
+import Profesor from "../profesor/Profesor";
 
 export const Login = () => {
   const [errorMessages, setErrorMessages] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState("");
+  const [userType, setUserType] = useState(null);
   const [showRegister, setShowRegister] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -26,8 +27,20 @@ export const Login = () => {
       const users = response.data;
       if (Array.isArray(users) && users.length > 0) {
         setUserEmail(users[0].email);
-        setIsLoggedIn(true);
-        setErrorMessages({});
+
+        const userTypeResponse = await axios.get(`http://localhost:3001/api/userType/${email.value}`);
+        const userType = userTypeResponse.data.userType;
+
+        if (userType === "Elev" || userType === "Profesor") {
+          setUserType(userType);
+          setIsLoggedIn(true);
+          setErrorMessages({});
+        } else {
+          setErrorMessages({
+            name: "email",
+            message: "User type not recognized",
+          });
+        }
       } else {
         setErrorMessages({
           name: "email",
@@ -67,7 +80,11 @@ export const Login = () => {
     <>
       {isLoading && <div>Loading...</div>}
       {showRegister && <Register handleRegister={handleRegister} />}
-      {isLoggedIn ? <Student email={userEmail} /> : null}
+      {isLoggedIn ?
+      (userType === "Elev" ? <Student email={userEmail} /> 
+      : userType === "Profesor" ? <Profesor email={userEmail} /> 
+      : null) 
+      : null}
       {!isLoading && !showRegister && !isLoggedIn && (
         <div className="form-container">
           <FormLogin handleLogin={handleLogin} renderError={renderError} setShowRegister={setShowRegister} />

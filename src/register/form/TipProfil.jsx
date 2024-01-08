@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import "./TipProfil.css";
 import ButonSferic from "../../butoane/ButonSferic";
+import { TITLU_INREGISTRARE, SELECTEAZA_INREGISTRARE } from "../../constante/TitluConstant"
+import TextReutilizabil from "../../text/TextReutilizabil";
 
 const TipProfil = ({ onSelect }) => {
+
+  const titluInregistrare = TITLU_INREGISTRARE;
+  const selecteaza = SELECTEAZA_INREGISTRARE;
+
   const [profil, setProfil] = useState('');
 
   const handleProfilSelect = (selectedProfil) => {
@@ -11,16 +17,14 @@ const TipProfil = ({ onSelect }) => {
   };
 
   return (
-    <div className="selectare-container">
-      <h1>INREGISTRARE</h1>
-      <h2>Selecteaza tipul de profil:</h2>
-      <div className="container-butoane-descriere">
-        <div className="div-buton-elev">
-          <ButonSferic onSelect={handleProfilSelect} tip="Elev" />
-        </div>
-        <div className="div-buton-profesor">
-          <ButonSferic onSelect={handleProfilSelect} tip="Profesor" />
-        </div>
+    <div className="tip-profil-items">
+      <div className="text-tip-profil">
+        <TextReutilizabil className="text-reutilizabil-5" text={titluInregistrare} />
+        <TextReutilizabil className="text-reutilizabil-4" text={selecteaza} />
+      </div>
+      <div className="butoane-descriere">
+        <ButonSferic onSelect={handleProfilSelect} tip="Elev" />
+        <ButonSferic onSelect={handleProfilSelect} tip="Profesor" />
       </div>
     </div>
   );

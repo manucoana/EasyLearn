@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { registerUser } from "../api/registerUser";
-import "./Register.css";
 import FormInregistrare from "./form/FormInregistrare";
 import TipProfil from "./form/TipProfil";
 

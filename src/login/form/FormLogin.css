@@ -1,13 +1,20 @@
-.form-login {
-    background-color: white;
+@import '../../design/VariabileDesign.css';
+
+.form-login-items {
+    background-color: var(--alb-pur);
     display: flex;
     flex-direction: column;
-    align-items: center;
     position: absolute;
+    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 60px;
     border-radius: 70px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.butoane-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

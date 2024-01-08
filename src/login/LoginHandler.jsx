@@ -1,22 +1,14 @@
 import React, { useState } from "react";
 import { Login } from "./Login";
 import Student from "../student/Student";
+import Profesor from "../profesor/Profesor";
 
 const LoginHandler = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showStudentComponent, setShowStudentComponent] = useState(false);
+  const [userType, setUserType] = useState(null);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setShowStudentComponent(false);
-  };
-
-  const handleButtonClick = () => {
-    setShowStudentComponent(!showStudentComponent);
   };
 
   return (
@@ -24,7 +16,13 @@ const LoginHandler = () => {
       {!isLoggedIn ? (
         <Login onLogin={handleLogin} />
       ) : (
-        showStudentComponent && <Student />
+        <>
+          {userType === "Elev" ? (
+            <Student />
+          ) : userType === "Profesor" (
+            <Profesor />
+          )}
+        </>
       )}
     </div>
   );

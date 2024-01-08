@@ -2,54 +2,57 @@ import React from "react";
 import "./InfoBoxContainer.css";
 import InfoBox from "../../../box/InfoBox";
 import TextReutilizabil from "../../../text/TextReutilizabil";
+import {
+    BENEFICII_TEXT,
+    TITLU_INFOBOX_1,
+    TITLU_INFOBOX_2,
+    TITLU_INFOBOX_3,
+    TITLU_INFOBOX_4,
+    TITLU_INFOBOX_5,
+    TITLU_INFOBOX_6,
+} from "../../../constante/BeneficiuConstant";
 
+import { SUBTITLU_BENEFICII } from "../../../constante/TitluConstant";
 
 const InfoBoxContainer = () => {
-    const benefitsText = [
-        'Lecțiile personalizate cu tutori experimentați îți oferă o experiență de învățare adaptată nevoilor tale unice. Descoperă metode de predare personalizate care să te ajute să atingi potențialul maxim.',
-        'Ai acces la o gamă variată de resurse educaționale, care îți permit să explorezi subiecte diverse și să îți dezvolți cunoștințele într-un mod captivant și interactiv.',
-        'Platforma prietenoasă și interactivă EasyLearn face învățarea accesibilă pentru toți. Descoperă o experiență de învățare plăcută și eficientă, adaptată ritmului tău.',
-        'Primeste feedback detaliat și rapoarte de progres, oferindu-ți vizibilitate asupra performanțelor tale și direcționându-te către îmbunătățire continuă.',
-        'Alătură-te unei comunități active, unde poți schimba idei, colabora cu alți învățători și găsi inspirație pentru progresele tale educaționale.',
-        'Învățarea devine distractivă cu EasyLearn! Descoperă o platformă care transformă procesul educațional într-o călătorie captivantă și plină de satisfacții.',
-    ];
+    const benefitsText = BENEFICII_TEXT;
 
     const infoboxes = [
         {
             className: "info-box-3",
-            title: "Personalizare",
+            title: TITLU_INFOBOX_1,
             benefits: [benefitsText[0]]
         },
         {
             className: "info-box-3",
-            title: "Resurse diversificate",
+            title: TITLU_INFOBOX_2,
             benefits: [benefitsText[1]]
         },
         {
             className: "info-box-3",
-            title: "Accesibilitate",
+            title: TITLU_INFOBOX_3,
             benefits: [benefitsText[2]]
         },
         {
             className: "info-box-3",
-            title: "Evaluare",
+            title: TITLU_INFOBOX_4,
             benefits: [benefitsText[3]]
         },
         {
             className: "info-box-3",
-            title: "Comunitate",
+            title: TITLU_INFOBOX_5,
             benefits: [benefitsText[4]]
         },
         {
             className: "info-box-3",
-            title: "Distractiv",
+            title: TITLU_INFOBOX_6,
             benefits: [benefitsText[5]]
         },
     ];
 
     return (
-        <div className="info-box-items">
-            <TextReutilizabil className="titlu-beneficii" text="Care sunt beneficiile platformei EasyLearn?" fontSize="1.87em" color="#f2f3f4" />
+        <div className="info-items">
+            <TextReutilizabil className="text-reutilizabil-2" text={SUBTITLU_BENEFICII}/>
             <div className="info-box-container">
                 {infoboxes.map((infobox, index) => (
                     <InfoBox key={index} className={infobox.className}>

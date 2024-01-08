@@ -1,18 +1,15 @@
 import React from "react";
 import "./ButonAutentificare.css";
 
-const ButonAutentificare = ({ onClick, text, color }) => {
+const ButonAutentificare = ({ className, onClick, text }) => {
     const handleClick = () => {
         if (onClick) {
             onClick();
         }
     }
-    const buttonStyle = {
-        backgroundColor: color,
-    };
 
     return (
-        <button className="buton-autentificare" style={buttonStyle} onClick={handleClick} >
+        <button className={`buton-autentificare ${className}`} onClick={handleClick} >
             {text}
         </button>
     );

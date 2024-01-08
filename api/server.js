@@ -5,6 +5,14 @@ const mysql = require("mysql");
 const multer = require('multer');
 const path = require('path');
 
+const {
+  insertUser,
+  getUserById,
+  getAllUsers,
+  getUserByEmail,
+  loginUser,
+  getUserTypeByEmail
+} = require('./model/utilizator');
 
 const app = express();
 app.use(cors());
@@ -20,41 +28,65 @@ const connection = mysql.createConnection({
 
 connection.connect((error) => {
   if (error) {
-    console.error("Error connecting to database: ", error);
+    console.error("Eroare la conectarea cu baza de date: ", error);
   } else {
-    console.log("Connected to database");
+    console.log("Conectat la baza de date");
   }
 });
 
 app.post("/api/users", (req, res) => {
   const { nume, varsta, oras, descriere, email, parola } = req.body;
 
-  const sql = `INSERT INTO easylearn_users (nume, varsta, oras, descriere, email, parola) VALUES (?, ?, ?, ?, ?, ?)`;
+  const sql = insertUser(nume, varsta, oras, descriere, email, parola);
   const values = [nume, varsta, oras, descriere, email, parola];
 
   connection.query(sql, values, (error, result) => {
     if (error) {
-      console.error("Error inserting data: ", error);
+      console.error("Eroare la introducerea datelor: ", error);
       res.status(500).send("Internal Server Error");
     } else {
-      console.log("Data inserted successfully");
+      console.log("Datele au fost introduse cu succes");
       res.status(200).send("Data inserted successfully");
     }
   });
 });
 
 app.get("/api/users", (req, res) => {
-  const sql = "SELECT * FROM easylearn_users";
+  const sql = getAllUsers();
 
   connection.query(sql, (error, results) => {
     if (error) {
-      console.error("Error querying database: ", error);
+      console.error("Eroare la interogarea bazei de date: ", error);
       res.status(500).send("Internal Server Error");
     } else {
-      console.log("Retrieved data successfully");
+      console.log("Date obtinute cu succes");
       res.status(200).send(results);
     }
   });
+});
+
+
+app.get('/api/userType/:email', async (req, res) => {
+  try {
+    const email = req.params.email;
+    const sql = getUserTypeByEmail(email);
+    const values = [email];
+
+    connection.query(sql, values, (error, results) => {
+      if (error) {
+        console.error('Eroare la interogarea bazei de date: ', error);
+        res.status(500).send('Internal Server Error');
+      } else if (results.length > 0) {
+        const userType = results[0].descriere;
+        res.status(200).json({ userType });
+      } else {
+        res.status(404).send('User type not found');
+      }
+    });
+  } catch (error) {
+    console.error('Eroare în timpul interogării:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.get('/api/profil/:email', (req, res) => {
@@ -78,12 +110,12 @@ app.get('/api/profil/:email', (req, res) => {
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
 
-  const sql = "SELECT * FROM easylearn_users WHERE email = ? AND parola = ?";
+  const sql = loginUser(email, password);
   const values = [email, password];
 
   connection.query(sql, values, (error, results) => {
     if (error) {
-      console.error("Error querying database: ", error);
+      console.error("Eroare la interogarea bazei de date: ", error);
       res.status(500).send("Internal Server Error");
     } else if (results.length === 0) {
       console.log("Invalid email or password");
@@ -95,7 +127,7 @@ app.post("/api/login", (req, res) => {
   });
 });
 
-const upload = multer({ dest: 'uploads/' }); 
+const upload = multer({ dest: 'uploads/' });
 
 app.post('/api/uploads', upload.single('file'), (req, res) => {
   const file = req.file;
@@ -104,9 +136,9 @@ app.post('/api/uploads', upload.single('file'), (req, res) => {
   res.status(200).json({ imageUrl });
 });
 
-
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.listen(3001, () => {
-  console.log("Server running on port 3001");
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Serverul ruleaza pe portul ${PORT}`);
 });
