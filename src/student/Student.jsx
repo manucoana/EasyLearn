@@ -3,7 +3,7 @@ import "./Student.css";
 import Titlu from "../text/Titlu";
 import DefaultLayout from "../layout/DefaultLayout";
 import Sfera from "../layout/decor/Sfera";
-import NavigareElev from "../piese/elev/NavigareElev";
+import NavigareElev from "../piese/elev/NavigarePagina";
 import ButoaneNavigareElev from "../piese/elev/ButoaneNavigareElev";
 
 const Student = ({ email }) => {

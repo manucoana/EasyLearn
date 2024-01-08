@@ -4,13 +4,14 @@ import axios from "axios";
 import Sfera from "../layout/decor/Sfera";
 import TextReutilizabil from "../text/TextReutilizabil";
 import { TITLU_PROFIL } from "../constante/TitluConstant";
-
+import DetaliiProfil from "./DetaliiProfil";
+import ListaElevi from "../eleviimei/ListaElevi";
 
 export const Profil = ({ email }) => {
-
   const titluProfil = TITLU_PROFIL;
 
   const [userData, setUserData] = useState({});
+  const [eleviInfo, setEleviInfo] = useState([]);
   const [errorMessages, setErrorMessages] = useState({});
 
   useEffect(() => {
@@ -26,6 +27,22 @@ export const Profil = ({ email }) => {
         setErrorMessages({ message: "Error" });
       });
   }, [email]);
+
+  useEffect(() => {
+    if (userData.nume) {
+      axios
+        .get(`http://localhost:3001/api/elevi/${userData.nume}`)
+        .then((response) => {
+          const elevData = response.data;
+          setEleviInfo(elevData);
+          setErrorMessages({});
+        })
+        .catch((error) => {
+          console.log(error);
+          setErrorMessages({ message: "Error" });
+        });
+    }
+  }, [userData.nume]);
 
   const renderError = (message) => message && <div className="error">{message}</div>;
 
@@ -49,30 +66,15 @@ export const Profil = ({ email }) => {
       });
   };
 
-  const renderForm = () => (
-    <div className="profil-container">
-      <TextReutilizabil className="text-reutilizabil-3" text={titluProfil} />
-      <div className="profile-image">
-        {userData.imageUrl && <img src={userData.imageUrl} alt="Profile" />}
-        <input type="file" onChange={handleFileUpload} />
-      </div>
-      <div className="profile-details">
-        <p>Nume: {userData.nume}</p>
-        <p>Varsta: {userData.varsta}</p>
-        <p>Oras: {userData.oras}</p>
-        <p>Descriere: {userData.descriere}</p>
-        <p>Email: {userData.email}</p>
-      </div>
-      {renderError(errorMessages.message)}
-    </div>
-  );
-
   return (
     <div className="profil-items">
-      <div className="top-bar"></div>
-      {renderForm()}
+      <div className="stanga">
+        <TextReutilizabil className="text-reutilizabil-3" text={titluProfil} />
+        <DetaliiProfil userData={userData} handleFileUpload={handleFileUpload} />
+        {renderError(errorMessages.message)}
+      </div>
       <Sfera />
-    </div>
 
+    </div>
   );
 };

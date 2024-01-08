@@ -14,6 +14,15 @@ const {
   getUserTypeByEmail
 } = require('./model/utilizator');
 
+const {
+  getVizibilitate
+} = require('./model/anunt');
+
+const {
+  getNumeElevi
+} = require('./model/elev');
+
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -106,6 +115,46 @@ app.get('/api/profil/:email', (req, res) => {
     }
   });
 });
+
+app.get("/api/vizibilitate", (req, res) => {
+  const vizibilitate= req.params.email;
+
+  const sql = getVizibilitate(vizibilitate);
+  const values = [vizibilitate];
+
+  connection.query(sql, values, (error, results) => {
+    if (error) {
+      console.error("Eroare la interogarea bazei de date: ", error);
+      res.status(500).send("Internal Server Error");
+    } else if (results.length === 0) {
+      console.log("Invalid");
+      res.status(401).send("Invalid");
+    } else {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).send(JSON.stringify(results));
+    }
+  });
+});
+
+app.get("/api/elevi/:nume_profesor", (req, res) => {
+  const nume_profesor = req.params.nume_profesor;
+
+  const sql = getNumeElevi(nume_profesor);
+
+  connection.query(sql, (error, results) => {
+    if (error) {
+      console.error("Eroare la interogarea bazei de date: ", error);
+      res.status(500).send("Internal Server Error");
+    } else if (results.length === 0) {
+      console.log("Invalid");
+      res.status(401).send("Invalid");
+    } else {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).send(JSON.stringify(results));
+    }
+  });
+});
+
 
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;

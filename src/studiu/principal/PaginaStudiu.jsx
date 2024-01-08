@@ -38,7 +38,7 @@ const PaginaStudiu = ({ email, onClick }) => {
             default:
                 return (
                     <div className="pagina-studiu-items">
-                        <ButoanePaginaStudiu />
+                        <ButoanePaginaStudiu handleButtonClick={handleButtonClick}  />
                     </div>
 
                 );

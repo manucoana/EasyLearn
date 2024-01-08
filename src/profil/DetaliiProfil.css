@@ -1,0 +1,22 @@
+.detalii-profil p {
+    position: relative;
+  }
+  
+  .detalii-profil p::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 150%;
+    height: 1px;
+    background-color: var(--albastru-fundal);
+  }
+
+  .profile-image {
+    text-align: left;
+  }
+  
+  .profile-image img {
+    width: 200px;
+    height: auto;
+  }

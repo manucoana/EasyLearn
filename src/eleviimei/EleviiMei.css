@@ -1,0 +1,13 @@
+.elevii-mei-items{
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lista-elevi{
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    align-items: center;
+    justify-content: center;
+}

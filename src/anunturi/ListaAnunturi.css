@@ -1,0 +1,28 @@
+.lista-anunturi-items {
+    padding: 30px;
+}
+.titlu-lista-anunturi{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 40px;
+}
+
+.lista-anunturi-items ul li {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    
+}
+
+.lista-anunturi-items ul li.even {
+    background-color: #f0f0f0;
+}
+
+.lista-anunturi-items ul li.odd {
+    background-color: #ffffff;
+}
