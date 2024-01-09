@@ -1,10 +1,10 @@
 import React from "react";
-import ListaAnunturi from "../../anunturi/ListaAnunturi";
-import PaginaStudiu from "../../studiu/principal/PaginaStudiu";
-import { Profil } from "../../profil/Profil";
-import EleviiMei from "../../eleviimei/EleviiMei";
+import Profil from "../profil/Profil"
+import PaginaStudiu from "../studiu/principal/PaginaStudiu"
+import ListaAnunturi from "../anunturi/ListaAnunturi"
+import EleviiMei from "../eleviimei/EleviiMei"
 
-const NavigareElev = ({ activePage, email }) => {
+const NavigarePagina = ({ activePage, email }) => {
   switch (activePage) {
     case "Profil":
       return <Profil email={email} />;
@@ -19,4 +19,4 @@ const NavigareElev = ({ activePage, email }) => {
   }
 };
 
-export default NavigareElev;
+export default NavigarePagina;

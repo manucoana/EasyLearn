@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Profesor.css";
 import ButonReutilizabil from '../butoane/ButonReutilizabil';
 import DefaultLayout from "../layout/DefaultLayout";
-import NavigareElev from "../piese/elev/NavigarePagina";
+
 import Titlu from "../text/Titlu";
 import Sfera from "../layout/decor/Sfera";
 import {
@@ -10,6 +10,7 @@ import {
   LISTA_ANUNTURI,
   PROFIL
 } from "../constante/ButonConstant"
+import NavigarePagina from "../piese/NavigarePagina";
 
 const Profesor = ({ email }) => {
 
@@ -38,7 +39,7 @@ const Profesor = ({ email }) => {
   return (
     <DefaultLayout>
       {activePage ? (
-        <NavigareElev activePage={activePage} email={email} />
+        <NavigarePagina activePage={activePage} email={email} />
       ) : (
         <div className='profesor-items'>
           <div className="panou-profesor">

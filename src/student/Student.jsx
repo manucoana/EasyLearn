@@ -3,8 +3,8 @@ import "./Student.css";
 import Titlu from "../text/Titlu";
 import DefaultLayout from "../layout/DefaultLayout";
 import Sfera from "../layout/decor/Sfera";
-import NavigareElev from "../piese/elev/NavigarePagina";
 import ButoaneNavigareElev from "../piese/elev/ButoaneNavigareElev";
+import NavigarePagina from "../piese/NavigarePagina";
 
 const Student = ({ email }) => {
   const [activePage, setActivePage] = useState("");
@@ -29,7 +29,7 @@ const Student = ({ email }) => {
   return (
     <DefaultLayout>
       {activePage ? (
-        <NavigareElev activePage={activePage} email={email} />
+        <NavigarePagina activePage={activePage} email={email} />
       ) : (
         <div className="student-items">
           <div className="panou-student">

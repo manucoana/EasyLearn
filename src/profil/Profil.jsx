@@ -6,7 +6,7 @@ import TextReutilizabil from "../text/TextReutilizabil";
 import { TITLU_PROFIL } from "../constante/TitluConstant";
 import DetaliiProfil from "./DetaliiProfil";
 
-export const Profil = ({ email }) => {
+const Profil = ({ email }) => {
   const titluProfil = TITLU_PROFIL;
 
   const [userData, setUserData] = useState({});
@@ -50,7 +50,6 @@ export const Profil = ({ email }) => {
 
   return (
     <div className="profil-items">
-
       {renderError(errorMessages.message)}
       <div className="detalii-sfera">
         <TextReutilizabil className="text-reutilizabil-3" text={titluProfil} />
@@ -60,3 +59,5 @@ export const Profil = ({ email }) => {
     </div>
   );
 };
+
+export default Profil;
