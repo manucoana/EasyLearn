@@ -1,18 +1,20 @@
 import React from "react";
 import LogoComponent from "../imagini/logo/LogoComponent";
+import "./ElevulMeu.css"
+import InfoBox from "../box/InfoBox";
 
-const ListaElevi = ({ eleviInfo }) => {
+const ElevulMeu = ({ eleviInfo }) => {
   return (
-    <div className="lista-elevi">
+    <div className="elevul-meu-container">
       {eleviInfo.map((elev, index) => (
-        <div key={index}>
+        <InfoBox className="info-box-4" key={index}>
             <LogoComponent/>
           <p>Elev {index + 1}</p>
           <p>{elev.nume_elev}</p>
-        </div>
+        </InfoBox>
       ))}
     </div>
   );
 };
 
-export default ListaElevi;
+export default ElevulMeu;

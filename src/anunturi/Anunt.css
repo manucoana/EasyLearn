@@ -1,0 +1,23 @@
+.lista-anunturi-items ul li {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.lista-anunturi-items ul li.par {
+    background-color: #f0f0f0;
+}
+
+.lista-anunturi-items ul li.impar {
+    background-color: #ffffff;
+}
+
+.campuri-anunut{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}

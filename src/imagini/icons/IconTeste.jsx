@@ -11,7 +11,7 @@ const IconTeste = () => {
         svgCode={testeIconSVG}
         width={220}
         height={250}
-        fillColor="#f2f3f4"
+        fillColor="#080C44"
       />
       
     </div>

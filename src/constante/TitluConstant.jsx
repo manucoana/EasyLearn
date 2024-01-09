@@ -16,6 +16,7 @@ export const SUBTITLU_INREGISTRARE = "Completati campurile cu datele dumneavoast
 export const SELECTEAZA_INREGISTRARE = "Selecteaza tipul de profil:";
 
 /*PaginaStudiu*/
+export const PAGINA_STUDIU = "PAGINA DE STUDIU";
 export const LECTII = "Lectii";
 export const TEME = "Teme";
 export const TESTE = "Teste";

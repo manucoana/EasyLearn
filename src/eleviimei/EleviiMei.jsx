@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ListaElevi from "./ListaElevi";
+import ElevulMeu from "./ElevulMeu";
 import "./EleviiMei.css";
 import TextReutilizabil from "../text/TextReutilizabil";
 
@@ -43,10 +43,10 @@ const EleviiMei = ({ email }) => {
 
     return (
         <div className="elevii-mei-items">
-            <TextReutilizabil className="text-reutilizabil-5" text="Elevii mei" />
+            <TextReutilizabil className="text-reutilizabil-5" text="ELEVII MEI" />
             {renderError(errorMessages.message)}
             <div className="lista-elevi">
-                <ListaElevi eleviInfo={eleviInfo} />
+                <ElevulMeu eleviInfo={eleviInfo} />
             </div>
         </div>
     );

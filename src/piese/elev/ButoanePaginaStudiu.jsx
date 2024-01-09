@@ -18,22 +18,22 @@ const ButoanePaginaStudiu = ({ handleButtonClick }) => {
 
     return (
             <div className="lectii-teme-teste">
-                <InfoBox onClick={() => handleButtonClick("Lectii")} className="info-box-6">
+                <InfoBox onClick={() => handleButtonClick("Lectii")} className="info-box-4">
                     <div>
-                        <TextReutilizabil className="text-reutilizabil-2" text={LECTII}/>
+                        <TextReutilizabil className="text-reutilizabil-3" text={LECTII}/>
                         <IconLectii />
                     </div>
                 </InfoBox>
-                <InfoBox onClick={() => handleButtonClick("Teme")} className="info-box-6">
+                <InfoBox onClick={() => handleButtonClick("Teme")} className="info-box-4">
                     <div>
-                        <TextReutilizabil className="text-reutilizabil-2"  text={TEME}/>
+                        <TextReutilizabil className="text-reutilizabil-3"  text={TEME}/>
                         <IconTeme />
                     </div>
                 </InfoBox>
 
-                <InfoBox onClick={() => handleButtonClick("Teste")} className="info-box-6">
+                <InfoBox onClick={() => handleButtonClick("Teste")} className="info-box-4">
                     <div>
-                        <TextReutilizabil className="text-reutilizabil-2" text={TESTE}/>
+                        <TextReutilizabil className="text-reutilizabil-3" text={TESTE}/>
                         <IconTeste />
                     </div>
                 </InfoBox>

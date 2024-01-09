@@ -11,7 +11,7 @@ const IconLectii = () => {
         svgCode={lectiiIconSVG}
         width={190}
         height={250}
-        fillColor="#f2f3f4"
+        fillColor="#080C44"
       />
     </div>
   );

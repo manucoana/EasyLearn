@@ -4,9 +4,13 @@ import Lectii from "../lectii/Lectii";
 import Teme from "../teme/Teme";
 import Teste from "../teste/Teste";
 import ButoanePaginaStudiu from "../../piese/elev/ButoanePaginaStudiu";
-
+import TextReutilizabil from "../../text/TextReutilizabil";
+import { PAGINA_STUDIU } from "../../constante/TitluConstant"
 
 const PaginaStudiu = ({ email, onClick }) => {
+
+    const paginaStudiu = PAGINA_STUDIU;
+
     const [activePage, setActivePage] = useState("");
 
     const handleButtonClick = (page) => {
@@ -38,7 +42,7 @@ const PaginaStudiu = ({ email, onClick }) => {
             default:
                 return (
                     <div className="pagina-studiu-items">
-                        <ButoanePaginaStudiu handleButtonClick={handleButtonClick}  />
+                        <ButoanePaginaStudiu handleButtonClick={handleButtonClick} />
                     </div>
 
                 );
@@ -46,7 +50,8 @@ const PaginaStudiu = ({ email, onClick }) => {
     };
     return (
         <div className="studiu-items">
-            {renderContent()}
+            <TextReutilizabil className="text-reutilizabil-3" text={paginaStudiu}/>
+                {renderContent()}
         </div>
     );
 };

@@ -4,10 +4,12 @@ import LogoComponent from '../../imagini/logo/LogoComponent';
 
 const Sfera = ({ children }) => {
   return (
+    <div className='sfera-items'>
       <div className="sfera">
         <LogoComponent />
         {children}
       </div>
+    </div>
   );
 };
 

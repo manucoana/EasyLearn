@@ -4,7 +4,15 @@
   text-align: left;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   flex-direction: row;
-  padding: 70px;
+  padding: 40px;
+}
+
+.detalii-sfera{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
 }

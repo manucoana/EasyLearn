@@ -1,9 +1,14 @@
 @import '../../design/VariabileDesign.css';
+.sfera-items{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
 
 .sfera {
     padding: 120px;
     background-color: var(--alb);
     border-radius: 50%;
     height: 300px;
-    width: 300px;
+    width: 300px; 
 }
