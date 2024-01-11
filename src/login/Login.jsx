@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Register } from "../register/Register";
 import FormLogin from "./form/FormLogin";
-import Student from "../student/Student";
+import Elev from "../elev/Elev";
 import Profesor from "../profesor/Profesor";
 
 export const Login = () => {
@@ -80,11 +80,12 @@ export const Login = () => {
     <>
       {isLoading && <div>Loading...</div>}
       {showRegister && <Register handleRegister={handleRegister} />}
-      {isLoggedIn ?
-      (userType === "Elev" ? <Student email={userEmail} /> 
-      : userType === "Profesor" ? <Profesor email={userEmail} /> 
-      : null) 
-      : null}
+      {isLoggedIn && (
+        <div>
+          {userType === "Elev" && <Elev email={userEmail} userType={userType} />}
+          {userType === "Profesor" && <Profesor email={userEmail} userType={userType} />}
+        </div>
+      )}
       {!isLoading && !showRegister && !isLoggedIn && (
         <div className="form-container">
           <FormLogin handleLogin={handleLogin} renderError={renderError} setShowRegister={setShowRegister} />

@@ -5,7 +5,16 @@
 }
 .titlu-lista-anunturi{
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: start;
+    flex-direction: column;
     padding-left: 40px;
+}
+
+.butoane-lista-anunturi{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: row;
+    width: 100%;
 }

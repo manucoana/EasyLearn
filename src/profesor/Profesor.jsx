@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Profesor.css";
 import ButonReutilizabil from '../butoane/ButonReutilizabil';
 import DefaultLayout from "../layout/DefaultLayout";
-
 import Titlu from "../text/Titlu";
 import Sfera from "../layout/decor/Sfera";
 import {
@@ -11,8 +10,9 @@ import {
   PROFIL
 } from "../constante/ButonConstant"
 import NavigarePagina from "../piese/NavigarePagina";
+import ButoaneNavigare from "../piese/ButoaneNavigare";
 
-const Profesor = ({ email }) => {
+const Profesor = ({ email, userType }) => {
 
   const eleviiMei = ELEVII_MEI;
   const listaAnunturi = LISTA_ANUNTURI;
@@ -39,16 +39,17 @@ const Profesor = ({ email }) => {
   return (
     <DefaultLayout>
       {activePage ? (
-        <NavigarePagina activePage={activePage} email={email} />
+        <NavigarePagina activePage={activePage} email={email} userType={userType} />
       ) : (
-        <div className='profesor-items'>
-          <div className="panou-profesor">
-            <Titlu />
-            <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => handleButtonClick("EleviiMei")} text={eleviiMei} />
-            <ButonReutilizabil className="buton-reutilizabil-2" onClick={() => handleButtonClick("ListaAnunturi")} text={listaAnunturi} />
-            <ButonReutilizabil className="buton-reutilizabil-3" onClick={() => handleButtonClick("Profil")} text={profil} />
+        <div>
+          <div className='profesor-items'>
+            <div className="panou-profesor">
+              <Titlu />
+              <ButoaneNavigare handleButtonClick={handleButtonClick} userType={userType} />
+            </div>
+            <Sfera />
           </div>
-          <Sfera />
+        
         </div>
       )}
     </DefaultLayout>

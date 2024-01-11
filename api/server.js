@@ -15,7 +15,10 @@ const {
 } = require('./model/utilizator');
 
 const {
-  getVizibilitate
+  getVizibilitate,
+  getVizibilitateByEmail,
+  setVizibilitateTrue,
+  setVizibilitateFalse
 } = require('./model/anunt');
 
 const {
@@ -124,6 +127,62 @@ app.get("/api/vizibilitate", (req, res) => {
 
   const sql = getVizibilitate(vizibilitate);
   const values = [vizibilitate];
+
+  connection.query(sql, values, (error, results) => {
+    if (error) {
+      console.error("Eroare la interogarea bazei de date: ", error);
+      res.status(500).send("Internal Server Error");
+    } else if (results.length === 0) {
+      console.log("Unauthorized");
+      res.status(401).send("Unauthorized");
+    } else {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).send(JSON.stringify(results));
+    }
+  });
+});
+
+app.post("/api/setVizibilitateTrue", (req, res) => {
+  const { email } = req.body;
+
+  const sql = setVizibilitateTrue(email);
+
+  console.log("SQL Query:", sql);
+
+  connection.query(sql, (error, result) => {
+    if (error) {
+      console.error("Eroare la actualizarea datelor: ", error);
+      res.status(500).send("Internal Server Error");
+    } else {
+      console.log("Vizibilitate setata cu succes");
+      res.status(200).send("Visibility set successfully");
+    }
+  });
+});
+
+app.post("/api/setVizibilitateFalse", (req, res) => {
+  const { email } = req.body;
+
+  const sql = setVizibilitateFalse(email);
+
+  console.log("SQL Query:", sql);
+
+  connection.query(sql, (error, result) => {
+    if (error) {
+      console.error("Eroare la actualizarea datelor: ", error);
+      res.status(500).send("Internal Server Error");
+    } else {
+      console.log("Vizibilitate setata cu succes");
+      res.status(200).send("Visibility set successfully");
+    }
+  });
+});
+
+app.get("/api/vizibilitate", (req, res) => {
+  const { email } = req.query;
+
+  const sql = getVizibilitateByEmail(email);
+  const values = [email];
 
   connection.query(sql, values, (error, results) => {
     if (error) {

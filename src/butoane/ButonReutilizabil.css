@@ -28,6 +28,11 @@
     background-color: var(--albastru-inchis);
 }
 
+.buton-reutilizabil-4 {
+    background-color: var(--gri);
+}
+
+
 .buton-reutilizabil:hover {
     animation: pulse 1s infinite;
 }

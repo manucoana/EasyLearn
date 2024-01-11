@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./Student.css";
+import "./Elev.css";
 import Titlu from "../text/Titlu";
 import DefaultLayout from "../layout/DefaultLayout";
 import Sfera from "../layout/decor/Sfera";
-import ButoaneNavigareElev from "../piese/elev/ButoaneNavigareElev";
+import ButoaneNavigare from "../piese/ButoaneNavigare";
 import NavigarePagina from "../piese/NavigarePagina";
 
-const Student = ({ email }) => {
+const Elev = ({ email, userType }) => {
   const [activePage, setActivePage] = useState("");
 
   const handleButtonClick = (page) => {
@@ -34,7 +34,7 @@ const Student = ({ email }) => {
         <div className="student-items">
           <div className="panou-student">
             <Titlu />
-            <ButoaneNavigareElev handleButtonClick={handleButtonClick} />
+            <ButoaneNavigare handleButtonClick={handleButtonClick} userType={userType} />
           </div>
           <Sfera/>
         </div>
@@ -43,4 +43,4 @@ const Student = ({ email }) => {
   );
 };
 
-export default Student;
+export default Elev;

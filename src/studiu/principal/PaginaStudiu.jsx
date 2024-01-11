@@ -3,7 +3,7 @@ import "./PaginaStudiu.css";
 import Lectii from "../lectii/Lectii";
 import Teme from "../teme/Teme";
 import Teste from "../teste/Teste";
-import ButoanePaginaStudiu from "../../piese/elev/ButoanePaginaStudiu";
+import ButoanePaginaStudiu from "../../elev/ButoanePaginaStudiu";
 import TextReutilizabil from "../../text/TextReutilizabil";
 import { PAGINA_STUDIU } from "../../constante/TitluConstant"
 
