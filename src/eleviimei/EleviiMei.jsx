@@ -5,51 +5,53 @@ import "./EleviiMei.css";
 import TextReutilizabil from "../text/TextReutilizabil";
 
 const EleviiMei = ({ email }) => {
-    const [userData, setUserData] = useState({});
-    const [eleviInfo, setEleviInfo] = useState([]);
-    const [errorMessages, setErrorMessages] = useState({});
+  const [userEmail, setUserEmail] = useState({});
+  const [numeElev, setNumeElev] = useState([]);
+  const [errorMessages, setErrorMessages] = useState({});
 
-    useEffect(() => {
-        axios
-            .get(`http://localhost:3001/api/profil/${email}`)
-            .then((response) => {
-                const user = response.data;
-                setUserData(user);
-                setErrorMessages({});
-            })
-            .catch((error) => {
-                console.log(error);
-                setErrorMessages({ message: "Eroare la preluarea datelor din profil" });
-            });
-    }, [email]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3001/api/profil/${email}`)
+      .then((response) => {
+        const userEmail = response.data;
+        setUserEmail(userEmail);
+        setErrorMessages({});
+      })
+      .catch((error) => {
+        console.log(error);
+        setErrorMessages({ message: "Eroare la preluarea datelor din profil" });
+      });
+  }, [email]);
 
-    useEffect(() => {
-        if (userData.nume) {
-            axios
-                .get(`http://localhost:3001/api/elevi/${userData.nume}`)
-                .then((response) => {
-                    const elevData = response.data;
-                    setEleviInfo(elevData);
-                    setErrorMessages({});
-                })
-                .catch((error) => {
-                    console.log(error);
-                    setErrorMessages({ message: "Eroare la preluarea datelor din elevi" });
-                });
-        }
-    }, [userData.nume]);
+  useEffect(() => {
+    if (userEmail.nume) {
+      axios
+        .get(`http://localhost:3001/api/elevi/${userEmail.nume}`)
+        .then((response) => {
+          const numeElev = response.data;
+          setNumeElev(numeElev);
+          setErrorMessages({});
+        })
+        .catch((error) => {
+          console.log(error);
+          setErrorMessages({ message: "Eroare la preluarea datelor din elevi" });
+        });
+    }
+  }, [userEmail.nume]);
 
-    const renderError = (message) => message && <div className="error">{message}</div>;
+  const renderError = (message) => message && <div className="error">{message}</div>;
 
-    return (
-        <div className="elevii-mei-items">
-            <TextReutilizabil className="text-reutilizabil-5" text="ELEVII MEI" />
-            {renderError(errorMessages.message)}
-            <div className="lista-elevi">
-                <ElevulMeu eleviInfo={eleviInfo} />
-            </div>
-        </div>
-    );
+  return (
+    <div className="elevii-mei-items">
+        <div className="titlu-elevii-mei">
+      <TextReutilizabil className="text-reutilizabil-5" text="ELEVII MEI" />
+      </div>
+      {renderError(errorMessages.message)}
+      <div className="lista-elevi">
+        <ElevulMeu elevi={numeElev} />
+      </div>
+    </div>
+  );
 };
 
 export default EleviiMei;

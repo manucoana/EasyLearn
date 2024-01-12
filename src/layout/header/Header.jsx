@@ -12,7 +12,9 @@ const Header = () => {
   };
   return (
     <header className="header-app">
-      <MeniuIcon toggleMenu={toggleMenu} />
+      <div className="menu-icon">
+      <MeniuIcon className="menu-icon" toggleMenu={toggleMenu} />
+      </div>
       <NavLateral isOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </header>
   );

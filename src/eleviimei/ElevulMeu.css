@@ -1,7 +1,35 @@
-.elevul-meu-container {
+.elevul-meu-list {
+    border-bottom: 1px solid #ddd;
+    list-style: none;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 0px;
 }
 
-.elevul-meu {
-    border: 1px solid #000;
+.elevul-meu-list li {
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    width: 100%;
+}
+
+.elevul-meu-list li:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.elevul-meu-list li:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.elevul-meu-list-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

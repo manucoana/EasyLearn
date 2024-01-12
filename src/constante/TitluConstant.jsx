@@ -17,6 +17,6 @@ export const SELECTEAZA_INREGISTRARE = "Selecteaza tipul de profil:";
 
 /*PaginaStudiu*/
 export const PAGINA_STUDIU = "PAGINA DE STUDIU";
-export const LECTII = "Lectii";
-export const TEME = "Teme";
-export const TESTE = "Teste";
+export const LECTII = "LECTII";
+export const TEME = "TEME";
+export const TESTE = "TESTE";

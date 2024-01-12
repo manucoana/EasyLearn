@@ -1,7 +1,7 @@
 import React from "react";
 import StudiuLayout from "../../layout/studiu/StudiuLayout";
 
-const Teme = ({ onClose }) => {
+const Teme = () => {
 
     const lectii = ['Tema 1', 'Tema 2', 'Tema 3'];
 

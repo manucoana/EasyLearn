@@ -6,7 +6,6 @@ import {
   PROFIL,
   ELEVII_MEI,
 } from  "../constante/ButonConstant"
-import ListaAnunturi from "../anunturi/ListaAnunturi";
 
 const ButoaneNavigare = ({ handleButtonClick, userType }) => {
 

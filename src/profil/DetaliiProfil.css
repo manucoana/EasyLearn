@@ -9,7 +9,7 @@
     left: 0;
     width: 150%;
     height: 1px;
-    background-color: var(--albastru-fundal);
+    background-color: var(--culoare-secundara);
   }
 
   .profile-image {

@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./TipProfil.css";
 import ButonSferic from "../../butoane/ButonSferic";
-import { TITLU_INREGISTRARE, SELECTEAZA_INREGISTRARE } from "../../constante/TitluConstant"
+import { TITLU_INREGISTRARE, SELECTEAZA_INREGISTRARE } from "../../constante/TitluConstant";
 import TextReutilizabil from "../../text/TextReutilizabil";
 
 const TipProfil = ({ onSelect }) => {
-
   const titluInregistrare = TITLU_INREGISTRARE;
   const selecteaza = SELECTEAZA_INREGISTRARE;
 
-  const [profil, setProfil] = useState('');
-
   const handleProfilSelect = (selectedProfil) => {
-    setProfil(selectedProfil);
     onSelect(selectedProfil);
   };
 

@@ -1,7 +1,7 @@
 @import '../../../design/VariabileDesign.css';
 
 .info-items {
-    background-color: var(--albastru-fundal);
+    background-color: var(--culoare-fundal-inchis);
     padding: 30px;
 }
 

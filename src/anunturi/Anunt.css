@@ -1,23 +1,24 @@
+@import '../design/VariabileDesign.css';
+
 .lista-anunturi-items ul li {
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--tabel-gri);
     list-style: none;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .lista-anunturi-items ul li.par {
-    background-color: #f0f0f0;
+    background-color: var(--alb);
 }
 
 .lista-anunturi-items ul li.impar {
-    background-color: #ffffff;
+    background-color: var(--tabel-fundal);
 }
 
 .campuri-anunut{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 }

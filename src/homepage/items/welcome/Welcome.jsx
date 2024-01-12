@@ -3,13 +3,12 @@ import './Welcome.css';
 import Titlu from '../../../text/Titlu';
 import SferaLogin from './SferaLogin';
 
-const Welcome = ({ setShowLoginComponent, setShowHeader, handleLogin, renderError, setShowRegister }) => {
+const Welcome = ({ setShowLogin, handleLogin, renderError, setShowRegister }) => {
   return (
     <div className='welcome-home'>
       <Titlu />
       <SferaLogin
-        setShowLoginComponent={setShowLoginComponent}
-        setShowHeader={setShowHeader}
+        setShowLogin={setShowLogin}
         handleLogin={handleLogin}
         renderError={renderError}
         setShowRegister={setShowRegister}

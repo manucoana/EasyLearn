@@ -31,8 +31,8 @@ const Elev = ({ email, userType }) => {
       {activePage ? (
         <NavigarePagina activePage={activePage} email={email} />
       ) : (
-        <div className="student-items">
-          <div className="panou-student">
+        <div className="elev-items">
+          <div className="panou-elev">
             <Titlu />
             <ButoaneNavigare handleButtonClick={handleButtonClick} userType={userType} />
           </div>

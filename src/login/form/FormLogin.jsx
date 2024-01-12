@@ -2,8 +2,8 @@ import React from "react";
 import "./FormLogin.css";
 import CampInput from "../../input/CampInput";
 import LogoComponent from "../../imagini/logo/LogoComponent";
-import ButonAutentificare from "../../butoane/ButonAutentificare";
 import { LOG_IN, INREGISTRARE } from "../../constante/ButonConstant";
+import ButonReutilizabil from "../../butoane/ButonReutilizabil";
 
 
 const FormLogin = ({ handleLogin, renderError, setShowRegister }) => {
@@ -19,8 +19,8 @@ const FormLogin = ({ handleLogin, renderError, setShowRegister }) => {
             <CampInput type="password" placeholder="Parola" name="parola" id="parola" />
             {renderError("parola")}
             <div className="butoane-login">
-            <ButonAutentificare className="buton-autentificare-login" text={logIn} />
-            <ButonAutentificare className="buton-autentificare-inregistrare" onClick={() => setShowRegister(true)} text={inregistrare} />
+            <ButonReutilizabil className="buton-login" text={logIn} />
+            <ButonReutilizabil className="buton-inregistrare" onClick={() => setShowRegister(true)} text={inregistrare} />
             </div>
         </form>
     );

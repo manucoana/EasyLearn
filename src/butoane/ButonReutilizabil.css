@@ -1,6 +1,8 @@
 @import '../design/VariabileDesign.css';
 
-.buton-reutilizabil {
+.buton-reutilizabil-1,
+.buton-reutilizabil-2,
+.buton-reutilizabil-3 {
     width: 530px;
     height: 100px;
     border-radius: 50px;
@@ -9,10 +11,48 @@
     justify-content: center;
     color: #f2f3f4;
     font-weight: bold;
-    cursor: pointer;
+    cursor: pointer;    
     border: none;
     margin-bottom: 10px;
-    background-color: var(--albastru-inchis);
+    background-color: var(--culoare-secundara);
+}
+
+.buton-login,
+.buton-inregistrare,
+.buton-publicare {
+    margin-top: 25px;
+    width: 250px;
+    height: 45px;
+    color: var(--alb);
+    border: none;
+    border-radius: 70px;
+    cursor: pointer;
+}
+
+.buton-login:hover {
+    animation: pulse 1s infinite;
+}
+
+.buton-inregistrare:hover {
+    animation: pulse 1s infinite;
+}
+
+.buton-login {
+    background-color: var(--albastru-mediu);
+}
+
+.buton-inregistrare {
+    background-color: var(--culoare-secundara);
+}
+
+.buton-publicare {
+    background-color: var(--culoare-secundara);
+    border-radius: 0px;
+    width: 100%;
+}
+
+.buton-publicare:hover {
+    background-color: var(--albastru-mediu);
 }
 
 
@@ -25,13 +65,8 @@
 }
 
 .buton-reutilizabil-3 {
-    background-color: var(--albastru-inchis);
+    background-color: var(--culoare-secundara);
 }
-
-.buton-reutilizabil-4 {
-    background-color: var(--gri);
-}
-
 
 .buton-reutilizabil:hover {
     animation: pulse 1s infinite;

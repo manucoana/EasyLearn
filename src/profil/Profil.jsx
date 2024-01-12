@@ -51,11 +51,13 @@ const Profil = ({ email }) => {
   return (
     <div className="profil-items">
       {renderError(errorMessages.message)}
-      <div className="detalii-sfera">
+      <div className="detalii">
         <TextReutilizabil className="text-reutilizabil-3" text={titluProfil} />
         <DetaliiProfil userData={userData} handleFileUpload={handleFileUpload} />
       </div>
+      <div className="sfera-profil">
       <Sfera />
+      </div>
     </div>
   );
 };

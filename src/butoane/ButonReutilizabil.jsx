@@ -4,7 +4,7 @@ import "./ButonReutilizabil.css";
 const ButonReutilizabil = ({ onClick, text, className }) => {
 
   return (
-    <button className={`buton-reutilizabil ${className}`} onClick={onClick}>
+    <button className={`${className}`} onClick={onClick}>
       {text}
     </button>
   );

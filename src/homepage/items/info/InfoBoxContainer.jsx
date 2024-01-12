@@ -55,7 +55,7 @@ const InfoBoxContainer = () => {
             <TextReutilizabil className="text-reutilizabil-2" text={SUBTITLU_BENEFICII}/>
             <div className="info-box-container">
                 {infoboxes.map((infobox, index) => (
-                    <InfoBox key={index} className={infobox.className}>
+                    <InfoBox key={index} className="info-box">
                         {infobox.title && <h2 className="titlu-info-box">{infobox.title}</h2>}
                         <div className="descriere-platforma">
                             {infobox.benefits && (

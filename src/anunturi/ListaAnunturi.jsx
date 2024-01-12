@@ -1,27 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./ListaAnunturi.css";
 import TextReutilizabil from "../text/TextReutilizabil";
 import { LISTA_ANUNTURI } from "../constante/ButonConstant";
 import Anunt from "./Anunt";
-import ButonAutentificare from "../butoane/ButonAutentificare";
+import ButonReutilizabil from "../butoane/ButonReutilizabil";
 
 const ListaAnunturi = ({ email, userType }) => {
   const listaAnunturi = LISTA_ANUNTURI;
   const [anunturiVizibile, setAnunturiVizibile] = useState([]);
-  const [vizibilitate, setVizibilitate] = useState(false);
 
-  const fetchAnunturiVizibile = async () => {
+  const fetchAnunturiVizibile = useCallback(async () => {
     try {
       const response = await fetch(`http://localhost:3001/api/vizibilitate?email=${email}`);
       const data = await response.json();
-
-      setVizibilitate(data.length > 0);
 
       setAnunturiVizibile(data);
     } catch (error) {
       console.error("Eroare la anunturi:", error);
     }
-  };
+  }, [email]);
 
   const handlePublicare = async () => {
     try {
@@ -62,8 +59,12 @@ const ListaAnunturi = ({ email, userType }) => {
   };
 
   useEffect(() => {
-    fetchAnunturiVizibile();
-  }, [email]);
+    const fetchData = async () => {
+      await fetchAnunturiVizibile();
+    };
+
+    fetchData();
+  }, [email, fetchAnunturiVizibile]);
 
   return (
     <div className="lista-anunturi-items">
@@ -71,13 +72,13 @@ const ListaAnunturi = ({ email, userType }) => {
         <TextReutilizabil className="text-reutilizabil-3" text={listaAnunturi} />
         {userType === "Profesor" && (
           <div className="butoane-lista-anunturi">
-            <ButonAutentificare
+            <ButonReutilizabil
               className="buton-publicare"
               onClick={handlePublicare}
               text={"PUBLICA ANUNTUL"}
               email={email}
             />
-            <ButonAutentificare
+            <ButonReutilizabil
               className="buton-publicare"
               onClick={handleStergere}
               text={"STERGE ANUNTUL"}

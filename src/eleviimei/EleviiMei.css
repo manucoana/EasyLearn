@@ -1,13 +1,17 @@
-.elevii-mei-items{
+.elevii-mei-items {
     display: flex;
     flex-direction: column;
-    padding-left: 40px;
+    padding: 0px 40px 0px 40px;
 }
 
-.lista-elevi{
+.titlu-elevii-mei {
+  
+}
+
+.lista-elevi {
     display: flex;
     flex-direction: row;
-    gap:30px;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
 }

@@ -8,27 +8,18 @@ import LoginHandler from "../login/LoginHandler";
 import DefaultLayout from "../layout/DefaultLayout";
 import InfoText from "./items/info/InfoText";
 
-
 const Homepage = () => {
-  const [showLoginComponent, setShowLoginComponent] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
+  const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-
-  const handleLoginClick = () => {
-    setShowLoginComponent(true);
-    setShowHeader(false);
-  };
 
   const handleRegisterClick = () => {
     setShowRegister(true);
-    setShowHeader(false);
   };
 
   const renderMainContent = () => (
     <main className="homepage-items">
       <Welcome
-        setShowLoginComponent={setShowLoginComponent}
-        setShowHeader={setShowHeader}
+        setShowLogin={setShowLogin}
         setShowRegister={handleRegisterClick}
       />
       <InfoBoxContainer />
@@ -38,8 +29,8 @@ const Homepage = () => {
   );
 
   return (
-    <DefaultLayout hideHeaderFooter={showLoginComponent || showRegister}>
-      {showLoginComponent ? (
+    <DefaultLayout hideHeaderFooter={showLogin || showRegister}>
+      {showLogin ? (
         <LoginHandler />
       ) : showRegister ? (
         <Register setShowRegister={setShowRegister} />

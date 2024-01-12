@@ -1,9 +1,8 @@
 @import '../../../design/VariabileDesign.css';
 
 .intrebari-frecvente {
-    padding: 150px;
-    background-color: var(--albastru-fundal);
     display: flex;
     flex-direction: column;
+    padding-left: 30px;
 }
 

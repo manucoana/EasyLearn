@@ -1,29 +1,26 @@
 import React from 'react';
 import Sfera from '../../../layout/decor/Sfera';
-import ButonAutentificare from '../../../butoane/ButonAutentificare';
 import { LOG_IN, INREGISTRARE } from "../../../constante/ButonConstant";
+import ButonReutilizabil from '../../../butoane/ButonReutilizabil';
 
-
-const SferaLogin = ({ setShowLoginComponent, setShowHeader, setShowRegister }) => {
+const SferaLogin = ({ setShowLogin, setShowRegister }) => {
 
   const logIn = LOG_IN;
   const inregistrare = INREGISTRARE;
 
   const handleLoginClick = () => {
-    setShowLoginComponent(true);
-    setShowHeader(false);
+    setShowLogin(true);
   };
 
   const handleRegisterClick = () => {
     setShowRegister(true);
-    setShowHeader(false);
   };
 
   return (
     <Sfera>
       <div className='butoane-homepage'>
-        <ButonAutentificare className="buton-autentificare-login" onClick={handleLoginClick} text={logIn} />
-        <ButonAutentificare className="buton-autentificare-inregistrare" onClick={handleRegisterClick} text={inregistrare} />
+        <ButonReutilizabil className="buton-login" onClick={handleLoginClick} text={logIn} />
+        <ButonReutilizabil className="buton-inregistrare" onClick={handleRegisterClick} text={inregistrare} />
       </div>
     </Sfera>
   );

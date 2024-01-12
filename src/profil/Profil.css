@@ -4,15 +4,19 @@
   text-align: left;
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: row;
-  padding: 40px;
+  padding: 0px 30px 30px 40px;
 }
 
-.detalii-sfera{
+.detalii {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
   height: 400px;
+}
+
+.sfera-profil {
+  padding-top: 30px;
 }

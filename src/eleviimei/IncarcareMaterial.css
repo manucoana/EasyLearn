@@ -1,21 +1,15 @@
-@import '../design/VariabileDesign.css';
-
-.lista-anunturi-items {
-    padding-right: 40px;
-}
-
-.titlu-lista-anunturi {
+.incarcare-material-items{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    padding-left: 40px;
+    width: 100%;
 }
 
-.butoane-lista-anunturi {
+.butoane-incarcare-material{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
 }

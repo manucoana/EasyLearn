@@ -10,15 +10,21 @@
 .form-inregistrare {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     background-color: var(--alb);
-    padding: 30px;
-    padding-top: 5px;
-    width: 50%;
-    margin-top: 2%;
-    border: 10px solid var(--albastru-fundal);
+    padding: 40px;
+    width: 40%;
+    margin-top: 10px;
+    border: 10px solid var(--culoare-fundal-inchis);
 }
 
 .inregistrare-titlu {
     text-align: left;
+}
+
+.buton-aut{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

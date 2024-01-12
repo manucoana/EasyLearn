@@ -1,16 +1,16 @@
 import React from "react";
 import CampInput from "../../input/CampInput";
 import "./FormInregistrare.css"
-import ButonAutentificare from "../../butoane/ButonAutentificare";
 import TextReutilizabil from "../../text/TextReutilizabil";
 import { INREGISTRARE } from "../../constante/ButonConstant";
-import {SUBTITLU_INREGISTRARE} from "../../constante/TitluConstant"
+import { SUBTITLU_INREGISTRARE } from "../../constante/TitluConstant"
+import ButonReutilizabil from "../../butoane/ButonReutilizabil";
 
 const FormInregistrare = ({ handleRegister, renderError, errorMessages }) => {
 
     const inregistrare = INREGISTRARE;
     const subtitluInregistrare = SUBTITLU_INREGISTRARE;
-    
+
     return (
         <div className="form-inregistrare-items">
             <form className="form-inregistrare" onSubmit={handleRegister}>
@@ -59,9 +59,11 @@ const FormInregistrare = ({ handleRegister, renderError, errorMessages }) => {
                     required
                 />
                 {renderError(errorMessages.message)}
-                <ButonAutentificare type="submit" className="buton-autentificare-inregistrare" text={inregistrare} />
-            </form>
-        </div>
+                <div className="buton-aut">
+                    <ButonReutilizabil type="submit" className="buton-inregistrare" text={inregistrare} />
+                </div>
+            </form >
+        </div >
     );
 };
 

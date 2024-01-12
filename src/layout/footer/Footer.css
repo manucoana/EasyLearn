@@ -1,10 +1,10 @@
 @import '../../design/VariabileDesign.css';
 
 .footer-app {
-  background-color: var(--albastru-inchis);
-  padding: 20px;
+  background-color: var(--culoare-secundara);
   height: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 300px;
 }

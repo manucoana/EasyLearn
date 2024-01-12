@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./PaginaStudiu.css";
-import Lectii from "../lectii/Lectii";
-import Teme from "../teme/Teme";
-import Teste from "../teste/Teste";
-import ButoanePaginaStudiu from "../../elev/ButoanePaginaStudiu";
+import ButoanePaginaStudiu from "./ButoanePaginaStudiu";
 import TextReutilizabil from "../../text/TextReutilizabil";
 import { PAGINA_STUDIU } from "../../constante/TitluConstant"
+import NavigarePagina from "../../piese/NavigarePagina";
 
-const PaginaStudiu = ({ email, onClick }) => {
+const PaginaStudiu = ({ email }) => {
 
     const paginaStudiu = PAGINA_STUDIU;
 
@@ -15,7 +13,6 @@ const PaginaStudiu = ({ email, onClick }) => {
 
     const handleButtonClick = (page) => {
         setActivePage(page);
-        window.history.pushState({ page: page }, page, `${page.toLowerCase()}`);
     };
 
     useEffect(() => {
@@ -31,27 +28,11 @@ const PaginaStudiu = ({ email, onClick }) => {
     }, []);
 
 
-    const renderContent = () => {
-        switch (activePage) {
-            case "Lectii":
-                return <Lectii email={email} />;
-            case "Teme":
-                return <Teme email={email} />;
-            case "Teste":
-                return <Teste email={email} />;
-            default:
-                return (
-                    <div className="pagina-studiu-items">
-                        <ButoanePaginaStudiu handleButtonClick={handleButtonClick} />
-                    </div>
-
-                );
-        }
-    };
     return (
         <div className="studiu-items">
-            <TextReutilizabil className="text-reutilizabil-3" text={paginaStudiu}/>
-                {renderContent()}
+            <TextReutilizabil className="text-reutilizabil-3" text={paginaStudiu} />
+            <ButoanePaginaStudiu handleButtonClick={handleButtonClick} />
+            <NavigarePagina activePage={activePage} email={email} />
         </div>
     );
 };

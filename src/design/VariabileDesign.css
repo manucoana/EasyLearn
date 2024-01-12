@@ -1,16 +1,20 @@
 :root {
   /* Culori */
-  --albastru-inchis: #080C44;
-  --albastru-fundal: #0D114D;
+  --culoare-fundal-deschis: #DDDDDF;
+  --culoare-fundal-inchis: #0D114D;
+  --culoare-secundara: #080C44;
   --albastru-mediu: #141B76;
   --albastru-deschis: #4d72dd;
-  --culoare-fundal: #DDDDDF;
-  --culoare-deschisa:#ffffff;
+
+  /* Alb */
   --alb: #f2f3f4;
   --alb-pur: white;
-  --alb-prafos: #EFEFEF;
+
+  /* Tabel */
+  --tabel-gri: #dddddd;
+  --tabel-fundal: #ffffff;
+
   --culoare-albastru2: #00305f;
-  --gri: #707070;
 
   /* Fonturi */
   --font-principal: 'Arial', sans-serif, 'Helvetica';
@@ -21,7 +25,7 @@
   --font-size-text-mare: 1.87em;
   --font-size-text-mic: 0.93em;
 
-  /* Margini și padding-uri */
+  /* Margini si padding-uri */
   --padding-element: 10px;
   --margin-element: 10px;
 

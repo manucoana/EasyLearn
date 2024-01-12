@@ -1,12 +1,18 @@
 @import '../../design/VariabileDesign.css';
 
-.header-app{
-  background-color: var(--albastru-inchis);
-  padding: 20px;
-  height: 60px;
+.header-app {
+  background-color: var(--culoare-secundara);
+  height: 80px;
   display: flex;
-  justify-content: right;
-  align-items: right;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
 }
 
-
+.menu-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  cursor: pointer;
+}

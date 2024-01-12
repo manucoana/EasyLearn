@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Profesor.css";
-import ButonReutilizabil from '../butoane/ButonReutilizabil';
 import DefaultLayout from "../layout/DefaultLayout";
 import Titlu from "../text/Titlu";
 import Sfera from "../layout/decor/Sfera";
-import {
-  ELEVII_MEI,
-  LISTA_ANUNTURI,
-  PROFIL
-} from "../constante/ButonConstant"
 import NavigarePagina from "../piese/NavigarePagina";
 import ButoaneNavigare from "../piese/ButoaneNavigare";
 
 const Profesor = ({ email, userType }) => {
-
-  const eleviiMei = ELEVII_MEI;
-  const listaAnunturi = LISTA_ANUNTURI;
-  const profil = PROFIL;
 
   const [activePage, setActivePage] = useState("");
 
