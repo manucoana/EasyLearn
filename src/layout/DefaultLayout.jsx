@@ -3,12 +3,12 @@ import "./DefaultLayout.css";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 
-const DefaultLayout = ({ children, hideHeaderFooter }) => (
+const DefaultLayout = ({ children, hideHeaderFooter, titlu}) => (
   <div className="default-layout">
-    {!hideHeaderFooter && <Header />}
+    {!hideHeaderFooter && <Header titlu={titlu} />}
     <div className="homepage-container">
       {children}
-      </div>
+    </div>
     {!hideHeaderFooter && <Footer />}
   </div>
 );

@@ -15,7 +15,7 @@ const ButonSferic = ({ tip, onSelect }) => {
         {tip === "Elev" ? <IconElev /> : <IconProfesor />}
       </button>
       <div className="text-buton-sferic">
-      <TextReutilizabil className="text-reutilizabil-3" text={tip} />
+      <TextReutilizabil className="text-subtitlu-albastru" text={tip} />
       </div>
     </div>
   );

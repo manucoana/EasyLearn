@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f2f3f4;
+    color: var(--alb);
     font-weight: bold;
     cursor: pointer;    
     border: none;
@@ -19,7 +19,8 @@
 
 .buton-login,
 .buton-inregistrare,
-.buton-publicare {
+.buton-publicare,
+.buton-descarca {
     margin-top: 25px;
     width: 250px;
     height: 45px;
@@ -27,14 +28,6 @@
     border: none;
     border-radius: 70px;
     cursor: pointer;
-}
-
-.buton-login:hover {
-    animation: pulse 1s infinite;
-}
-
-.buton-inregistrare:hover {
-    animation: pulse 1s infinite;
 }
 
 .buton-login {
@@ -45,16 +38,20 @@
     background-color: var(--culoare-secundara);
 }
 
-.buton-publicare {
+.buton-publicare{
     background-color: var(--culoare-secundara);
     border-radius: 0px;
     width: 100%;
 }
 
-.buton-publicare:hover {
+.buton-publicare:focus {
     background-color: var(--albastru-mediu);
 }
 
+.buton-descarca {
+    background-color: #4caf50;
+    border-radius: 4px;
+}
 
 .buton-reutilizabil-1 {
     background-color: var(--albastru-deschis);
@@ -68,6 +65,10 @@
     background-color: var(--culoare-secundara);
 }
 
-.buton-reutilizabil:hover {
+.buton-login:hover {
+    animation: pulse 1s infinite;
+}
+
+.buton-inregistrare:hover {
     animation: pulse 1s infinite;
 }

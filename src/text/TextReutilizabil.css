@@ -1,35 +1,55 @@
 @import '../design/VariabileDesign.css';
 
-.text-reutilizabil {
-    font-family: Helvetica;
+.text {
     text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.text-reutilizabil-1{
+.text-titlu-site{
     font-size: 3rem;
     color: var(--culoare-secundara);
 }
 
-.text-reutilizabil-2{
+.text-subtitlu{
     font-size: 1.87rem;
     color: var(--alb);
-    font-family: Helvetica;
 }
 
-.text-reutilizabil-3{
+.text-titlu-header{
+    font-size: 1em;
+    color: var(--alb);
+}
+
+.text-subtitlu-albastru{
     font-size: 1.87rem;
     color: var(--culoare-secundara);
-    font-family: Helvetica;
 }
 
-.text-reutilizabil-4{
+.text-normal{
     font-size: 1.2rem;
     color: var(--culoare-secundara);
-    font-family: Helvetica;
 }
 
-.text-reutilizabil-5{
+.text-titlu-secundar{
     font-size: 2em;
     color: var(--culoare-secundara);
-    font-family: Helvetica;
+}
+
+.text-mic{
+    font-size: 0.9em;
+    font-weight: 100;
+    color: var(--culoare-secundara);
+    width: 600px;
+    margin:0px;
+    padding: 15px 0px 15px 0px;
+}
+
+.text-reutilizabil-subliniat{
+    font-size: 0.9em;
+    font-weight: 100;
+    color: var(--culoare-secundara);
+    width: 600px;
+    margin:0px;
+    border-bottom: 1px solid var(--text);
+    padding: 15px 0px 15px 0px;
 }

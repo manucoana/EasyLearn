@@ -3,11 +3,10 @@ import StudiuLayout from "../../layout/studiu/StudiuLayout";
 
 const Teste = () => {
 
-    const lectii = ['Testul 1', 'Testul 2', 'Testul 3'];
 
     return (
         <div className='lectii-items'>
-            <StudiuLayout items={lectii} title="Teste" />;
+            <StudiuLayout/>;
         </div >
     );
 };

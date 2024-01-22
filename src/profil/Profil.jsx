@@ -1,62 +1,74 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Profil.css";
-import axios from "axios";
 import Sfera from "../layout/decor/Sfera";
-import TextReutilizabil from "../text/TextReutilizabil";
-import { TITLU_PROFIL } from "../constante/TitluConstant";
 import DetaliiProfil from "./DetaliiProfil";
+import ImagineProfil from "./ImagineProfil";
+import useFetchUserData from "./useFetchUserData";
+import InputImagineProfil from "./InputImagineProfil";
 
-const Profil = ({ email }) => {
-  const titluProfil = TITLU_PROFIL;
+const Profil = ({ email, activePage }) => {
 
-  const [userData, setUserData] = useState({});
-  const [errorMessages, setErrorMessages] = useState({});
+  const { userData } = useFetchUserData(email);
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:3001/api/profil/${email}`)
-      .then((response) => {
-        const user = response.data;
-        setUserData(user);
-        setErrorMessages({});
-      })
-      .catch((error) => {
-        console.log(error);
-        setErrorMessages({ message: "Error" });
-      });
-  }, [email]);
-
-  const renderError = (message) => message && <div className="error">{message}</div>;
-
-  const handleFileUpload = (event) => {
+  const handleFileUpload = async (event) => {
     const file = event.target.files[0];
+    const titlu = file.name;
+
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('nume_elev', userData.nume);
+    formData.append('active_page', activePage);
 
-    axios
-      .post(`http://localhost:3001/api/uploads`, formData)
-      .then((response) => {
-        console.log('Image uploaded successfully');
-
-        const updatedUser = { ...userData, imageUrl: response.data.imageUrl };
-        setUserData(updatedUser);
-        setErrorMessages({});
-      })
-      .catch((error) => {
-        console.error('Error uploading image: ', error);
-        setErrorMessages({ message: 'Error uploading image' });
+    try {
+      const response = await fetch("http://localhost:3001/api/material-didactic/uploads", {
+        method: "POST",
+        body: formData,
       });
+
+      if (!response.ok) {
+        console.error(`Eroare la încărcarea materialului: ${response.statusText}`);
+        return;
+      }
+
+      const result = await response.json();
+      const cale = result.imageUrl;
+
+      console.log("Cale imagine:", cale);
+
+      const data = {
+        nume: userData.nume,
+        cale: cale,
+        titlu: titlu,
+      };
+
+      const insertResponse = await fetch("http://localhost:3001/api/profil/info-poza", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!insertResponse.ok) {
+        console.error(`Eroare la inserarea datelor: ${insertResponse.statusText}`);
+      } else {
+        console.log("Material și datele au fost încărcate cu succes!");
+      }
+    } catch (error) {
+      console.error(`Eroare la încărcarea materialului: ${error.message}`);
+    }
   };
 
   return (
     <div className="profil-items">
-      {renderError(errorMessages.message)}
       <div className="detalii">
-        <TextReutilizabil className="text-reutilizabil-3" text={titluProfil} />
-        <DetaliiProfil userData={userData} handleFileUpload={handleFileUpload} />
+        <InputImagineProfil imageUrl={userData.imageUrl} handleFileUpload={handleFileUpload} />
+        <DetaliiProfil email={email} />
       </div>
       <div className="sfera-profil">
-      <Sfera />
+        <Sfera>
+          <ImagineProfil email={email} />
+        </Sfera>
       </div>
     </div>
   );

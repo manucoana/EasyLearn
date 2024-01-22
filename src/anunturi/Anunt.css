@@ -1,12 +1,14 @@
 @import '../design/VariabileDesign.css';
 
 .lista-anunturi-items ul li {
-    border-bottom: 1px solid var(--tabel-gri);
-    list-style: none;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    width: 100%;
+    border-bottom: 1px solid var(--tabel-gri);
+    list-style: none;
+    cursor: pointer;
 }
 
 .lista-anunturi-items ul li.par {
@@ -17,8 +19,23 @@
     background-color: var(--tabel-fundal);
 }
 
-.campuri-anunut{
+.campuri-anunut {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+@media screen and (max-width: 767px) {
+    .lista-anunturi-items ul li {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .campuri-anunut {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 30px 30px 30px 30px;
+    }
 }

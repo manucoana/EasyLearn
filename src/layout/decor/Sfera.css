@@ -6,6 +6,10 @@
 }
 
 .sfera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 120px;
     background-color: var(--alb);
     border-radius: 50%;

@@ -3,7 +3,8 @@ import LogoComponent from "../imagini/logo/LogoComponent";
 import "./ElevulMeu.css";
 import IncarcareMaterial from "./IncarcareMaterial";
 
-const ElevulMeu = ({ elevi }) => {
+const ElevulMeu = ({ elevi, numeProfesor }) => {
+  
   const [selectedElev, setSelectedElev] = useState(null);
 
   const handleListItemClick = (elev) => {
@@ -13,7 +14,7 @@ const ElevulMeu = ({ elevi }) => {
   const renderContent = () => {
     if (selectedElev) {
       return (
-        <IncarcareMaterial numeElev={selectedElev.nume_elev} />
+        <IncarcareMaterial numeElev={selectedElev.nume_elev} numeProfesor={numeProfesor} />
       );
     }
 

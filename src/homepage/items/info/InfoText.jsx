@@ -10,8 +10,8 @@ const InfoText = () => {
 
   return (
     <div className="info-text-items">
-      <TextReutilizabil className="text-reutilizabil-1" text={subtitluInfo}/>
-      <TextReutilizabil className="text-reutilizabil-3" text={descriere} />
+      <TextReutilizabil className="text-titlu-site" text={subtitluInfo}/>
+      <TextReutilizabil className="text-normal" text={descriere} />
     </div>
 
   );

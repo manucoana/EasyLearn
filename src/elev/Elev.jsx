@@ -3,13 +3,15 @@ import "./Elev.css";
 import Titlu from "../text/Titlu";
 import DefaultLayout from "../layout/DefaultLayout";
 import Sfera from "../layout/decor/Sfera";
-import ButoaneNavigare from "../piese/ButoaneNavigare";
-import NavigarePagina from "../piese/NavigarePagina";
+import ButoaneNavigare from "../navigare/ButoaneNavigare";
+import NavigarePagina from "../navigare/NavigarePagina";
+import TitluPagina from "../navigare/TitluPagina";
 
 const Elev = ({ email, userType }) => {
+
   const [activePage, setActivePage] = useState("");
 
-  const handleButtonClick = (page) => {
+  const onClick = (page) => {
     setActivePage(page);
     window.history.pushState({ page: page }, page, `${page.toLowerCase()}`);
   };
@@ -27,16 +29,16 @@ const Elev = ({ email, userType }) => {
   }, []);
 
   return (
-    <DefaultLayout>
+    <DefaultLayout titlu={TitluPagina[activePage]}>
       {activePage ? (
         <NavigarePagina activePage={activePage} email={email} />
       ) : (
         <div className="elev-items">
           <div className="panou-elev">
             <Titlu />
-            <ButoaneNavigare handleButtonClick={handleButtonClick} userType={userType} />
+            <ButoaneNavigare onClick={onClick} userType={userType} />
           </div>
-          <Sfera/>
+          <Sfera />
         </div>
       )}
     </DefaultLayout>

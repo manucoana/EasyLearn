@@ -9,7 +9,7 @@ const IntrebariFrecvente = () => {
 
   return (
     <div className="intrebari-frecvente">
-        <TextReutilizabil className="text-reutilizabil-3" text={subtitluIntrebari}/>
+        <TextReutilizabil className="text-subtitlu-albastru" text={subtitluIntrebari}/>
     </div>
   );
 };

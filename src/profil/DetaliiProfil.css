@@ -1,22 +1,29 @@
-.detalii-profil p {
-    position: relative;
-  }
-  
-  .detalii-profil p::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 150%;
-    height: 1px;
-    background-color: var(--culoare-secundara);
+@import '../design/VariabileDesign.css';
+
+.detalii-profil-items {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text-detalii-profil {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .detalii-profil-items {
+    margin-bottom: 5px;
   }
 
-  .profile-image {
-    text-align: left;
+  .text-mic::after {
+    bottom: -1px;
   }
-  
-  .profile-image img {
-    width: 200px;
-    height: auto;
-  }
+}

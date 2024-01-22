@@ -1,7 +1,11 @@
-.studiu-items{
+.studiu-items {
     padding: 0px 40px 0px 40px;
 }
 
-.test{
-    padding:200px
+.test {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
 }

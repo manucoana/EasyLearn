@@ -11,7 +11,7 @@ export const Register = () => {
 
   const registerUser = async (data) => {
     try {
-      const response = await fetch("http://localhost:3001/api/users", {
+      const response = await fetch("http://localhost:3001/api/inregistrare", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,10 +22,8 @@ export const Register = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
       return { success: true };
     } catch (error) {
-      console.error("Error inserting data: ", error);
       return { success: false, error: "Internal Server Error" };
     }
   };
@@ -37,13 +35,13 @@ export const Register = () => {
       nume: nume.value,
       varsta: varsta.value,
       oras: oras.value,
-      descriere: tipProfil,
+      tip_utilizator: tipProfil,
       email: email.value,
       parola: parola.value,
     };
-
+    
     const result = await registerUser(data);
-
+      console.log(data)
     if (result.success) {
       setIsSubmitted(true);
       setSuccessMessage('Înregistrare completă!');

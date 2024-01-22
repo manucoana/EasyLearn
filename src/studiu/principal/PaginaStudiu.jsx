@@ -1,19 +1,31 @@
 import React, { useState, useEffect } from "react";
 import "./PaginaStudiu.css";
+import axios from "axios";
 import ButoanePaginaStudiu from "./ButoanePaginaStudiu";
-import TextReutilizabil from "../../text/TextReutilizabil";
-import { PAGINA_STUDIU } from "../../constante/TitluConstant"
-import NavigarePagina from "../../piese/NavigarePagina";
+import NavigarePagina from "../../navigare/NavigarePagina";
+import CitesteMaterial from "../../eleviimei/CitesteMaterial";
 
 const PaginaStudiu = ({ email }) => {
 
-    const paginaStudiu = PAGINA_STUDIU;
-
     const [activePage, setActivePage] = useState("");
+    const [numeElev, setNumeElev] = useState([]);
 
-    const handleButtonClick = (page) => {
+    const onClick = (page) => {
         setActivePage(page);
     };
+
+    useEffect(() => {
+        axios
+            .get(`http://localhost:3001/api/easylearn-users/info-utilizatori/${email}`)
+            .then((response) => {
+                const numeElev = response.data.nume;
+                setNumeElev(numeElev);
+            })
+            .catch((error) => {
+                console.log(error);
+
+            });
+    }, [email]);
 
     useEffect(() => {
         const gestioneazaNavigare = (event) => {
@@ -30,9 +42,11 @@ const PaginaStudiu = ({ email }) => {
 
     return (
         <div className="studiu-items">
-            <TextReutilizabil className="text-reutilizabil-3" text={paginaStudiu} />
-            <ButoanePaginaStudiu handleButtonClick={handleButtonClick} />
-            <NavigarePagina activePage={activePage} email={email} />
+            <ButoanePaginaStudiu onClick={onClick} />
+            <div className="test">
+                <NavigarePagina activePage={activePage} email={email} />
+                <CitesteMaterial numeElev={numeElev} activePage={activePage} />
+            </div>
         </div>
     );
 };

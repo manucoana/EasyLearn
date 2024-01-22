@@ -3,14 +3,15 @@ import "./Profesor.css";
 import DefaultLayout from "../layout/DefaultLayout";
 import Titlu from "../text/Titlu";
 import Sfera from "../layout/decor/Sfera";
-import NavigarePagina from "../piese/NavigarePagina";
-import ButoaneNavigare from "../piese/ButoaneNavigare";
+import NavigarePagina from "../navigare/NavigarePagina";
+import ButoaneNavigare from "../navigare/ButoaneNavigare";
+import TitluPagina from "../navigare/TitluPagina";
 
 const Profesor = ({ email, userType }) => {
 
   const [activePage, setActivePage] = useState("");
 
-  const handleButtonClick = (page) => {
+  const onClick = (page) => {
     setActivePage(page);
     window.history.pushState({ page: page }, page, `${page.toLowerCase()}`);
   };
@@ -27,7 +28,7 @@ const Profesor = ({ email, userType }) => {
   }, []);
 
   return (
-    <DefaultLayout>
+    <DefaultLayout titlu={TitluPagina[activePage]}>
       {activePage ? (
         <NavigarePagina activePage={activePage} email={email} userType={userType} />
       ) : (
@@ -35,11 +36,10 @@ const Profesor = ({ email, userType }) => {
           <div className='profesor-items'>
             <div className="panou-profesor">
               <Titlu />
-              <ButoaneNavigare handleButtonClick={handleButtonClick} userType={userType} />
+              <ButoaneNavigare onClick={onClick} userType={userType} />
             </div>
             <Sfera />
           </div>
-        
         </div>
       )}
     </DefaultLayout>

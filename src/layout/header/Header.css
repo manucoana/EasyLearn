@@ -4,10 +4,12 @@
   background-color: var(--culoare-secundara);
   height: 80px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   width: 100%;
 }
+
 
 .menu-icon{
   display: flex;
@@ -16,3 +18,4 @@
   margin-right: 30px;
   cursor: pointer;
 }
+

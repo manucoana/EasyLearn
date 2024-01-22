@@ -1,20 +1,29 @@
 import React from "react";
 import "./DetaliiProfil.css";
+import {
+  NUME,
+  VARSTA,
+  ORAS,
+  TIP_UTILIZATOR,
+  EMAIL
+} from "../constante/InfoUtilizatorConstant"
+import useFetchUserData from "./useFetchUserData";
+import TextReutilizabil from "../text/TextReutilizabil";
 
-const DetaliiProfil = ({ userData, handleFileUpload }) => (
-  <div className="titlu-campuri">
-    <div className="profile-image">
-      {userData.imageUrl && <img src={userData.imageUrl} alt="Profile" />}
-      <input type="file" onChange={handleFileUpload} />
-    </div>
-    <div className="detalii-profil">
-      <p>Nume: {userData.nume}</p>
-      <p>Varsta: {userData.varsta}</p>
-      <p>Oras: {userData.oras}</p>
-      <p>Descriere: {userData.descriere}</p>
-      <p>Email: {userData.email}</p>
-    </div>
-  </div>
-);
+const DetaliiProfil = ({ email }) => {
 
+  const { userData } = useFetchUserData(email);
+
+  return (
+    <div className="detalii-profil-items">
+      <div className="text-detalii-profil">
+        <TextReutilizabil className="text-reutilizabil-subliniat" text={`${NUME} ${userData.nume}`} />
+        <TextReutilizabil className="text-reutilizabil-subliniat" text={`${VARSTA} ${userData.varsta}`} />
+        <TextReutilizabil className="text-reutilizabil-subliniat" text={`${ORAS} ${userData.oras}`} />
+        <TextReutilizabil className="text-reutilizabil-subliniat" text={`${TIP_UTILIZATOR} ${userData.tip_utilizator}`} />
+        <TextReutilizabil className="text-reutilizabil-subliniat" text={`${EMAIL} ${userData.email}`} />
+      </div>
+    </div>
+  );
+}
 export default DetaliiProfil;

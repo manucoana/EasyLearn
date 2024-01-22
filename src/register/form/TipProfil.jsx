@@ -8,19 +8,20 @@ const TipProfil = ({ onSelect }) => {
   const titluInregistrare = TITLU_INREGISTRARE;
   const selecteaza = SELECTEAZA_INREGISTRARE;
 
-  const handleProfilSelect = (selectedProfil) => {
+  const selectareTipProfil = (selectedProfil) => {
     onSelect(selectedProfil);
+    console.log(selectedProfil);
   };
 
   return (
     <div className="tip-profil-items">
       <div className="text-tip-profil">
-        <TextReutilizabil className="text-reutilizabil-5" text={titluInregistrare} />
-        <TextReutilizabil className="text-reutilizabil-4" text={selecteaza} />
+        <TextReutilizabil className="text-titlu-secundar" text={titluInregistrare} />
+        <TextReutilizabil className="text-normal" text={selecteaza} />
       </div>
       <div className="butoane-descriere">
-        <ButonSferic onSelect={handleProfilSelect} tip="Elev" />
-        <ButonSferic onSelect={handleProfilSelect} tip="Profesor" />
+        <ButonSferic onSelect={selectareTipProfil} tip="Elev" />
+        <ButonSferic onSelect={selectareTipProfil} tip="Profesor" />
       </div>
     </div>
   );

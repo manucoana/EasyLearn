@@ -17,9 +17,11 @@ const Pagini = {
   Teste,
 };
 
-const NavigarePagina = ({ activePage, email, userType }) => {
+const NavigarePagina = ({ activePage, email, userType, numeElev }) => {
+
   const PaginaCurenta = Pagini[activePage];
-  return PaginaCurenta ? <PaginaCurenta email={email} userType={userType} /> : null;
+
+  return PaginaCurenta ? <PaginaCurenta activePage={activePage} email={email} userType={userType} numeElev={numeElev} /> : null;
 };
 
 export default NavigarePagina;

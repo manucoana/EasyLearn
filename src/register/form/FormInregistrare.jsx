@@ -15,8 +15,8 @@ const FormInregistrare = ({ handleRegister, renderError, errorMessages }) => {
         <div className="form-inregistrare-items">
             <form className="form-inregistrare" onSubmit={handleRegister}>
                 <div className="inregistrare-titlu">
-                    <TextReutilizabil className="text-reutilizabil-3" text={inregistrare} />
-                    <TextReutilizabil className="text-reutilizabil-4" text={subtitluInregistrare} />
+                    <TextReutilizabil className="text-subtitlu-albastru" text={inregistrare} />
+                    <TextReutilizabil className="text-normal" text={subtitluInregistrare} />
                 </div>
                 <CampInput
                     label="Nume"

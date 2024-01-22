@@ -8,7 +8,7 @@ import {
 import ButonReutilizabil from "../../butoane/ButonReutilizabil";
 
 
-const ButoanePaginaStudiu = ({ handleButtonClick }) => {
+const ButoanePaginaStudiu = ({ onClick }) => {
 
     const lectii = LECTII;
     const teme = TEME;
@@ -16,9 +16,9 @@ const ButoanePaginaStudiu = ({ handleButtonClick }) => {
 
     return (
             <div className="lectii-teme-teste">
-                <ButonReutilizabil onClick={() => handleButtonClick("Lectii")} text={lectii} className="buton-publicare"/>
-                <ButonReutilizabil onClick={() => handleButtonClick("Teme")} text={teme} className="buton-publicare"/>
-                <ButonReutilizabil onClick={() => handleButtonClick("Teste")} text={teste} className="buton-publicare"/>
+                <ButonReutilizabil onClick={() => onClick("Lectii")} text={lectii} className="buton-publicare"/>
+                <ButonReutilizabil onClick={() => onClick("Teme")} text={teme} className="buton-publicare"/>
+                <ButonReutilizabil onClick={() => onClick("Teste")} text={teste} className="buton-publicare"/>
             </div>
     );
 };

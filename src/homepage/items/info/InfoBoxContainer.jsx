@@ -52,7 +52,7 @@ const InfoBoxContainer = () => {
 
     return (
         <div className="info-items">
-            <TextReutilizabil className="text-reutilizabil-2" text={SUBTITLU_BENEFICII}/>
+            <TextReutilizabil className="text-subtitlu" text={SUBTITLU_BENEFICII}/>
             <div className="info-box-container">
                 {infoboxes.map((infobox, index) => (
                     <InfoBox key={index} className="info-box">
