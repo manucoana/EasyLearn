@@ -1,4 +1,4 @@
-@import '../../design/VariabileDesign.css';
+@import '../../elemente/design/VariabileDesign.css';
 
 .studiu-layout {
     width: 100%;
@@ -6,7 +6,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    
+
 }
 
 .list-view {
@@ -16,8 +16,8 @@
 }
 
 .list-item {
-    background-color: white;
-    border: 1px solid #e0e0e0;
+    background-color: var(--alb);
+    border: 1px solid var(--tabel-gri);
     cursor: pointer;
     display: flex;
     align-items: flex-start;
@@ -27,8 +27,7 @@
 }
 
 .list-item:hover {
-    background-color: var(--alb);
-    transform: scale(1.02);
+    background-color: white;
 }
 
 .list-item:active {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./InfoBoxContainer.css";
-import InfoBox from "../../../box/InfoBox";
-import TextReutilizabil from "../../../text/TextReutilizabil";
+import InfoBox from "../../../elemente/box/InfoBox";
+import TextReutilizabil from "../../../elemente/text/TextReutilizabil";
 import {
     BENEFICII_TEXT,
     TITLU_INFOBOX_1,
@@ -10,9 +10,9 @@ import {
     TITLU_INFOBOX_4,
     TITLU_INFOBOX_5,
     TITLU_INFOBOX_6,
-} from "../../../constante/BeneficiuConstant";
+} from "../../../elemente/constante/BeneficiuConstant";
 
-import { SUBTITLU_BENEFICII } from "../../../constante/TitluConstant";
+import { SUBTITLU_BENEFICII } from "../../../elemente/constante/TitluConstant";
 
 const InfoBoxContainer = () => {
     const benefitsText = BENEFICII_TEXT;

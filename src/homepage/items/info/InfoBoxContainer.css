@@ -1,4 +1,4 @@
-@import '../../../design/VariabileDesign.css';
+@import '../../../elemente/design/VariabileDesign.css';
 
 .info-items {
     background-color: var(--culoare-fundal-inchis);

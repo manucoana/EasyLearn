@@ -5,6 +5,7 @@ import DetaliiProfil from "./DetaliiProfil";
 import ImagineProfil from "./ImagineProfil";
 import useFetchUserData from "./useFetchUserData";
 import InputImagineProfil from "./InputImagineProfil";
+import TextReutilizabil from "../elemente/text/TextReutilizabil";
 
 const Profil = ({ email, activePage }) => {
 
@@ -62,12 +63,15 @@ const Profil = ({ email, activePage }) => {
   return (
     <div className="profil-items">
       <div className="detalii">
-        <InputImagineProfil imageUrl={userData.imageUrl} handleFileUpload={handleFileUpload} />
         <DetaliiProfil email={email} />
+        <TextReutilizabil className="text-mic" text="Modifica imaginea de profil:"/>
+        <InputImagineProfil className="incarca-imagine" imageUrl={userData.imageUrl} handleFileUpload={handleFileUpload} />
       </div>
       <div className="sfera-profil">
         <Sfera>
-          <ImagineProfil email={email} />
+          <ImagineProfil email={email} />       
+          <TextReutilizabil className="text-normal" text={userData.nume}/>
+          <TextReutilizabil className="text-mic" text={userData.tip_utilizator}/>      
         </Sfera>
       </div>
     </div>

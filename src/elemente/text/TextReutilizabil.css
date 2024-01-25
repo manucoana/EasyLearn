@@ -1,0 +1,52 @@
+@import '../design/VariabileDesign.css';
+
+.text {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-titlu-site{
+    font-size: 3rem;
+    color: var(--culoare-secundara);
+}
+
+.text-subtitlu{
+    font-size: 1.87rem;
+    color: var(--alb);
+}
+
+.text-titlu-header{
+    font-size: 1em;
+    color: var(--alb);
+}
+
+.text-subtitlu-albastru{
+    font-size: 1.87rem;
+    color: var(--culoare-secundara);
+}
+
+.text-normal{
+    font-size: 1.2rem;
+    color: var(--culoare-secundara);
+}
+
+.text-titlu-secundar{
+    font-size: 2em;
+    color: var(--culoare-secundara);
+}
+
+.text-mic{
+    font-size: 0.9em;
+    font-weight: 100;
+    color: var(--culoare-secundara);
+}
+
+.text-reutilizabil-subliniat{
+    font-size: 0.9em;
+    font-weight: 100;
+    color: var(--culoare-secundara);
+    width: 600px;
+    margin:0px;
+    border-bottom: 1px solid var(--text);
+    padding: 15px 0px 15px 0px;
+}

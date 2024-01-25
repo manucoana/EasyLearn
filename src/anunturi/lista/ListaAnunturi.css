@@ -1,0 +1,33 @@
+@import '../../elemente/design/VariabileDesign.css';
+
+.lista-anunturi-items {
+    display: flex;
+    flex-direction: row;
+}
+
+ul {
+    padding-left: 0px;
+    width: 100%;
+}
+
+.titlu-lista-anunturi {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 60%;
+}
+
+.butoane-lista-anunturi {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+}
+
+@media screen and (max-width: 100px) {
+    .lista-anunturi-items {
+        margin: 0px;
+    }
+}

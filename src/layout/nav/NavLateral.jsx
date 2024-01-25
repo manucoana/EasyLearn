@@ -8,6 +8,7 @@ const NavLateral = ({ isOpen, toggleMenu }) => {
                 <li><a href="despre">Despre platforma</a></li>
                 <li><a href="intrebari">Intrebari frecvente</a></li>
                 <li><a href="taxe">Taxe</a></li>
+                <li><a href="cerere-colaborare">Cereri de colaborare</a></li>
             </ul>
             <div className="close" onClick={toggleMenu}>X</div>
         </div>

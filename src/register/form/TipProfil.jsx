@@ -1,8 +1,8 @@
 import React from "react";
 import "./TipProfil.css";
-import ButonSferic from "../../butoane/ButonSferic";
-import { TITLU_INREGISTRARE, SELECTEAZA_INREGISTRARE } from "../../constante/TitluConstant";
-import TextReutilizabil from "../../text/TextReutilizabil";
+import ButonSferic from "../../elemente/butoane/ButonSferic";
+import { TITLU_INREGISTRARE, SELECTEAZA_INREGISTRARE } from "../../elemente/constante/TitluConstant";
+import TextReutilizabil from "../../elemente/text/TextReutilizabil";
 
 const TipProfil = ({ onSelect }) => {
   const titluInregistrare = TITLU_INREGISTRARE;

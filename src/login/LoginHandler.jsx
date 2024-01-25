@@ -5,15 +5,15 @@ import Profesor from "../profesor/Profesor";
 
 const LoginHandler = () => {
 
-  const userTypeElev = "Elev";
-  const userTypeProfesor = "Profesor";
+  const tipUtilizatorElev = "Elev";
+  const tipUtilizatorProfesor = "Profesor";
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userType, setUserType] = useState(null);
+  const [tipUtilizator, setTipUtilizator] = useState(null);
 
   const handleLogin = (type) => {
     setIsLoggedIn(true);
-    setUserType(type);
+    setTipUtilizator(type);
   };
 
   return (
@@ -22,10 +22,10 @@ const LoginHandler = () => {
         <Login onLogin={handleLogin} />
       ) : (
         <>
-          {userType === userTypeElev ? (
-            <Elev userType={"Elev"} />
-          ) : userType === userTypeProfesor(
-            <Profesor userType={"Profesor"} />
+          {tipUtilizator === tipUtilizatorElev ? (
+            <Elev tipUtilizator={"Elev"} />
+          ) : tipUtilizator === tipUtilizatorProfesor(
+            <Profesor tipUtilizator={"Profesor"} />
           )}
         </>
       )}

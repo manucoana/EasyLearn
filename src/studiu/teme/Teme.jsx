@@ -1,14 +1,15 @@
 import React from "react";
 import StudiuLayout from "../../layout/studiu/StudiuLayout";
+import TitluPagina from "../../navigare/TitluPagina";
 
 const Teme = () => {
-
+    const titluPagina = TitluPagina.Teme;
 
     return (
         <div className='lectii-items'>
-            <StudiuLayout />;
-        </div >
+            <StudiuLayout titlu={titluPagina} />
+        </div>
     );
 };
-export default Teme;
 
+export default Teme;

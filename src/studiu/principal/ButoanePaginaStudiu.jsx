@@ -4,8 +4,8 @@ import {
     LECTII,
     TEME,
     TESTE
-} from "../../constante/TitluConstant";
-import ButonReutilizabil from "../../butoane/ButonReutilizabil";
+} from "../../elemente/constante/TitluConstant";
+import ButonReutilizabil from "../../elemente/butoane/ButonReutilizabil";
 
 
 const ButoanePaginaStudiu = ({ onClick }) => {

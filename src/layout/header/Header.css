@@ -1,4 +1,4 @@
-@import '../../design/VariabileDesign.css';
+@import '../../elemente/design/VariabileDesign.css';
 
 .header-app {
   background-color: var(--culoare-secundara);
@@ -11,11 +11,10 @@
 }
 
 
-.menu-icon{
+.menu-icon {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 30px;
   cursor: pointer;
 }
-

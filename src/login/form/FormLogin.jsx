@@ -1,9 +1,9 @@
 import React from "react";
 import "./FormLogin.css";
-import CampInput from "../../input/CampInput";
+import CampInput from "../../elemente/input/CampInput";
 import LogoComponent from "../../imagini/logo/LogoComponent";
-import { LOG_IN, INREGISTRARE } from "../../constante/ButonConstant";
-import ButonReutilizabil from "../../butoane/ButonReutilizabil";
+import { LOG_IN, INREGISTRARE } from "../../elemente/constante/ButonConstant";
+import ButonReutilizabil from "../../elemente/butoane/ButonReutilizabil";
 
 
 const FormLogin = ({ handleLogin, renderError, setShowRegister }) => {
@@ -14,13 +14,26 @@ const FormLogin = ({ handleLogin, renderError, setShowRegister }) => {
     return (
         <form className="form-login-items" onSubmit={handleLogin}>
             <LogoComponent />
-            <CampInput type="email" placeholder="E-mail" name="email" id="email" />
+            <CampInput
+                type="email"
+                placeholder="E-mail"
+                name="email"
+                id="email" />
             {renderError("email")}
-            <CampInput type="password" placeholder="Parola" name="parola" id="parola" />
+            <CampInput
+                type="password"
+                placeholder="Parola"
+                name="parola"
+                id="parola" />
             {renderError("parola")}
             <div className="butoane-login">
-            <ButonReutilizabil className="buton-login" text={logIn} />
-            <ButonReutilizabil className="buton-inregistrare" onClick={() => setShowRegister(true)} text={inregistrare} />
+                <ButonReutilizabil
+                    className="buton-login"
+                    text={logIn} />
+                <ButonReutilizabil
+                    className="buton-inregistrare"
+                    onClick={() => setShowRegister(true)}
+                    text={inregistrare} />
             </div>
         </form>
     );

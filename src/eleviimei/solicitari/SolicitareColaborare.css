@@ -1,0 +1,20 @@
+@import '../../elemente/design/VariabileDesign.css';
+
+.solicitare-colaborare-items {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+}
+
+.solicitare-lv {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: start;
+    border: 2px solid var(--gri);
+    justify-content: space-between;
+}

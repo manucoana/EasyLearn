@@ -1,10 +1,10 @@
 import React from "react";
-import CampInput from "../../input/CampInput";
+import CampInput from "../../elemente/input/CampInput";
 import "./FormInregistrare.css"
-import TextReutilizabil from "../../text/TextReutilizabil";
-import { INREGISTRARE } from "../../constante/ButonConstant";
-import { SUBTITLU_INREGISTRARE } from "../../constante/TitluConstant"
-import ButonReutilizabil from "../../butoane/ButonReutilizabil";
+import TextReutilizabil from "../../elemente/text/TextReutilizabil";
+import { INREGISTRARE } from "../../elemente/constante/ButonConstant";
+import { SUBTITLU_INREGISTRARE } from "../../elemente/constante/TitluConstant"
+import ButonReutilizabil from "../../elemente/butoane/ButonReutilizabil";
 
 const FormInregistrare = ({ handleRegister, renderError, errorMessages }) => {
 

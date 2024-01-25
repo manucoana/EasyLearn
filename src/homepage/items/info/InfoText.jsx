@@ -1,8 +1,8 @@
 import React from "react";
 import "./InfoText.css";
-import TextReutilizabil from "../../../text/TextReutilizabil";
-import { SUBTITLU_INFO } from "../../../constante/TitluConstant";
-import { DESCRIERE } from "../../../constante/InfoConstant";
+import TextReutilizabil from "../../../elemente/text/TextReutilizabil";
+import { SUBTITLU_INFO } from "../../../elemente/constante/TitluConstant";
+import { DESCRIERE } from "../../../elemente/constante/InfoConstant";
 
 const InfoText = () => {
   const subtitluInfo = SUBTITLU_INFO;

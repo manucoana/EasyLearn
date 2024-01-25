@@ -13,7 +13,6 @@ app.use(bodyParser.json());
 const rutaInregistrare = require('./rute/easylearn-users/rutaInregistrare');
 const rutaInfoUtilizator = require('./rute/easylearn-users/rutaInfoUtilizator');
 const rutaLogin = require('./rute/easylearn-users/rutaLogin');
-const rutaElevInscris = require('./rute/elevi/rutaElevInscris');
 
 const rutaVizibilitate = require('./rute/anunturi/rutaVizibilitate');
 
@@ -28,12 +27,17 @@ const rutaInfoMaterial = require('./rute/material-didactic/rutaInfoMaterial');
 const rutaSolicitareMaterial = require('./rute/material-didactic/rutaSolicitareMaterial');
 const rutaCaleMaterial = require('./rute/material-didactic/rutaCaleMaterial');
 
+const rutaSolicitare = require('./rute/solicitari/rutaSolicitare');
+const rutaStatusSolicitare = require('./rute/solicitari/rutaStatusSolicitare');
+
+const rutaStatusMeditatii = require('./rute/meditatii/rutaMeditatii');
+
 
 // Utilizare rute
 app.use("/api/inregistrare", rutaInregistrare);
 app.use("/api/easylearn-users/info-utilizatori", rutaInfoUtilizator);
 app.use("/api/easylearn-users/login", rutaLogin);
-app.use("/api/elev/elev-inscris", rutaElevInscris);
+
 app.use("/api/anunt/vizibilitate", rutaVizibilitate);
 
 app.use('/api/profil-uploads', rutaIncarcarePoza);
@@ -45,6 +49,11 @@ app.use("/api/material-didactic/uploads", rutaIncarcareMaterial);
 app.use("/api/material-didactic/insertMaterial", rutaInfoMaterial);
 app.use("/api/material-didactic/download", rutaSolicitareMaterial);
 app.use("/api/material-didactic/documents", rutaCaleMaterial);
+
+app.use("/api/meditatii/solicita-colaborare", rutaSolicitare);
+app.use("/api/meditatii/status", rutaStatusSolicitare);
+
+app.use("/api/meditatii/inscris", rutaStatusMeditatii);
 
 
 // Port

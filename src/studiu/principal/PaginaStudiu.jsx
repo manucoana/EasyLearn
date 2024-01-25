@@ -3,7 +3,7 @@ import "./PaginaStudiu.css";
 import axios from "axios";
 import ButoanePaginaStudiu from "./ButoanePaginaStudiu";
 import NavigarePagina from "../../navigare/NavigarePagina";
-import CitesteMaterial from "../../eleviimei/CitesteMaterial";
+import CitesteMaterial from "../material/CitesteMaterial";
 
 const PaginaStudiu = ({ email }) => {
 
@@ -43,9 +43,13 @@ const PaginaStudiu = ({ email }) => {
     return (
         <div className="studiu-items">
             <ButoanePaginaStudiu onClick={onClick} />
-            <div className="test">
-                <NavigarePagina activePage={activePage} email={email} />
-                <CitesteMaterial numeElev={numeElev} activePage={activePage} />
+            <div className="elemente-studiu">
+                <div className="panou-stanga"></div>
+                <div className="panou-studiu">
+                    <NavigarePagina activePage={activePage} email={email} />
+                    <CitesteMaterial numeElev={numeElev} activePage={activePage} />
+                </div>
+                <div className="panou-dreapta"></div>
             </div>
         </div>
     );

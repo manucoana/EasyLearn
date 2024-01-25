@@ -1,6 +1,7 @@
-const insertUser = (nume, varsta, oras, tip_utilizator, email, parola) => {
+//mutat in inregistrare
+/* const insertUser = (nume, varsta, oras, tip_utilizator, email, parola) => {
     return 'INSERT INTO easylearn_users (nume, varsta, oras, tip_utilizator, email, parola) VALUES (?, ?, ?, ?, ?, ?)';
-};
+}; */
 
 const getUserById = (id) => {
     return `SELECT * FROM easylearn_users WHERE id = ${id}`;
@@ -20,7 +21,6 @@ const getUserTypeByEmail = (tip_utilizator) => {
 
 
 module.exports = {
-    insertUser,
     getUserById,
     getUserByEmail,
     loginUser,

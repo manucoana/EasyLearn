@@ -7,11 +7,11 @@ import Profesor from "../profesor/Profesor";
 
 export const Login = () => {
   const [errorMessages, setErrorMessages] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState("");
-  const [userType, setUserType] = useState(null);
+  const [tipUtilizator, setTipUtilizator] = useState(null);
   const [showRegister, setShowRegister] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -28,11 +28,11 @@ export const Login = () => {
       if (Array.isArray(users) && users.length > 0) {
         setUserEmail(users[0].email);
 
-        const userTypeResponse = await axios.get(`http://localhost:3001/api/easylearn-users/info-utilizatori/${email.value}`);
-        const userType = userTypeResponse.data.tip_utilizator;
+        const tipUtilizatorResponse = await axios.get(`http://localhost:3001/api/easylearn-users/info-utilizatori/${email.value}`);
+        const tipUtilizator = tipUtilizatorResponse.data.tip_utilizator;
 
-        if (userType === "Elev" || userType === "Profesor") {
-          setUserType(userType);
+        if (tipUtilizator === "Elev" || tipUtilizator === "Profesor") {
+          setTipUtilizator(tipUtilizator);
           setIsLoggedIn(true);
           setErrorMessages({});
 
@@ -67,8 +67,6 @@ export const Login = () => {
       setShowRegister(false);
     } catch (error) {
       console.error(error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -80,11 +78,17 @@ export const Login = () => {
   return (
     <>
       {isLoading && <div>Loading...</div>}
-      {showRegister && <Register handleRegister={handleRegister} />}
+      {showRegister &&
+        <Register handleRegister={handleRegister} />
+      }
       {isLoggedIn && (
         <div>
-          {userType === "Elev" && <Elev email={userEmail} userType={userType} />}
-          {userType === "Profesor" && <Profesor email={userEmail} userType={userType} />}
+          {tipUtilizator === "Elev" &&
+            <Elev email={userEmail} tipUtilizator={tipUtilizator} />
+          }
+          {tipUtilizator === "Profesor" &&
+            <Profesor email={userEmail} tipUtilizator={tipUtilizator} />
+          }
         </div>
       )}
       {!isLoading && !showRegister && !isLoggedIn && (

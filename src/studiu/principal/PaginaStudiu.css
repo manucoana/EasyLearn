@@ -1,11 +1,32 @@
-.studiu-items {
-    padding: 0px 40px 0px 40px;
+@import '../../elemente/design/VariabileDesign.css';
+
+.studiu-items {}
+
+.elemente-studiu {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
-.test {
+.panou-studiu {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
+    width: 60%;
+    height: 1250px;
+    padding: 15px;
+    background-color: var(--alb);
+}
 
+.panou-stanga {
+    width: 20%;
+    height: 1250px;
+    background-color: var(--fundal);
+}
+
+.panou-dreapta {
+    width: 20%;
+    height: 1250px;
+    background-color: var(--fundal);
 }

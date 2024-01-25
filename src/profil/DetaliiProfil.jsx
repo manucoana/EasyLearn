@@ -6,9 +6,9 @@ import {
   ORAS,
   TIP_UTILIZATOR,
   EMAIL
-} from "../constante/InfoUtilizatorConstant"
+} from "../elemente/constante/InfoUtilizatorConstant"
 import useFetchUserData from "./useFetchUserData";
-import TextReutilizabil from "../text/TextReutilizabil";
+import TextReutilizabil from "../elemente/text/TextReutilizabil";
 
 const DetaliiProfil = ({ email }) => {
 

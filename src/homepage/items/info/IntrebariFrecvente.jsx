@@ -1,7 +1,7 @@
 import React from "react";
 import "./IntrebariFrecvente.css"
-import TextReutilizabil from "../../../text/TextReutilizabil";
-import { SUBTITLU_INTREBARI } from "../../../constante/TitluConstant";
+import TextReutilizabil from "../../../elemente/text/TextReutilizabil";
+import { SUBTITLU_INTREBARI } from "../../../elemente/constante/TitluConstant";
 
 const IntrebariFrecvente = () => {
   

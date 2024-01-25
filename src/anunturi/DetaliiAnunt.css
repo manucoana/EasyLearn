@@ -1,8 +1,0 @@
-.detalii-utilizator {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    text-align: center;
-    justify-content: space-between;
-    width: 100%;
-}
