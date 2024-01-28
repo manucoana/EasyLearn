@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Register } from "../register/Register";
 import FormLogin from "./form/FormLogin";
-import Elev from "../elev/Elev";
-import Profesor from "../profesor/Profesor";
+import Elev from "../utilizator/elev/menu/Elev";
+import Profesor from "../utilizator/profesor/menu/Profesor";
+import useFetchUserData from "../utilizator/user-data/useFetchUserData";
 
 export const Login = () => {
   const [errorMessages, setErrorMessages] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userEmail, setUserEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [tipUtilizator, setTipUtilizator] = useState(null);
   const [showRegister, setShowRegister] = useState(false);
+
+  const { userData } = useFetchUserData(email);
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -26,7 +29,7 @@ export const Login = () => {
 
       const users = response.data;
       if (Array.isArray(users) && users.length > 0) {
-        setUserEmail(users[0].email);
+        setEmail(users[0].email);
 
         const tipUtilizatorResponse = await axios.get(`http://localhost:3001/api/easylearn-users/info-utilizatori/${email.value}`);
         const tipUtilizator = tipUtilizatorResponse.data.tip_utilizator;
@@ -84,10 +87,10 @@ export const Login = () => {
       {isLoggedIn && (
         <div>
           {tipUtilizator === "Elev" &&
-            <Elev email={userEmail} tipUtilizator={tipUtilizator} />
+            <Elev userData={userData} email={userData.email} tipUtilizator={userData.tip_utilizator} />
           }
           {tipUtilizator === "Profesor" &&
-            <Profesor email={userEmail} tipUtilizator={tipUtilizator} />
+            <Profesor userData={userData} email={userData.email} tipUtilizator={userData.tip_utilizator} />
           }
         </div>
       )}

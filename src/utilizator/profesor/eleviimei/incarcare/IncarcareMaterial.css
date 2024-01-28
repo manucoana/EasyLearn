@@ -1,0 +1,19 @@
+.incarcare-material-items {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    background-color: #f2f3f4;
+    height: 1250px;
+    padding: 0px 15px 0px 15px;
+}
+
+.butoane-incarcare-material {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+}

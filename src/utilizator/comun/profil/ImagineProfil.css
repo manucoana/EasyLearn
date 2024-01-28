@@ -1,0 +1,9 @@
+@import '../../../elemente/design/VariabileDesign.css';
+
+.imagine-profil {
+    margin: 0px 90px 15px 90px;
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--tabel-gri);
+    border-radius: 50%;
+}

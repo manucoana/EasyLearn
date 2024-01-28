@@ -14,26 +14,13 @@ const FormLogin = ({ handleLogin, renderError, setShowRegister }) => {
     return (
         <form className="form-login-items" onSubmit={handleLogin}>
             <LogoComponent />
-            <CampInput
-                type="email"
-                placeholder="E-mail"
-                name="email"
-                id="email" />
+            <CampInput type="email" placeholder="E-mail" name="email" id="email" />
             {renderError("email")}
-            <CampInput
-                type="password"
-                placeholder="Parola"
-                name="parola"
-                id="parola" />
+            <CampInput type="password" placeholder="Parola" name="parola" id="parola" />
             {renderError("parola")}
             <div className="butoane-login">
-                <ButonReutilizabil
-                    className="buton-login"
-                    text={logIn} />
-                <ButonReutilizabil
-                    className="buton-inregistrare"
-                    onClick={() => setShowRegister(true)}
-                    text={inregistrare} />
+                <ButonReutilizabil className="buton-login" text={logIn} />
+                <ButonReutilizabil className="buton-inregistrare" onClick={() => setShowRegister(true)} text={inregistrare} />
             </div>
         </form>
     );

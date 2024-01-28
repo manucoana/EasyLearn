@@ -3,7 +3,7 @@ import React from 'react';
 const MeniuIcon = ({ toggleMenu }) => {
   return (
     <div onClick={toggleMenu}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="55" height="35" viewBox="0 0 70.901 60.1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" viewBox="0 0 70.901 60.1">
         <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(2.5 2.5)">
           <path
             id="Path_6"

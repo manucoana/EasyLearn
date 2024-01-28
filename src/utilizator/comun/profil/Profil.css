@@ -1,0 +1,19 @@
+@import '../../../elemente/design/VariabileDesign.css';
+
+.profil-items {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 30px 30px 0px 0px;
+}
+
+.detalii {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+  padding: 30px 50px 30px 50px;
+}

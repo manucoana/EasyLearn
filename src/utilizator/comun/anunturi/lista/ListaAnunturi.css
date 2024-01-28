@@ -1,0 +1,50 @@
+@import '../../../../elemente/design/VariabileDesign.css';
+
+.lista-anunturi-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.lista-anunturi-items ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid var(--tabel-gri);
+    list-style: none;
+    cursor: pointer;
+    width: 80%;
+}
+
+.lista-anunturi-items ul li.par {
+    background-color: var(--alb);
+}
+
+.lista-anunturi-items ul li.impar {
+    background-color: var(--tabel-fundal);
+}
+
+.butoane-lista-anunturi {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .lista-anunturi-items ul li {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .campuri-anunut {
+        justify-content: flex-start;
+        padding: 30px;
+    }
+}
+
+
+@media screen and (max-width: 100px) {
+    .lista-anunturi-items {
+        margin: 0;
+    }
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Login } from "./Login";
-import Elev from "../elev/Elev";
-import Profesor from "../profesor/Profesor";
+import Elev from "../utilizator/elev/menu/Elev";
+import Profesor from "../utilizator/profesor/menu/Profesor";
 
 const LoginHandler = () => {
 
