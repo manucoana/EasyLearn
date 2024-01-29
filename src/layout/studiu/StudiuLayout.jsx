@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 import "./StudiuLayout.css";
 import TextReutilizabil from "../../elemente/text/TextReutilizabil";
 
 const StudiuLayout = ({ titlu }) => {
+
   return (
     <div className="studiu-layout">
       {titlu &&

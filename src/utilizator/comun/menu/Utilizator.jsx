@@ -3,9 +3,9 @@ import './Utilizator.css';
 import Titlu from "../../../elemente/text/Titlu";
 import DefaultLayout from "../../../layout/DefaultLayout";
 import Sfera from "../../../layout/decor/Sfera";
-import ButoaneNavigare from "../../../navigare/ButoaneNavigare";
+import ButoaneNavigare from "../../navigare/ButoaneNavigare";
 import NavigarePagina from "../../navigare/NavigarePagina";
-import TitluPagina from "../../../navigare/TitluPagina";
+import TitluPagina from "../../navigare/TitluPagina";
 import ImagineProfil from "../profil/ImagineProfil";
 import TextReutilizabil from "../../../elemente/text/TextReutilizabil";
 

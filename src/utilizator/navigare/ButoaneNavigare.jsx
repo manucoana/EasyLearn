@@ -1,11 +1,11 @@
 import React from "react";
-import ButonReutilizabil from "../elemente/butoane/ButonReutilizabil";
+import ButonReutilizabil from "../../elemente/butoane/ButonReutilizabil";
 import {
   SPRE_PAGINA_STUDIU,
   LISTA_ANUNTURI,
   PROFIL,
   ELEVII_MEI,
-} from  "../elemente/constante/ButonConstant"
+} from  "../../elemente/constante/ButonConstant"
 
 const ButoaneNavigare = ({ onClick, tipUtilizator }) => {
 

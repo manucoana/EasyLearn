@@ -7,9 +7,8 @@ import useFetchUserData from '../../../user-data/useFetchUserData';
 const SolicitareColaborare = ({ email, isOpen, deschideNotificare }) => {
     const [requests, setRequests] = useState([]);
     const [id_elev, setElevIds] = useState([]);
-    const { userData, loading: userDataLoading } = useFetchUserData(email);
+    const { userData } = useFetchUserData(email);
     const [userNames, setUserNames] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     const id_profesor = userData?.id;
@@ -17,8 +16,6 @@ const SolicitareColaborare = ({ email, isOpen, deschideNotificare }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                setLoading(true);
-
                 const responseRequests = await axios.get(`http://localhost:3001/api/meditatii/solicita-colaborare/${id_profesor}`);
                 const responseElevIds = await axios.get(`http://localhost:3001/api/meditatii/solicita-colaborare/elevi/${id_profesor}`);
 
@@ -27,8 +24,6 @@ const SolicitareColaborare = ({ email, isOpen, deschideNotificare }) => {
             } catch (error) {
                 console.error('Error fetching collaboration requests:', error);
                 setError('Error fetching collaboration requests');
-            } finally {
-                setLoading(false);
             }
         };
 
@@ -40,8 +35,6 @@ const SolicitareColaborare = ({ email, isOpen, deschideNotificare }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                setLoading(true);
-
                 const names = [];
 
                 for (const id of id_elev) {
@@ -53,8 +46,6 @@ const SolicitareColaborare = ({ email, isOpen, deschideNotificare }) => {
             } catch (error) {
                 console.error('Error fetching user data:', error);
                 setError('Error fetching user data');
-            } finally {
-                setLoading(false);
             }
         };
 
@@ -84,10 +75,6 @@ const SolicitareColaborare = ({ email, isOpen, deschideNotificare }) => {
             console.error('Error rejecting collaboration request:', error);
         }
     };
-
-    if (loading || userDataLoading) {
-        return <p>Loading...</p>;
-    }
 
     if (error) {
         return <p>Error: {error}</p>;
