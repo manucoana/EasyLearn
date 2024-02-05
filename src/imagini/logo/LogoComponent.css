@@ -3,9 +3,18 @@
     justify-content: center;
     align-items: center;
 }
+
 .imagine-student {
     width: 150px;
     height: 150px;
     margin-left: 90px;
     margin-right: 90px;
+}
+
+.imagine-student-round{
+    margin: 0px 90px 15px 90px;
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--tabel-gri);
+    border-radius: 50%;
 }

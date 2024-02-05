@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import LogoComponent from '../../../imagini/logo/LogoComponent';
-import "./ImagineProfil.css"
+import "./ImagineProfil.css";
+import LogoComponent from "../../../../imagini/logo/LogoComponent"
+import  { fetchUserData, fetchProfileImage } from "../functii/showImagineProfil";
 
 const ImagineProfil = ({ userData }) => {
   const [imagineProfil, setImagineProfil] = useState(null);
@@ -12,8 +12,7 @@ const ImagineProfil = ({ userData }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await axios.get(`http://localhost:3001/api/profil/imagini-utilizator/${userData.email}`);
-        const data = response.data;
+        const data = await fetchUserData(userData.email);
         setNume(data.nume || "");
         setTitlu(data.titlu || "");
       } catch (error) {
@@ -28,17 +27,11 @@ const ImagineProfil = ({ userData }) => {
     if (nume && titlu) {
       const fetchImage = async () => {
         try {
-          let response = await axios.get(`http://localhost:3001/api/profil/show/${nume}/Profil/${titlu}`, {
-            responseType: 'blob',
-          });
-
-          const imageUrl = URL.createObjectURL(response.data);
+          const imageUrl = await fetchProfileImage(nume, titlu);
           setImagineProfil(imageUrl);
           setExistaImagine(true);
-
-          console.log(`Image fetched successfully for ${nume}/Profil/${titlu}`);
         } catch (error) {
-          console.error('Error fetching image:', error);
+          console.log('Nu exista poza de profl:');
           setExistaImagine(false);
         }
       };
@@ -47,13 +40,12 @@ const ImagineProfil = ({ userData }) => {
     }
   }, [nume, titlu]);
 
-
   return (
     <div className="sfera-profil">
       {existaImagine ? (
         <img className='imagine-profil' src={imagineProfil} alt={`${nume}/Profil/${titlu}`} />
       ) : (
-        <LogoComponent />
+        <LogoComponent className="imagine-student-round"/>
       )}
     </div>
   );

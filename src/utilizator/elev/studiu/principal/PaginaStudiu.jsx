@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./PaginaStudiu.css";
 import ButoanePaginaStudiu from "./ButoanePaginaStudiu";
-import NavigarePagina from "../../../navigare/NavigarePagina";
+import NavigarePagina from "../../../../navigare/NavigarePagina";
 import CitesteMaterial from "../material/CitesteMaterial";
+import ProfesorInfo from "../../menu/ProfesorInfo";
 
-const PaginaStudiu = ({ userData }) => {
+const PaginaStudiu = ({ userData, profesorData }) => {
 
     const [activePage, setActivePage] = useState("");
 
@@ -24,17 +25,23 @@ const PaginaStudiu = ({ userData }) => {
         };
     }, []);
 
+    console.log(profesorData)
+
 
     return (
         <div className="studiu-items">
             <ButoanePaginaStudiu onClick={onClick} />
             <div className="elemente-studiu">
-                <div className="panou-stanga"></div>
+                {/*   <div className="panou-stanga"></div> */}
                 <div className="panou-studiu">
-                    <NavigarePagina activePage={activePage} email={userData.email} />
+                    <NavigarePagina activePage={activePage} userData={userData} />
                     <CitesteMaterial numeElev={userData.nume} activePage={activePage} />
                 </div>
-                <div className="panou-dreapta"></div>
+                <div className="panou-dreapta">
+                    {profesorData ? (
+                        <ProfesorInfo profesorData={profesorData} />
+                    ) : null}
+                </div>
             </div>
         </div>
     );

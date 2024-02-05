@@ -1,0 +1,4 @@
+.butoane{
+    display: flex;
+    flex-direction: row;
+}

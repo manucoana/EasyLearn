@@ -1,20 +1,20 @@
 @import '../design/VariabileDesign.css';
 
-.buton-reutilizabil-1,
-.buton-reutilizabil-2,
-.buton-reutilizabil-3 {
-    width: 530px;
-    height: 100px;
-    border-radius: 50px;
+.buton-reutilizabil-1 {
+    height: 45px;
+    width: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--alb);
-    font-weight: bold;
-    cursor: pointer;    
+    cursor: pointer;
     border: none;
     margin-bottom: 10px;
-    background-color: var(--culoare-secundara);
+    background-color: transparent;
+}
+
+.buton-reutilizabil-1:hover {
+    background-color: #3a364e;
 }
 
 .buton-login,
@@ -27,6 +27,7 @@
     border: none;
     border-radius: 70px;
     cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .buton-login {
@@ -37,8 +38,8 @@
     background-color: var(--culoare-secundara);
 }
 
-.buton-publicare{
-    background-color: var(--albastru-mediu);
+.buton-publicare {
+    background-color: #1E2753;
     border: none;
     width: 100%;
     height: 45px;
@@ -46,24 +47,12 @@
 }
 
 .buton-publicare:focus {
-    background-color: var(--albastru-deschis);
+    background-color: var(--albastru-mediu);
 }
 
 .buton-descarca {
     background-color: #4caf50;
     border-radius: 4px;
-}
-
-.buton-reutilizabil-1 {
-    background-color: var(--albastru-deschis);
-}
-
-.buton-reutilizabil-2 {
-    background-color: var(--albastru-mediu);
-}
-
-.buton-reutilizabil-3 {
-    background-color: var(--culoare-secundara);
 }
 
 .buton-login:hover {

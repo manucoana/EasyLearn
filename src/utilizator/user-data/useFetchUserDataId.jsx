@@ -7,7 +7,7 @@ const useFetchUserDataId = (id) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/api/easylearn-users/info-utilizatori/e/${id}`);
+                const response = await axios.get(`http://localhost:3001/api/easylearn-users/info-utilizatori/by-id/${id}`);
                 const user = response.data;
                 setUserDataID(user);
             } catch (error) {

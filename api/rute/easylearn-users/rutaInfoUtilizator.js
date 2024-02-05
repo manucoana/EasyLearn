@@ -27,7 +27,7 @@ router.get('/:email', async (req, res) => {
   }
 });
 
-router.get('/e/:id', async (req, res) => {
+router.get('/by-id/:id', async (req, res) => {
   try {
     const id = req.params.id;
 

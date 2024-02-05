@@ -1,5 +1,4 @@
 import React from "react";
-import "./InputImagineProfil.css";
 
 const InputImagineProfil = ({ imageUrl, handleFileUpload }) => {
     

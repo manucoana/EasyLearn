@@ -1,12 +1,25 @@
-export const fetchListaAnunturi = async (userData, setAnunturiVizibile) => {
+export const fetchListaAnunturi = async (userData, setAnunturiVizibile, materieFiltru) => {
   try {
     const response = await fetch(`http://localhost:3001/api/anunt/vizibilitate?email=${userData.email}`);
     const data = await response.json();
-    setAnunturiVizibile(data);
+
+    const anunturiFiltrate = filtreazaAnunturiDupaMaterie(data, materieFiltru);
+    console.log('Anunturi filtrate:', anunturiFiltrate);
+
+    setAnunturiVizibile(anunturiFiltrate);
   } catch (error) {
     console.error("Eroare la vizibilitate:", error);
   }
 };
+
+export const filtreazaAnunturiDupaMaterie = (anunturi, materie) => {
+  if (!materie) {
+    return anunturi;
+  }
+
+  return anunturi.filter(anunt => anunt.materie === materie);
+};
+
 
 export const setVizibilitateTrue = async (email, fetchAnunturiVizibile) => {
   try {

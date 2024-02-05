@@ -33,8 +33,6 @@ router.post('/acceptata/:requestId', (req, res) => {
   });
 });
 
-
-
 router.post('/respinsa/:requestId', (req, res) => {
   const requestId = req.params.requestId;
   const id_profesor = req.body.id_profesor;

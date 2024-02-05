@@ -1,15 +1,15 @@
 import React from "react";
 import "./CampInput.css"
 
-const CampInput = ({ label, type, placeholder, name, id, required}) => (
+const CampInput = ({ type, placeholder, name, id, required }) => (
     <>
         <label className="label-login" htmlFor={id}>{placeholder}</label>
         <input className="input-login"
-         type={type} 
-         placeholder={placeholder} 
-         name={name} 
-         id={id}
-         required={required} />
+            type={type}
+            placeholder={placeholder}
+            name={name}
+            id={id}
+            required={required} />
     </>
 );
 

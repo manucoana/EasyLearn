@@ -21,7 +21,7 @@ const rutaInfoPoza = require('./rute/profil/rutaInfoPoza');
 const rutaSolicitareImagine = require('./rute/profil/rutaSolicitareImagine');
 const rutaNumeTitluImagine = require('./rute/profil/rutaNumeTitluImagine');
 
-const rutaIncarcareMaterial = require('./rute/material-didactic/rutaIncarcareMaterial');
+const rutaIncarcareMedia = require('./rute/incarcare-media/rutaIncarcareMedia');
 const rutaInfoMaterial = require('./rute/material-didactic/rutaInfoMaterial');
 
 const rutaSolicitareMaterial = require('./rute/material-didactic/rutaSolicitareMaterial');
@@ -31,6 +31,7 @@ const rutaSolicitare = require('./rute/solicitari/rutaSolicitare');
 const rutaStatusSolicitare = require('./rute/solicitari/rutaStatusSolicitare');
 
 const rutaStatusMeditatii = require('./rute/meditatii/rutaMeditatii');
+const rutaMaterii = require('./rute/materie/rutaMaterie');
 
 
 // Utilizare rute
@@ -45,7 +46,8 @@ app.use("/api/profil/info-poza", rutaInfoPoza);
 app.use("/api/profil/show", rutaSolicitareImagine);
 app.use("/api/profil/imagini-utilizator", rutaNumeTitluImagine);
 
-app.use("/api/material-didactic/uploads", rutaIncarcareMaterial);
+app.use("/api/incarcare-media/uploads", rutaIncarcareMedia);
+
 app.use("/api/material-didactic/insertMaterial", rutaInfoMaterial);
 app.use("/api/material-didactic/download", rutaSolicitareMaterial);
 app.use("/api/material-didactic/documents", rutaCaleMaterial);
@@ -54,6 +56,8 @@ app.use("/api/meditatii/solicita-colaborare", rutaSolicitare);
 app.use("/api/meditatii/status", rutaStatusSolicitare);
 
 app.use("/api/meditatii/inscris", rutaStatusMeditatii);
+
+app.use("/api/materie", rutaMaterii);
 
 
 // Port

@@ -2,15 +2,12 @@ import React, { useState, useEffect } from "react";
 import './Utilizator.css';
 import Titlu from "../../../elemente/text/Titlu";
 import DefaultLayout from "../../../layout/DefaultLayout";
-import Sfera from "../../../layout/decor/Sfera";
-import ButoaneNavigare from "../../navigare/ButoaneNavigare";
-import NavigarePagina from "../../navigare/NavigarePagina";
-import TitluPagina from "../../navigare/TitluPagina";
-import ImagineProfil from "../profil/ImagineProfil";
-import TextReutilizabil from "../../../elemente/text/TextReutilizabil";
+import NavigarePagina from "../../../navigare/NavigarePagina";
+import TitluPagina from "../../../navigare/TitluPagina";
+import SferaUtilizator from "../../../layout/sfera/SferaUtilizator";
+import NavPrincipal from "../../../layout/nav/NavPrincipal";
 
-
-const Utilizator = ({ userData, tipUtilizator }) => {
+const Utilizator = ({ userData, profesorData, children }) => {
   const [activePage, setActivePage] = useState("");
 
   const onClick = (page) => {
@@ -33,20 +30,20 @@ const Utilizator = ({ userData, tipUtilizator }) => {
   }, [activePage]);
 
   return (
-    <DefaultLayout email={userData.email} titlu={TitluPagina[activePage]}>
+    <DefaultLayout userData={userData} titlu={TitluPagina[activePage]}>
       {activePage ? (
-        <NavigarePagina userData={userData} activePage={activePage} />
+        <NavigarePagina userData={userData} profesorData={profesorData} activePage={activePage} />
       ) : (
-        <div className="utilizator-items">
-          <div className={`panou-${tipUtilizator}`}>
-            <Titlu />
-            <ButoaneNavigare onClick={onClick} tipUtilizator={tipUtilizator} />
+        <div>
+          <NavPrincipal onClick={onClick} userData={userData}/>
+          
+          <div className="utilizator-items">
+            <div className={`panou-${userData.tip_utilizator}`}>
+              <Titlu />
+              {children}
+            </div>
+            <SferaUtilizator userData={userData}/>
           </div>
-          <Sfera>
-            <ImagineProfil userData={userData} />
-            <TextReutilizabil className="text-normal" text={userData.nume} />
-            <TextReutilizabil className="text-mic" text={tipUtilizator} />
-          </Sfera>
         </div>
       )}
     </DefaultLayout>

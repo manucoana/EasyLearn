@@ -1,0 +1,7 @@
+.nav-principal {
+    height: 45px;
+    width: 100%;
+    background-color: var(--portocaliu);
+    display: flex;
+    flex-direction: row;
+  }

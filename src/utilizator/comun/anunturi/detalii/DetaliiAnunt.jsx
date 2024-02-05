@@ -1,31 +1,25 @@
 import React from "react";
 import "./DetaliiAnunt.css";
-import DetaliiProfil from "../../profil/DetaliiProfil";
+import DetaliiProfil from "../../profil/detalii/DetaliiProfil";
 import useFetchUserData from "../../../user-data/useFetchUserData";
-import ImagineProfil from "../../profil/ImagineProfil";
-import Sfera from "../../../../layout/decor/Sfera";
-import TextReutilizabil from "../../../../elemente/text/TextReutilizabil";
 import ButonReutilizabil from "../../../../elemente/butoane/ButonReutilizabil";
 import trimiteSolicitare from "../functii/trimiteSolicitare";
+import ImagineProfil from "../../profil/imagine/ImagineProfil";
 
 const DetaliiAnunt = ({ email, idUtilizator }) => {
-  const { userData } = useFetchUserData(email);
+  const { userData: profesorSelectatData } = useFetchUserData(email);
 
   const handleTrimiteSolicitare = () => {
-    trimiteSolicitare(idUtilizator, userData);
+    trimiteSolicitare(idUtilizator, profesorSelectatData);
   };
 
   return (
     <div className="detalii-utilizator-items">
+      <ImagineProfil userData={profesorSelectatData} />
       <div className="detalii-container">
-        <DetaliiProfil userData={userData}/>
-        <ButonReutilizabil className="buton-reutilizabil-3" onClick={handleTrimiteSolicitare} text="Solicita colaborare"/>
+        <DetaliiProfil userData={profesorSelectatData} />
+        <ButonReutilizabil className="buton-reutilizabil-3" onClick={handleTrimiteSolicitare} text="Solicita colaborare" />
       </div>
-      <Sfera>
-        <ImagineProfil userData={userData} />
-        <TextReutilizabil className="text-normal" text={userData.nume} />
-        <TextReutilizabil className="text-mic" text={userData.tip_utilizator} />
-      </Sfera>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 .info-text-items{
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
+    padding: 30px;
 }

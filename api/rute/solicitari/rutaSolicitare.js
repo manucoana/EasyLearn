@@ -57,28 +57,4 @@ router.get('/:id_profesor', (req, res) => {
 
 });
 
-router.get('/elevi/:id_profesor', (req, res) => {
-    try {
-        const idProfesor = req.params.id_profesor;
-
-        const selectSql = `
-            SELECT id_elev
-            FROM solicitari
-            WHERE id_profesor = ?`;
-
-        const selectValues = [idProfesor];
-
-        connection.query(selectSql, selectValues, (error, results) => {
-            if (error) {
-                return res.status(500).send('Internal Server Error');
-            }
-
-            const idElevValues = results.map(result => result.id_elev);
-            res.status(200).json(idElevValues);
-        });
-    } catch (error) {
-        res.status(500).send('Internal Server Error');
-    }
-});
-
 module.exports = router;

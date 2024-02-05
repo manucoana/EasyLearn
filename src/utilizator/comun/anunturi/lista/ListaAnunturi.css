@@ -2,7 +2,12 @@
 
 .lista-anunturi-items {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.lista-items {
     width: 100%;
 }
 
@@ -13,7 +18,11 @@
     border-bottom: 1px solid var(--tabel-gri);
     list-style: none;
     cursor: pointer;
-    width: 80%;
+    width: 100%;
+}
+
+.test {
+    width: 100%;
 }
 
 .lista-anunturi-items ul li.par {
@@ -27,7 +36,6 @@
 .butoane-lista-anunturi {
     display: flex;
     flex-direction: row;
-    width: 100%;
 }
 
 @media screen and (max-width: 767px) {
@@ -41,7 +49,6 @@
         padding: 30px;
     }
 }
-
 
 @media screen and (max-width: 100px) {
     .lista-anunturi-items {

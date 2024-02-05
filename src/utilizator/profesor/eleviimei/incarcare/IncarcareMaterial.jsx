@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import TextReutilizabil from "../../../../elemente/text/TextReutilizabil";
 import "./IncarcareMaterial.css";
 import ButoanePaginaStudiu from "../../../elev/studiu/principal/ButoanePaginaStudiu";
-import NavigarePagina from "../../../navigare/NavigarePagina";
+import NavigarePagina from "../../../../navigare/NavigarePagina";
 import ButonReutilizabil from "../../../../elemente/butoane/ButonReutilizabil";
+import CitesteMaterial from "../../../elev/studiu/material/CitesteMaterial";
 
 const IncarcareMaterial = ({ email, numeElev, numeProfesor }) => {
   const [activePage, setActivePage] = useState("");
@@ -31,7 +32,7 @@ const IncarcareMaterial = ({ email, numeElev, numeProfesor }) => {
       formData.append("active_page", activePage);
 
       try {
-        const response = await fetch("http://localhost:3001/api/material-didactic/uploads", {
+        const response = await fetch("http://localhost:3001/api/incarcare-media/uploads", {
           method: "POST",
           body: formData,
         });
@@ -76,18 +77,15 @@ const IncarcareMaterial = ({ email, numeElev, numeProfesor }) => {
 
   return (
     <div className="incarcare-material-items">
-
-      <TextReutilizabil className="text-normal" text={`Încarcă materiale pentru ${numeElev}`} />
       <ButoanePaginaStudiu onClick={onClick} />
-      <input type="file" onChange={handleFileChange} />
-      <ButonReutilizabil
-        className="buton-descarca"
-        onClick={handleUpload}
-        text={`Încarcă`}
-      />
-
-      {uploadError && <p style={{ color: "red" }}>{uploadError}</p>}
-      <NavigarePagina activePage={activePage} email={email} />
+      <div className="panou-studiu">
+        <TextReutilizabil className="text-test" text={`Încarcă materiale pentru ${numeElev}`} />
+        <input type="file" onChange={handleFileChange} />
+        <ButonReutilizabil className="buton-descarca" onClick={handleUpload} text={`Încarcă`} />
+        {uploadError && <p style={{ color: "red" }}>{uploadError}</p>}
+        <NavigarePagina activePage={activePage} email={email} />
+        <CitesteMaterial numeElev={numeElev} activePage={activePage} />
+      </div>
     </div>
   );
 };

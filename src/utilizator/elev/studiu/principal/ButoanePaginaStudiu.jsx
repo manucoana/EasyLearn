@@ -15,11 +15,15 @@ const ButoanePaginaStudiu = ({ onClick }) => {
     const teste = TESTE;
 
     return (
-            <div className="lectii-teme-teste">
-                <ButonReutilizabil onClick={() => onClick("Lectii")} text={lectii} className="buton-publicare"/>
-                <ButonReutilizabil onClick={() => onClick("Teme")} text={teme} className="buton-publicare"/>
-                <ButonReutilizabil onClick={() => onClick("Teste")} text={teste} className="buton-publicare"/>
-            </div>
+            <nav className="nav-principal">
+                <ButonReutilizabil onClick={() => onClick("Lectii")} text={lectii} className="buton-reutilizabil-1"/>
+                <ButonReutilizabil onClick={() => onClick("Teme")} text={teme} className="buton-reutilizabil-1"/>
+                <ButonReutilizabil onClick={() => onClick("Teste")} text={teste} className="buton-reutilizabil-1"/>
+                
+                {/* <ButonReutilizabil text="MESAJE" className="buton-reutilizabil-1"/>
+                <ButonReutilizabil text="NOTE" className="buton-reutilizabil-1"/>
+                <ButonReutilizabil text="VIDEOCONFERINTA" className="buton-reutilizabil-1"/> */}
+            </nav>
     );
 };
 

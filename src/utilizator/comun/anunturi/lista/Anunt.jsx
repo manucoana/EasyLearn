@@ -1,24 +1,37 @@
 import React, { useState } from "react";
-import ImagineProfil from "../../profil/ImagineProfil";
+import ImagineProfil from "../../profil/imagine/ImagineProfil";
 import { NUME, MATERIE } from "../../../../elemente/constante/InfoUtilizatorConstant";
-import DetaliiAnunt from "../detalii/DetaliiAnunt";
 import "./Anunt.css";
+import DetaliiAnunt from "../detalii/DetaliiAnunt";
 
 const Anunt = ({ userData, anunturi }) => {
-
-    const [profesorSelectat, setProfesorSelectat] = useState(false);
+    const [profesorSelectat, setProfesorSelectat] = useState(null);
+    const [showDetails, setShowDetails] = useState(false);
 
     const handleAnuntClick = (profesor) => {
         setProfesorSelectat(profesor);
+        setShowDetails(true);
+    };
+
+    const handleBackClick = () => {
+        setShowDetails(false);
     };
 
     const deschideAnunt = () => {
-        if (profesorSelectat) {
+        if (showDetails) {
             return (
-                <DetaliiAnunt userData={userData} numeProfesor={profesorSelectat.nume_profesor} email={profesorSelectat.email} idUtilizator={userData.id} />
+                <div className="deschide-anunt-items">
+                    <DetaliiAnunt idUtilizator={userData.id} email={profesorSelectat.email} />
+                    <button className="close-button" onClick={handleBackClick}> X </button>
+                </div>
             );
         }
-        return (
+        return null;
+    };
+    
+    return (
+        <div className="lista">
+            {deschideAnunt()}
             <ul className="lista-anunturi">
                 {anunturi.map((anunt, index) => (
                     <li key={anunt.id_anunt} className={index % 2 === 0 ? "par" : "impar"} onClick={() => handleAnuntClick(anunt)}>
@@ -32,9 +45,8 @@ const Anunt = ({ userData, anunturi }) => {
                     </li>
                 ))}
             </ul>
-        );
-    };
-
-    return deschideAnunt();
+        </div>
+    );
 };
+
 export default Anunt;

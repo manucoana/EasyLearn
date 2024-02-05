@@ -1,8 +1,8 @@
 import React from 'react';
-import Sfera from '../../../layout/decor/Sfera';
-import { LOG_IN, INREGISTRARE } from "../../../elemente/constante/ButonConstant";
-import ButonReutilizabil from '../../../elemente/butoane/ButonReutilizabil';
-import LogoComponent from '../../../imagini/logo/LogoComponent';
+import Sfera from './Sfera';
+import { LOG_IN, INREGISTRARE } from "../../elemente/constante/ButonConstant";
+import ButonReutilizabil from '../../elemente/butoane/ButonReutilizabil';
+import LogoComponent from '../../imagini/logo/LogoComponent';
 
 const SferaLogin = ({ setShowLogin, setShowRegister }) => {
 

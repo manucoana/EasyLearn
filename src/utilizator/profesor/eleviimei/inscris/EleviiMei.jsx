@@ -4,34 +4,14 @@ import ElevulMeu from "./ElevulMeu";
 import "./EleviiMei.css";
 
 const EleviiMei = ({ userData }) => {
-
-  const [numeProfesor, setNumeProfesor] = useState([]);
+  
   const [numeElev, setNumeElev] = useState([]);
-  const [idProfesor, setIdProfesor] = useState(null);
   const [errorMessages, setErrorMessages] = useState({});
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3001/api/easylearn-users/info-utilizatori/${userData.email}`)
-      .then((response) => {
-
-        const numeProfesor = response.data.nume;
-        const idProfesor = response.data.id;
-
-        setNumeProfesor(numeProfesor);
-        setIdProfesor(idProfesor);
-        setErrorMessages({});
-      })
-      .catch((error) => {
-        console.log(error);
-        setErrorMessages({ message: "Eroare la preluarea datelor din profil" });
-      });
-  }, [userData.email]);
-
-  useEffect(() => {
-    if (idProfesor) {
+    if (userData?.id) {
       axios
-        .get(`http://localhost:3001/api/meditatii/inscris/${idProfesor}`)
+        .get(`http://localhost:3001/api/meditatii/inscris/${userData?.id}`)
         .then((response) => {
           const numeElev = response.data;
           setNumeElev(numeElev);
@@ -42,22 +22,22 @@ const EleviiMei = ({ userData }) => {
           setErrorMessages({ message: "Eroare la preluarea datelor din elevi" });
         });
     }
-  }, [idProfesor]);
+  }, [userData?.id]);
 
   const renderError = (message) => message && <div className="error">{message}</div>;
 
   return (
     <div className="elevii-mei-items">
       <div className="row">
-        <div className="panou-stanga"></div>
+      {/*   <div className="panou-stanga"></div> */}
         {renderError(errorMessages.message)}
         <div className="lista-elevi">
           <ElevulMeu
             email={userData.email}
             elevi={numeElev}
-            numeProfesor={numeProfesor} />
+            numeProfesor={userData.nume} />
         </div>
-        <div className="panou-dreapta"></div>
+       {/*  <div className="panou-dreapta"></div> */}
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ const useFetchUserData = (email) => {
         const user = response.data;
         setUserData(user);
       } catch (error) {
-        console.error({ message: "Error fetching user data" });
+        console.log("Nu au fost primite datele utilizatorului");
       }
     };
 

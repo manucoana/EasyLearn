@@ -1,7 +1,7 @@
 import React from 'react';
 import './Welcome.css';
 import Titlu from '../../../elemente/text/Titlu';
-import SferaLogin from './SferaLogin';
+import SferaLogin from '../../../layout/sfera/SferaLogin';
 
 const Welcome = ({ setShowLogin, handleLogin, renderError, setShowRegister }) => {
   return (

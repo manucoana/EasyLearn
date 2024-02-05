@@ -6,15 +6,14 @@ import {
   ORAS,
   TIP_UTILIZATOR,
   EMAIL
-} from "../../../elemente/constante/InfoUtilizatorConstant"
-import TextReutilizabil from "../../../elemente/text/TextReutilizabil";
+} from "../../../../elemente/constante/InfoUtilizatorConstant"
+import TextReutilizabil from "../../../../elemente/text/TextReutilizabil";
 
 const DetaliiProfil = ({ userData }) => {
 
   return (
     <div className="detalii-profil-items">
       <div className="text-detalii-profil">
-       {/*  <TextReutilizabil className="text-reutilizabil-subliniat" text={`id: ${userData.id}`} /> */}
         <TextReutilizabil className="text-reutilizabil-subliniat" text={`${NUME} ${userData.nume}`} />
         <TextReutilizabil className="text-reutilizabil-subliniat" text={`${VARSTA} ${userData.varsta}`} />
         <TextReutilizabil className="text-reutilizabil-subliniat" text={`${ORAS} ${userData.oras}`} />

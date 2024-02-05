@@ -1,7 +1,7 @@
 import React from 'react';
 import StudiuLayout from '../../../../layout/studiu/StudiuLayout';
 import "./Lectii.css";
-import TitluPagina from '../../../navigare/TitluPagina';
+import TitluPagina from '../../../../navigare/TitluPagina';
 
 
 const Lectii = () => {  

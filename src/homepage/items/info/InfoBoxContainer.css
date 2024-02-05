@@ -1,7 +1,7 @@
 @import '../../../elemente/design/VariabileDesign.css';
 
 .info-items {
-    background-color: var(--culoare-fundal-inchis);
+    background-color: var(--culoare-secundara);
     padding: 30px;
 }
 

@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const trimiteSolicitare = async (idUtilizator, userData) => {
+const trimiteSolicitare = async (idUtilizator, profesorSelectatData) => {
   try {
     const idElev = idUtilizator;
-    console.log("Nume elev: " + idUtilizator);
+    console.log("Id elev: " + idUtilizator);
 
-    const idProfesor = userData.id;
-    console.log("Nume profesor: " + userData.id);
+    const idProfesor = profesorSelectatData.id;
+    console.log("Id profesor: " + profesorSelectatData.id);
 
     const response = await axios.post('http://localhost:3001/api/meditatii/solicita-colaborare', { idElev, idProfesor });
 

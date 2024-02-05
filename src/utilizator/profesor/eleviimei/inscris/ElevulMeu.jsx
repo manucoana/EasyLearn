@@ -14,7 +14,7 @@ const ElevulMeu = ({ elevi, numeProfesor }) => {
   const renderContent = () => {
     if (selectedElev) {
       return (
-        <IncarcareMaterial numeElev={selectedElev.nume_elev} numeProfesor={numeProfesor} />
+        <IncarcareMaterial emailElev={selectedElev.emailElev} numeElev={selectedElev.nume_elev} numeProfesor={numeProfesor} />
       );
     }
 

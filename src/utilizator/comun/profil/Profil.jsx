@@ -1,77 +1,28 @@
 import React from "react";
 import "./Profil.css";
-import Sfera from "../../../layout/decor/Sfera";
-import DetaliiProfil from "./DetaliiProfil";
-import ImagineProfil from "./ImagineProfil";
-import InputImagineProfil from "./InputImagineProfil";
+import DetaliiProfil from "./detalii/DetaliiProfil";
+import InputImagineProfil from "../../../elemente/input/InputImagineProfil";
 import TextReutilizabil from "../../../elemente/text/TextReutilizabil";
+import handleImagineProfilUpload from "./functii/handleImagineProfilUpload";
+import SferaUtilizator from "../../../layout/sfera/SferaUtilizator";
 
 const Profil = ({ userData, activePage }) => {
 
-  const handleFileUpload = async (event) => {
+  const handleImagineProfilUploadWrapper = async (event) => {
     const file = event.target.files[0];
-    const titlu = file.name;
-
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('nume_elev', userData.nume);
-    formData.append('active_page', activePage);
-
-    try {
-      const response = await fetch("http://localhost:3001/api/material-didactic/uploads", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        console.error(`Eroare la încărcarea materialului: ${response.statusText}`);
-        return;
-      }
-
-      const result = await response.json();
-      const cale = result.imageUrl;
-
-      console.log("Cale imagine:", cale);
-
-      const data = {
-        nume: userData.nume,
-        cale: cale,
-        titlu: titlu,
-      };
-
-      const insertResponse = await fetch("http://localhost:3001/api/profil/info-poza", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!insertResponse.ok) {
-        console.error(`Eroare la inserarea datelor: ${insertResponse.statusText}`);
-      } else {
-        console.log("Material și datele au fost încărcate cu succes!");
-      }
-    } catch (error) {
-      console.error(`Eroare la încărcarea materialului: ${error.message}`);
-    }
+    await handleImagineProfilUpload(file, userData, activePage);
   };
 
   return (
     <div className="profil-items">
       <div className="detalii">
+        <TextReutilizabil className="text-subtitlu-albastru" text={activePage} />
         <DetaliiProfil userData={userData} />
         <TextReutilizabil className="text-mic" text="Modifica imaginea de profil:" />
-        <InputImagineProfil className="incarca-imagine" imageUrl={userData.imageUrl} handleFileUpload={handleFileUpload} />
+        <InputImagineProfil className="incarca-imagine" imageUrl={userData.imageUrl} handleFileUpload={handleImagineProfilUploadWrapper} />
       </div>
-      <div className="sfera-profil">
-        <Sfera>
-          <ImagineProfil userData={userData} />
-          <TextReutilizabil className="text-normal" text={userData.nume} />
-          <TextReutilizabil className="text-mic" text={userData.tip_utilizator} />
-        </Sfera>
+       <SferaUtilizator userData={userData}/>
       </div>
-    </div>
   );
 };
 
