@@ -5,12 +5,19 @@ import ButoanePaginaStudiu from "../../../elev/studiu/principal/ButoanePaginaStu
 import NavigarePagina from "../../../../navigare/NavigarePagina";
 import ButonReutilizabil from "../../../../elemente/butoane/ButonReutilizabil";
 import CitesteMaterial from "../../../elev/studiu/material/CitesteMaterial";
+import useFetchUserDataId from "../../../user-data/useFetchUserDataId";
 
-const IncarcareMaterial = ({ email, numeElev, numeProfesor }) => {
+const IncarcareMaterial = ({ email, idElev, numeProfesor, userData }) => {
+
   const [activePage, setActivePage] = useState("");
   const [material, setMaterial] = useState(null);
   const [uploadError, setUploadError] = useState(null);
   const [materialTitle, setMaterialTitle] = useState("");
+  const { userDataID: elevData } = useFetchUserDataId(idElev);
+
+  console.log("Aici1 " + elevData.nume + " " + idElev)
+  console.log("Aici 2" + elevData.nume)
+  console.log("Aici 3" + elevData.tip_utilizator)
 
   const onClick = (page) => {
     setActivePage(page);
@@ -28,7 +35,7 @@ const IncarcareMaterial = ({ email, numeElev, numeProfesor }) => {
 
       const formData = new FormData();
       formData.append("file", material);
-      formData.append("nume_elev", numeElev);
+      formData.append("nume_elev", elevData.nume);
       formData.append("active_page", activePage);
 
       try {
@@ -47,7 +54,7 @@ const IncarcareMaterial = ({ email, numeElev, numeProfesor }) => {
 
         const data = {
           nume_profesor: numeProfesor,
-          nume_elev: numeElev,
+          nume_elev: elevData.nume,
           tip_material: activePage,
           cale: cale,
           titlu: materialTitle,
@@ -77,14 +84,14 @@ const IncarcareMaterial = ({ email, numeElev, numeProfesor }) => {
 
   return (
     <div className="incarcare-material-items">
-      <ButoanePaginaStudiu onClick={onClick} />
+      <ButoanePaginaStudiu elevData={elevData} userData={userData} onClick={onClick} />
       <div className="panou-studiu">
-        <TextReutilizabil className="text-test" text={`Încarcă materiale pentru ${numeElev}`} />
+        <TextReutilizabil className="text-test" text={`Încarcă materiale pentru ${elevData.nume}`} />
         <input type="file" onChange={handleFileChange} />
         <ButonReutilizabil className="buton-descarca" onClick={handleUpload} text={`Încarcă`} />
         {uploadError && <p style={{ color: "red" }}>{uploadError}</p>}
-        <NavigarePagina activePage={activePage} email={email} />
-        <CitesteMaterial numeElev={numeElev} activePage={activePage} />
+        <NavigarePagina userData={userData} activePage={activePage} email={email} />
+        <CitesteMaterial numeElev={elevData.nume} activePage={activePage} />
       </div>
     </div>
   );

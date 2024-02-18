@@ -1,0 +1,18 @@
+@import '../../elemente/design/VariabileDesign.css';
+
+.icon-notificari {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+}
+
+.icon-notificari:hover svg path {
+    fill: var(--albastru-deschis);
+}
+
+.icon-notificari:hover {
+    color: var(--albastru-deschis);
+}

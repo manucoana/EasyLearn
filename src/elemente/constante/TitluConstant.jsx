@@ -4,7 +4,7 @@ export const SUBTITLU_TEXT = "Platforma online de meditatii";
 
 /*Homepage*/
 export const SUBTITLU_BENEFICII = "Care sunt beneficiile platformei EasyLearn?";
-export const SUBTITLU_INFO = "Info";
+export const SUBTITLU_INFO = "De ce EasyLearn?";
 export const SUBTITLU_INTREBARI = "Intrebari Frecvente";
 
 /*Profil*/
@@ -16,7 +16,7 @@ export const SUBTITLU_INREGISTRARE = "Completati campurile cu datele dumneavoast
 export const SELECTEAZA_INREGISTRARE = "Selecteaza tipul de profil:";
 
 /*PaginaStudiu*/
-export const PAGINA_STUDIU = "PAGINA DE STUDIU";
-export const LECTII = "LECTII";
-export const TEME = "TEME";
-export const TESTE = "TESTE";
+export const PAGINA_STUDIU = "Pagina de studiu";
+export const LECTII = "Lectii";
+export const TEME = "Teme";
+export const TESTE = "Teste";

@@ -4,8 +4,7 @@ import ElevulMeu from "./ElevulMeu";
 import "./EleviiMei.css";
 
 const EleviiMei = ({ userData }) => {
-  
-  const [numeElev, setNumeElev] = useState([]);
+  const [elevi, setElevi] = useState([]);
   const [errorMessages, setErrorMessages] = useState({});
 
   useEffect(() => {
@@ -13,13 +12,18 @@ const EleviiMei = ({ userData }) => {
       axios
         .get(`http://localhost:3001/api/meditatii/inscris/${userData?.id}`)
         .then((response) => {
-          const numeElev = response.data;
-          setNumeElev(numeElev);
+          const elevi = response.data.map((elev) => ({
+            ...elev,
+            elevData: elev.detalii_elev,
+          }));
+          setElevi(elevi);
           setErrorMessages({});
         })
         .catch((error) => {
           console.log(error);
-          setErrorMessages({ message: "Eroare la preluarea datelor din elevi" });
+          setErrorMessages({
+            message: "Eroare la preluarea datelor din elevi",
+          });
         });
     }
   }, [userData?.id]);
@@ -28,18 +32,13 @@ const EleviiMei = ({ userData }) => {
 
   return (
     <div className="elevii-mei-items">
-      <div className="row">
-      {/*   <div className="panou-stanga"></div> */}
         {renderError(errorMessages.message)}
-        <div className="lista-elevi">
-          <ElevulMeu
-            email={userData.email}
-            elevi={numeElev}
-            numeProfesor={userData.nume} />
+        <div className="elevul-meu-list">
+          {elevi.map((elev) => (
+            <ElevulMeu key={elev.id_elev} elev={elev} userData={userData} />
+          ))}
         </div>
-       {/*  <div className="panou-dreapta"></div> */}
       </div>
-    </div>
   );
 };
 

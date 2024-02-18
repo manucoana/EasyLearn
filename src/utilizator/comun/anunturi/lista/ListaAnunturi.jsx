@@ -6,6 +6,7 @@ import { fetchListaAnunturi, setVizibilitateTrue, setVizibilitateFalse } from ".
 import MaterieDropdown from "../filtru/MaterieDropdown";
 
 const ListaAnunturi = ({ userData }) => {
+  
   const [anunturiVizibile, setAnunturiVizibile] = useState([]);
   const [selectedMaterie, setSelectedMaterie] = useState(null);
 
@@ -35,22 +36,19 @@ const ListaAnunturi = ({ userData }) => {
 
   return (
     <div className="lista-anunturi-items">
-       <div className="panou-stanga"></div>
-       <div className="lista-items">
-      <MaterieDropdown setSelectedMaterie={setSelectedMaterie} onChange={handleFiltrareClick} />
-      {anunturiVizibile.length === 0 ? (
-        <p>Nu exista niciun anunt</p>
-      ) : (
-        <div className="test">
-          {userData.tip_utilizator === "Profesor" && (
-            <ButoaneAnunturi handlePublicare={handlePublicare} handleStergere={handleStergere} email={userData.email} />
-          )}
-
-          <Anunt userData={userData} anunturi={anunturiVizibile} />
-        </div>
-      )}
-    </div>
-    <div className="panou-stanga"></div> 
+      <div className="filtru-lista">
+        <MaterieDropdown setSelectedMaterie={setSelectedMaterie} onChange={handleFiltrareClick} />
+        {anunturiVizibile.length === 0 ? (
+          <p>Nu exista niciun anunt</p>
+        ) : (
+          <div className="lista">
+            {userData.tip_utilizator === "Profesor" && (
+              <ButoaneAnunturi handlePublicare={handlePublicare} handleStergere={handleStergere} email={userData.email} />
+            )}
+            <Anunt userData={userData} anunturi={anunturiVizibile} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

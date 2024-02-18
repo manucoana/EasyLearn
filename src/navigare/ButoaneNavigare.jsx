@@ -8,7 +8,7 @@ import {
   ELEVII_MEI,
 } from "../elemente/constante/ButonConstant"
 
-const ButoaneNavigare = ({ onClick, userData }) => {
+const ButoaneNavigare = ({ userData, onClick }) => {
 
   const paginaStudiu = SPRE_PAGINA_STUDIU;
   const listaAnunturi = LISTA_ANUNTURI;
@@ -17,21 +17,21 @@ const ButoaneNavigare = ({ onClick, userData }) => {
 
   return (
     <div className="butoane">
+      <ButonReutilizabil userData={userData} className="buton-nav-principal" onClick={() => onClick("PanouUtilizator")} text="Home" />
+
       {userData?.tip_utilizator === "Elev" && (
         <>
-          <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => onClick("PaginaStudiu")} text={paginaStudiu} />
-          <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => onClick("ListaAnunturi")} text={listaAnunturi} />
-          <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => onClick("Profil")} text={profil} />
+          <ButonReutilizabil userData={userData} className="buton-nav-principal" onClick={() => onClick("PaginaStudiu")} text={paginaStudiu} />
         </>
       )}
 
       {userData?.tip_utilizator === "Profesor" && (
         <>
-          <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => onClick("EleviiMei")} text={eleviiMei} />
-          <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => onClick("ListaAnunturi")} text={listaAnunturi} />
-          <ButonReutilizabil className="buton-reutilizabil-1" onClick={() => onClick("Profil")} text={profil} />
+          <ButonReutilizabil userData={userData} className="buton-nav-principal" onClick={() => onClick("EleviiMei")} text={eleviiMei} />
         </>
       )}
+      <ButonReutilizabil userData={userData} className="buton-nav-principal" onClick={() => onClick("ListaAnunturi")} text={listaAnunturi} />
+      <ButonReutilizabil userData={userData} className="buton-nav-principal" onClick={() => onClick("Profil")} text={profil} />
     </div>
   );
 };

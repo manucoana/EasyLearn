@@ -1,20 +1,47 @@
 @import '../design/VariabileDesign.css';
 
-.buton-reutilizabil-1 {
+.buton-nav-principal {
     height: 45px;
-    width: 150px;
+    width: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--alb);
     cursor: pointer;
     border: none;
-    margin-bottom: 10px;
     background-color: transparent;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
 }
 
-.buton-reutilizabil-1:hover {
-    background-color: #3a364e;
+.buton-nav-principal:hover {
+    color: var(--albastru-deschis);
+}
+
+@media only screen and (max-width: 768px) {
+    .buton-nav-principal {
+        width: 100%;
+        max-width: 200px;
+        font-size: 0.8em;
+    }
+}
+
+.buton-studiu {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 0.9em;
+}
+
+.buton-studiu:hover {
+    background-color: var(--albastru-deschis);
+    color: white;
 }
 
 .buton-login,

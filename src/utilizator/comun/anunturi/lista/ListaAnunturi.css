@@ -7,8 +7,9 @@
     width: 100%;
 }
 
-.lista-items {
+.filtru-lista {
     width: 100%;
+    padding: var(--padding-principal);
 }
 
 .lista-anunturi-items ul li {
@@ -21,12 +22,12 @@
     width: 100%;
 }
 
-.test {
+.lista {
     width: 100%;
 }
 
 .lista-anunturi-items ul li.par {
-    background-color: var(--alb);
+    background-color: var(--tabel-alb);
 }
 
 .lista-anunturi-items ul li.impar {
@@ -36,6 +37,7 @@
 .butoane-lista-anunturi {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 @media screen and (max-width: 767px) {
@@ -46,12 +48,16 @@
 
     .campuri-anunut {
         justify-content: flex-start;
-        padding: 30px;
     }
 }
 
-@media screen and (max-width: 100px) {
+@media screen and (max-width: 767px) {
     .lista-anunturi-items {
-        margin: 0;
+        width: 100%;
+    }
+
+    .filtru-lista {
+        width: 100%;
+        padding: 0px;
     }
 }

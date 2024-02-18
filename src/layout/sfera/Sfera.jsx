@@ -1,9 +1,9 @@
 import React from 'react';
 import './Sfera.css';
 
-const Sfera = ({ children }) => {
+const Sfera = ({ children, onClick }) => {
   return (
-    <div className='sfera-items'>
+    <div className='sfera-items' onClick={onClick}>
       <div className="sfera">
         {children}
       </div>

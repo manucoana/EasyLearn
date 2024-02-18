@@ -6,54 +6,68 @@
     color: var(--text);
 }
 
-.text-titlu-site{
+.text-titlu-site {
     font-size: 3rem;
     color: var(--culoare-secundara);
     text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.2);
 }
 
-.text-subtitlu{
+.text-subtitlu {
     font-size: 1.87rem;
     color: var(--alb-pur);
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
-.text-titlu-header{
+.text-titlu-header {
     font-size: 1em;
     color: var(--alb);
 }
 
-.text-subtitlu-albastru{
-    font-size: 1.87rem;   
+.text-subtitlu-albastru {
+    font-size: 1.87rem;
 }
 
-.text-normal{
+.text-normal {
     font-size: 1.2rem;
- 
+    font-weight: lighter;
+    text-align: center;
+    color: var(--text);
 }
 
-.text-titlu-secundar{
+.text-titlu-secundar {
     font-size: 2em;
-   
+
 }
 
-.text-mic{
+.text-mic {
     font-size: 0.9em;
     font-weight: 100;
-   
+
 }
 
-.text-reutilizabil-subliniat{
+.text-reutilizabil-subliniat {
     font-size: 0.9em;
     font-weight: 100;
-   
-    width: 600px;
-    margin:0px;
+    width: 400px;
+    margin: 0px;
     border-bottom: 1px solid var(--text);
     padding: 15px 0px 15px 0px;
 }
 
-.text-test{
+@media (max-width: 768px) {
+    .text-reutilizabil-subliniat {
+        width: 300px;
+    }
+
+    .text-titlu-site,
+    .text-subtitlu {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+.text-test {
     font-size: 2em;
     font-weight: 100;
     color: var(--text);

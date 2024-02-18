@@ -10,7 +10,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   right: 0px;
-  top: 80px;
+  top: 90px;
   z-index: 1000;
 }
 
@@ -28,6 +28,7 @@
   margin-bottom: 5px;
 }
 
+
 .close:hover {
-  color: var(--culoare-primara-hover);
+  color: var(--albastru-deschis);
 }

@@ -1,0 +1,17 @@
+.slider-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+}
+
+.slider-container {
+    width: 70%;
+    background-color: white;
+}
+
+.slider-item img {
+    width: 100%;
+    height: auto;
+}

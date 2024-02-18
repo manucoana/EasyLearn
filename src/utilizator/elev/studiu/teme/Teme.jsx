@@ -1,6 +1,6 @@
 import React from "react";
 import StudiuLayout from "../../../../layout/studiu/StudiuLayout";
-import TitluPagina from "../../../../navigare/TitluPagina";
+import TitluPagina from "../../../../elemente/constante/TitluPagina";
 
 const Teme = () => {
     const titluPagina = TitluPagina.Teme;

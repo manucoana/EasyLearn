@@ -3,7 +3,7 @@ import { Login } from "./Login";
 import Elev from "../utilizator/elev/menu/Elev";
 import Profesor from "../utilizator/profesor/menu/Profesor";
 
-const LoginHandler = () => {
+const LoginHandler = ({ userData }) => {
 
   const tipUtilizatorElev = "Elev";
   const tipUtilizatorProfesor = "Profesor";
@@ -19,13 +19,13 @@ const LoginHandler = () => {
   return (
     <div className="login-handler">
       {!isLoggedIn ? (
-        <Login onLogin={handleLogin} />
+        <Login userData={userData} onLogin={handleLogin} />
       ) : (
         <>
           {tipUtilizator === tipUtilizatorElev ? (
-            <Elev tipUtilizator={"Elev"} />
+            <Elev userData={userData} />
           ) : tipUtilizator === tipUtilizatorProfesor(
-            <Profesor tipUtilizator={"Profesor"} />
+            <Profesor userData={userData} />
           )}
         </>
       )}

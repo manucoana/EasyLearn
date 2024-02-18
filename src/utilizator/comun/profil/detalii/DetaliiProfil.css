@@ -23,7 +23,7 @@
     margin-bottom: 5px;
   }
 
-  .text-mic::after {
-    bottom: -1px;
+  .text-detalii-profil {
+    width: 100%;
   }
 }

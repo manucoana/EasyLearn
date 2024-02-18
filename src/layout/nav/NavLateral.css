@@ -36,7 +36,7 @@
     right: 20px;
     cursor: pointer;
     font-size: 24px;
-    color: var(--alb);
+    color: var(--culoare-secundara);
   }
   .nav-lateral a:hover {
     color: var(--albastru-deschis); 

@@ -1,0 +1,32 @@
+.utilizator-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-principal);
+}
+
+@media (max-width: 500px) {
+  .utilizator-items {
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.5) translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+.spin-animation {
+  animation: spin 1s linear 1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}

@@ -17,12 +17,24 @@ ul {
     margin: 0;
 }
 
-.butoane-elevii-mei{
+.butoane-elevii-mei {
     display: flex;
     flex-direction: row;
 }
 
-.row{
+.row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.elevii-mei-items .elevul-meu-list .elevul-meu-item:nth-child(odd) {
+    background-color: var(--culoare-fundal-deschis);
+}
+
+.elevii-mei-items .elevul-meu-list .elevul-meu-item:nth-child(even) {
+    background-color: var(--tabel-fundal);
+}
+
+.elevii-mei-items .elevul-meu-list .elevul-meu-item:hover {
+    color: var(--albastru-deschis);
 }

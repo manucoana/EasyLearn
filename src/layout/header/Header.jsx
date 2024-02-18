@@ -3,16 +3,12 @@ import "./Header.css";
 import MeniuIcon from "../../imagini/icons/MeniuIcon";
 import NavLateral from '../nav/NavLateral';
 import TextReutilizabil from '../../elemente/text/TextReutilizabil';
-import IconNotificari from '../../imagini/icons/IconNotificari';
-import SolicitareColaborare from '../../utilizator/profesor/eleviimei/solicitari/SolicitareColaborare';
+import Notificare from './Notificare';
+import NavPrincipal from '../nav/NavPrincipal';
+import LogoComponent from '../../imagini/logo/LogoComponent';
 
-const Header = ({ titlu, userData }) => {
-  const [isNotificareOpen, setIsNotificareOpen] = useState(false);
+const Header = ({ titlu, userData, profesorData, onClick, goBack }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const deschideNotificare = () => {
-    setIsNotificareOpen(!isNotificareOpen);
-  };
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -23,22 +19,24 @@ const Header = ({ titlu, userData }) => {
   }, [titlu]);
 
   return (
-    <div>
-      <header className="header-app">
-        <div></div>
-        <TextReutilizabil className="text-titlu-header" text={titlu || "EASYLEARN"} />
-        <div className="menu-icon">
-          {userData?.tip_utilizator === 'Profesor' && (
-            <IconNotificari deschideNotificare={deschideNotificare} isNotificareOpen={isNotificareOpen} />
-          )}
-          <MeniuIcon className="menu-icon" toggleMenu={toggleMenu} />
-        </div>
-        <NavLateral isOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        {isNotificareOpen && (
-          <SolicitareColaborare isOpen={isNotificareOpen} deschideNotificare={deschideNotificare} userData={userData} />
-        )}
-      </header>
-    </div>
+    <header className="header-items">
+      <div onClick={() => onClick("PanouUtilizator")} className="header-titlu">
+        <LogoComponent className="imagine-student-mica" />
+        <TextReutilizabil className="text-titlu-header" text={titlu || "EasyLearn"} />
+      </div>
+      <div className="menu-icon">
+        {userData &&
+          <>
+            <NavPrincipal profesorData={profesorData} onClick={onClick} goBack={goBack} userData={userData} />
+          </>
+        }
+        <Notificare userData={userData} />
+
+        <MeniuIcon className="menu-icon" toggleMenu={toggleMenu} />
+
+      </div>
+      <NavLateral isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+    </header>
   );
 };
 

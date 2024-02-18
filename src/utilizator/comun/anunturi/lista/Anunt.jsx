@@ -5,6 +5,7 @@ import "./Anunt.css";
 import DetaliiAnunt from "../detalii/DetaliiAnunt";
 
 const Anunt = ({ userData, anunturi }) => {
+    
     const [profesorSelectat, setProfesorSelectat] = useState(null);
     const [showDetails, setShowDetails] = useState(false);
 

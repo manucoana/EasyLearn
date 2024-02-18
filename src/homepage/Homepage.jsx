@@ -8,7 +8,7 @@ import LoginHandler from "../login/LoginHandler";
 import DefaultLayout from "../layout/DefaultLayout";
 import InfoText from "./items/info/InfoText";
 
-const Homepage = () => {
+const Homepage = ({ userData }) => {
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
 
@@ -22,8 +22,8 @@ const Homepage = () => {
         setShowLogin={setShowLogin}
         setShowRegister={handleRegisterClick}
       />
-      <InfoBoxContainer />
       <InfoText />
+      <InfoBoxContainer />
       <IntrebariFrecvente />
     </main>
   );
@@ -31,7 +31,7 @@ const Homepage = () => {
   return (
     <DefaultLayout hideHeaderFooter={showLogin || showRegister}>
       {showLogin ? (
-        <LoginHandler />
+        <LoginHandler userData={userData} />
       ) : showRegister ? (
         <Register setShowRegister={setShowRegister} />
       ) : (

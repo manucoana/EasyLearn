@@ -6,8 +6,10 @@ import EleviiMei from "../utilizator/profesor/eleviimei/inscris/EleviiMei";
 import Lectii from "../utilizator/elev/studiu/lectii/Lectii";
 import Teme from "../utilizator/elev/studiu/teme/Teme";
 import Teste from "../utilizator/elev/studiu/teste/Teste";
+import PanouUtilizator from "../utilizator/comun/menu/PanouUtilizator";
 
 const Pagini = {
+  PanouUtilizator,
   Profil,
   PaginaStudiu,
   ListaAnunturi,
@@ -17,11 +19,10 @@ const Pagini = {
   Teste,
 };
 
-const NavigarePagina = ({ userData, activePage, profesorData}) => {
-
+const NavigarePagina = ({ userData, activePage , profesorData }) => {
   const PaginaCurenta = Pagini[activePage];
 
-  return PaginaCurenta ? <PaginaCurenta userData={userData} profesorData={profesorData} activePage={activePage}/> : null;
+  return PaginaCurenta ? <PaginaCurenta userData={userData} profesorData={profesorData} activePage={activePage} /> : null;
 };
 
 export default NavigarePagina;

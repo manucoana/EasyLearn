@@ -3,7 +3,7 @@ const router = express.Router();
 const { getElevInscrisId, getProfesorId } = require('../../model/meditatii');
 const connection = require('../../db');
 
-//gaseste solicitarile profesorului pentru notificari
+// Endpoint pentru a obține detalii despre solicitarile unui profesor pentru notificări
 router.get("/:id_profesor", (req, res) => {
   try {
     const id_profesor = req.params.id_profesor;
@@ -21,8 +21,8 @@ router.get("/:id_profesor", (req, res) => {
           let count = 0;
 
           results.forEach((result) => {
-            const elevSql = `SELECT nume FROM easylearn_users WHERE id = ${result.id_elev}`;
-            const profesorSql = `SELECT nume FROM easylearn_users WHERE id = ${result.id_profesor}`;
+            const elevSql = `SELECT * FROM easylearn_users WHERE id = ${result.id_elev}`;
+            const profesorSql = `SELECT * FROM easylearn_users WHERE id = ${result.id_profesor}`;
 
             connection.query(elevSql, (error, elevResult) => {
               if (error) {
@@ -40,7 +40,7 @@ router.get("/:id_profesor", (req, res) => {
 
                 userDetails.push({
                   id_elev: result.id_elev,
-                  nume_elev: elevResult[0].nume,
+                  detalii_elev: elevResult[0], // Adăugăm toate detaliile despre elev
                   id_profesor: result.id_profesor,
                   nume_profesor: profesorResult[0].nume
                 });
@@ -63,6 +63,7 @@ router.get("/:id_profesor", (req, res) => {
   }
 });
 
+// Endpoint pentru a obține detalii despre profesorii asociati unui elev
 router.get("/elev/:id_elev", (req, res) => {
   try {
     const id_elev = req.params.id_elev;
@@ -80,8 +81,8 @@ router.get("/elev/:id_elev", (req, res) => {
           let count = 0;
 
           results.forEach((result) => {
-            const elevSql = `SELECT nume FROM easylearn_users WHERE id = ${result.id_elev}`;
-            const profesorSql = `SELECT nume FROM easylearn_users WHERE id = ${result.id_profesor}`;
+            const elevSql = `SELECT * FROM easylearn_users WHERE id = ${id_elev}`; // Schimbare aici, să obținem detaliile despre elevul cu id-ul respectiv
+            const profesorSql = `SELECT * FROM easylearn_users WHERE id = ${result.id_profesor}`;
 
             connection.query(elevSql, (error, elevResult) => {
               if (error) {
@@ -98,8 +99,8 @@ router.get("/elev/:id_elev", (req, res) => {
                 }
 
                 userDetails.push({
-                  id_elev: result.id_elev,
-                  nume_elev: elevResult[0].nume,
+                  id_elev: id_elev, 
+                  detalii_elev: elevResult[0], 
                   id_profesor: result.id_profesor,
                   nume_profesor: profesorResult[0].nume
                 });

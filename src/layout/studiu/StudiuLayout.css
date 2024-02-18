@@ -6,7 +6,6 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-
 }
 
 .list-view {
@@ -16,7 +15,7 @@
 }
 
 .list-item {
-    background-color: var(--alb);
+    background-color: var(--alb-pur);
     border: 1px solid var(--tabel-gri);
     cursor: pointer;
     display: flex;
@@ -28,7 +27,8 @@
 }
 
 .list-item:hover {
-    background-color: white;
+    background-color: var(--alb);
+    color: white;
 }
 
 .list-item:active {

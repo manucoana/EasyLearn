@@ -1,7 +1,14 @@
 .nav-principal {
-    height: 45px;
-    width: 100%;
-    background-color: var(--portocaliu);
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-principal {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
+}

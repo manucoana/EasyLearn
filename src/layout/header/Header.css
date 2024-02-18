@@ -1,15 +1,14 @@
 @import '../../elemente/design/VariabileDesign.css';
 
-.header-app {
+.header-items {
   background-color: var(--culoare-secundara);
   height: 60px;
+  padding: 15px 0px 15px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  width: 100%;
 }
-
 
 .menu-icon {
   display: flex;
@@ -17,5 +16,13 @@
   align-items: center;
   margin-right: 30px;
   cursor: pointer;
+  gap: 30px;
+}
+
+.header-titlu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
 }

@@ -3,10 +3,10 @@ import "./App.css";
 
 import Homepage from "./homepage/Homepage";
 
-const App = () => {
+const App = (userData) => {
   return (
     <div className="App">
-      <Homepage />
+      <Homepage userData={userData}/>
     </div>
   );
 };

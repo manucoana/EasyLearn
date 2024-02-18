@@ -1,0 +1,10 @@
+@media (max-width: 500px) {
+    .titlu-items {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        width: 90%;
+    }
+}

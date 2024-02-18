@@ -3,9 +3,8 @@ import "./PaginaStudiu.css";
 import ButoanePaginaStudiu from "./ButoanePaginaStudiu";
 import NavigarePagina from "../../../../navigare/NavigarePagina";
 import CitesteMaterial from "../material/CitesteMaterial";
-import ProfesorInfo from "../../menu/ProfesorInfo";
 
-const PaginaStudiu = ({ userData, profesorData }) => {
+const PaginaStudiu = ({ userData, profesorData, elevData }) => {
 
     const [activePage, setActivePage] = useState("");
 
@@ -27,20 +26,13 @@ const PaginaStudiu = ({ userData, profesorData }) => {
 
     console.log(profesorData)
 
-
     return (
         <div className="studiu-items">
-            <ButoanePaginaStudiu onClick={onClick} />
+            <ButoanePaginaStudiu userData={userData} profesorData={profesorData} onClick={onClick} />
             <div className="elemente-studiu">
-                {/*   <div className="panou-stanga"></div> */}
                 <div className="panou-studiu">
                     <NavigarePagina activePage={activePage} userData={userData} />
                     <CitesteMaterial numeElev={userData.nume} activePage={activePage} />
-                </div>
-                <div className="panou-dreapta">
-                    {profesorData ? (
-                        <ProfesorInfo profesorData={profesorData} />
-                    ) : null}
                 </div>
             </div>
         </div>

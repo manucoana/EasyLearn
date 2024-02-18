@@ -3,9 +3,9 @@ import Sfera from "./Sfera";
 import ImagineProfil from "../../utilizator/comun/profil/imagine/ImagineProfil";
 import TextReutilizabil from "../../elemente/text/TextReutilizabil";
 
-const SferaUtilizator = ({ userData }) => {
+const SferaUtilizator = ({ userData, onClick }) => {
     return (
-        <Sfera>
+        <Sfera onClick={onClick}>
             <ImagineProfil userData={userData} />
             <TextReutilizabil className="text-normal" text={userData.nume} />
             <TextReutilizabil className="text-mic" text={userData.tip_utilizator} />

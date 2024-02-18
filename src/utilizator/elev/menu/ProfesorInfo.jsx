@@ -3,9 +3,9 @@ import TextReutilizabil from "../../../elemente/text/TextReutilizabil";
 import ImagineProfil from "../../comun/profil/imagine/ImagineProfil";
 import Sfera from "../../../layout/sfera/Sfera";
 
-const ProfesorInfo = ({ profesorData }) => {
+const ProfesorInfo = ({ profesorData, onClick }) => {
   return (
-    <div className="profesorul-meu">
+    <div className="profesorul-meu" onClick={onClick}>
       <Sfera>
         <ImagineProfil userData={profesorData} />
         <TextReutilizabil className="text-mic" text={`Profesorul meu este`} />

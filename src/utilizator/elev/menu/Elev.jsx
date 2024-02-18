@@ -29,7 +29,7 @@ const Elev = ({ userData }) => {
 
   return (
     <div>
-      <Utilizator profesorData={profesorData} userData={userData} tipUtilizator={userData.tip_utilizator}/>
+      <Utilizator profesorData={profesorData} userData={userData} tipUtilizator={userData.tip_utilizator} />
     </div>
   );
 };

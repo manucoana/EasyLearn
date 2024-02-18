@@ -2,17 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding: var(--padding-principal);
   padding-bottom: 150px;
 }
 
 @media (max-width: 500px) {
   .welcome-home {
-    flex-direction: column;
+    width: 100%;
     align-items: center;
-    transform: scale(0.6);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
+    padding: 0px 0px 120px 0px;
   }
 }

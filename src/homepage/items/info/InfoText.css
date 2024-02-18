@@ -1,7 +1,8 @@
-.info-text-items{
+.info-text-items {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 30px;
+    background-color: var(--alb-pur);
+    padding: 0 20% 10% 20%;
 }

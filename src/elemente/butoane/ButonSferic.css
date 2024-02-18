@@ -2,7 +2,7 @@
 
 .buton-sferic {
     border: 0;
-    background-color: var(alb);
+    background-color: var(--alb-pur);
     border-radius: 50%;
     width: 270px;
     height: 250px;

@@ -1,21 +1,20 @@
 :root {
   /* Culori */
-  --culoare-fundal-deschis: #DDDDDF;
+  --culoare-fundal-deschis: #eeeeee;
   --culoare-fundal-inchis: #0D114D;
   --culoare-secundara: #191337;
   --albastru-mediu: #141B76;
-  --albastru-deschis: #4d72dd;
-  --portocaliu: #0f0e24;
+  --albastru-deschis: #8ca9ff;
   /* Gri */
   --text: #444444;
   /* Alb */
   --alb: #eaeaea;
   --alb-pur: white;
   /* Tabel */
-  --tabel-gri: #dddddd;
+  --tabel-alb: #f9f9f9;
   --tabel-fundal: #ffffff;
 
-  --culoare-albastru2: #00305f;
+  --culoare-albastru2: #667793;
 
   /* Fonturi */
   --font-principal: 'Arial', sans-serif, 'Helvetica';
@@ -29,6 +28,7 @@
   /* Margini si padding-uri */
   --padding-element: 10px;
   --margin-element: 10px;
+  --padding-principal: 30px 60px 30px 60px;
 
   /* Border*/
   --border-standard: 2px solid var(--gri);
