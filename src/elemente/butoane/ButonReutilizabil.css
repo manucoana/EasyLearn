@@ -21,7 +21,7 @@
 @media only screen and (max-width: 768px) {
     .buton-nav-principal {
         width: 100%;
-        max-width: 200px;
+        max-width: 60px;
         font-size: 0.8em;
     }
 }

@@ -1,44 +1,36 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import ElevulMeu from "./ElevulMeu";
+import { fetchEleviData } from "../functii/fetchEleviData";
+import EleviList from "./EleviList";
+import PaginareElevi from "./PaginareElevi";
 import "./EleviiMei.css";
+
+const calculRanduri = (numElevi) => Math.ceil(numElevi / 3);
 
 const EleviiMei = ({ userData }) => {
   const [elevi, setElevi] = useState([]);
-  const [errorMessages, setErrorMessages] = useState({});
+  const [paginaCurenta, setPaginaCurenta] = useState(1);
 
   useEffect(() => {
-    if (userData?.id) {
-      axios
-        .get(`http://localhost:3001/api/meditatii/inscris/${userData?.id}`)
-        .then((response) => {
-          const elevi = response.data.map((elev) => ({
-            ...elev,
-            elevData: elev.detalii_elev,
-          }));
-          setElevi(elevi);
-          setErrorMessages({});
-        })
-        .catch((error) => {
-          console.log(error);
-          setErrorMessages({
-            message: "Eroare la preluarea datelor din elevi",
-          });
-        });
-    }
+    fetchEleviData(userData?.id, setElevi);
   }, [userData?.id]);
 
-  const renderError = (message) => message && <div className="error">{message}</div>;
+  const handlePaginaUrmatoare = () => {
+    setPaginaCurenta((prevPage) => prevPage + 1);
+  };
+
+  const handlePaginaAnterioara = () => {
+    setPaginaCurenta((prevPage) => Math.max(prevPage - 1, 1));
+  };
+
+  const startIdx = (paginaCurenta - 1) * 3;
+  const endIdx = paginaCurenta * 3;
+  const eleviInscrisi = elevi.slice(startIdx, endIdx);
 
   return (
     <div className="elevii-mei-items">
-        {renderError(errorMessages.message)}
-        <div className="elevul-meu-list">
-          {elevi.map((elev) => (
-            <ElevulMeu key={elev.id_elev} elev={elev} userData={userData} />
-          ))}
-        </div>
-      </div>
+      <PaginareElevi paginaCurenta={paginaCurenta} calculRanduri={calculRanduri} handlePaginaAnterioara={handlePaginaAnterioara} handlePaginaUrmatoare={handlePaginaUrmatoare} elevi={elevi} endIdx={endIdx} />
+      <EleviList eleviInscrisi={eleviInscrisi} userData={userData} />
+    </div>
   );
 };
 

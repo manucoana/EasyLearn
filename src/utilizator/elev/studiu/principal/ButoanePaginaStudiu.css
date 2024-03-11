@@ -1,4 +1,4 @@
-.butoane-pagina-studiu {
+.butoane-pagina-studiu-items {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,6 +7,34 @@
     height: 1250px;
 }
 
-.detalii-profesor{
+.butoane-pagina-studiu {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.detalii-profesor {
     padding: 30px 0px 30px 0px;
+}
+
+@media (max-width: 500px) {
+    .butoane-pagina-studiu-items {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .butoane-pagina-studiu {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: row;
+        width: 100%;
+    }
 }

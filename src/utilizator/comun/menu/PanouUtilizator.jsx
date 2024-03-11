@@ -8,7 +8,6 @@ const PanouUtilizator = ({ userData, children, profesorData }) => {
         return null;
     }
 
-    console.log (userData)
     return (
         <>
         <div userData={userData} className="utilizator-items">

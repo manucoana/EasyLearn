@@ -9,18 +9,11 @@
   padding: var(--padding-principal);
 }
 
-.detalii {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 400px;
-}
-
 @media (max-width: 500px) {
   .profil-items {
     align-items: center;
-    transform: scale(0.5) translateY(-50%);
+    width: 100%;
+    padding: 2px;
     display: flex;
     gap: 100px;
     flex-direction: column;

@@ -1,16 +1,16 @@
 .elevul-meu-list {
-    list-style: none;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: flex-start;
-    width: 100%;    
+    width: 100%; 
 }
 
 .elevul-meu-item {
     padding: 10px;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: 100%;

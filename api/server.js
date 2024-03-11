@@ -20,6 +20,7 @@ const rutaIncarcarePoza = require('./rute/profil/rutaIncarcarePoza');
 const rutaInfoPoza = require('./rute/profil/rutaInfoPoza');
 const rutaSolicitareImagine = require('./rute/profil/rutaSolicitareImagine');
 const rutaNumeTitluImagine = require('./rute/profil/rutaNumeTitluImagine');
+const rutaUpdateUserData = require('./rute/profil/rutaUpdateUserData');
 
 const rutaIncarcareMedia = require('./rute/incarcare-media/rutaIncarcareMedia');
 const rutaInfoMaterial = require('./rute/material-didactic/rutaInfoMaterial');
@@ -45,6 +46,7 @@ app.use('/api/profil-uploads', rutaIncarcarePoza);
 app.use("/api/profil/info-poza", rutaInfoPoza);
 app.use("/api/profil/show", rutaSolicitareImagine);
 app.use("/api/profil/imagini-utilizator", rutaNumeTitluImagine);
+app.use("/api/profil/update", rutaUpdateUserData);
 
 app.use("/api/incarcare-media/uploads", rutaIncarcareMedia);
 

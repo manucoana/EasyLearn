@@ -23,13 +23,9 @@ const DefaultLayout = ({ userData, children, hideHeaderFooter, profesorData }) =
     <div className="default-layout">
       {!hideHeaderFooter && <Header goBack={goBack} onClick={onClick} userData={userData} titlu={titlu} />}
       {activePage ? (
-        <>
-          <NavigarePagina userData={userData} profesorData={profesorData} activePage={activePage} />
-        </>
-      ) : (
-        <>
+        <NavigarePagina userData={userData} profesorData={profesorData} activePage={activePage} />
+      ) : (       
           <div className="homepage-container">{children}</div>
-        </>
       )}
       {!hideHeaderFooter && <Footer />}
     </div>

@@ -6,10 +6,10 @@ import {
   ORAS,
   TIP_UTILIZATOR,
   EMAIL
-} from "../../../../elemente/constante/InfoUtilizatorConstant"
+} from "../../../../elemente/constante/InfoUtilizatorConstant";
 import TextReutilizabil from "../../../../elemente/text/TextReutilizabil";
 
-const DetaliiProfil = ({ userData }) => {
+const DetaliiProfil = ({ userData, onInputChange, isEditing }) => {
 
   return (
     <div className="detalii-profil-items">
@@ -23,4 +23,5 @@ const DetaliiProfil = ({ userData }) => {
     </div>
   );
 }
-export default DetaliiProfil;
+
+export default DetaliiProfil; 

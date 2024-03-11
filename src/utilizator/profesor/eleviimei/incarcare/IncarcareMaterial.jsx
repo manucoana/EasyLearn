@@ -15,10 +15,6 @@ const IncarcareMaterial = ({ email, idElev, numeProfesor, userData }) => {
   const [materialTitle, setMaterialTitle] = useState("");
   const { userDataID: elevData } = useFetchUserDataId(idElev);
 
-  console.log("Aici1 " + elevData.nume + " " + idElev)
-  console.log("Aici 2" + elevData.nume)
-  console.log("Aici 3" + elevData.tip_utilizator)
-
   const onClick = (page) => {
     setActivePage(page);
   };

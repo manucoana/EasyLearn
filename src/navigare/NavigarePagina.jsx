@@ -7,6 +7,7 @@ import Lectii from "../utilizator/elev/studiu/lectii/Lectii";
 import Teme from "../utilizator/elev/studiu/teme/Teme";
 import Teste from "../utilizator/elev/studiu/teste/Teste";
 import PanouUtilizator from "../utilizator/comun/menu/PanouUtilizator";
+import IncarcareMaterial from "../utilizator/profesor/eleviimei/incarcare/IncarcareMaterial";
 
 const Pagini = {
   PanouUtilizator,
@@ -17,6 +18,7 @@ const Pagini = {
   Lectii,
   Teme,
   Teste,
+  IncarcareMaterial
 };
 
 const NavigarePagina = ({ userData, activePage , profesorData }) => {

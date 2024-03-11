@@ -3,7 +3,7 @@ import "./Header.css";
 import MeniuIcon from "../../imagini/icons/MeniuIcon";
 import NavLateral from '../nav/NavLateral';
 import TextReutilizabil from '../../elemente/text/TextReutilizabil';
-import Notificare from './Notificare';
+import Notificare from '../notificare/Notificare';
 import NavPrincipal from '../nav/NavPrincipal';
 import LogoComponent from '../../imagini/logo/LogoComponent';
 
@@ -25,15 +25,9 @@ const Header = ({ titlu, userData, profesorData, onClick, goBack }) => {
         <TextReutilizabil className="text-titlu-header" text={titlu || "EasyLearn"} />
       </div>
       <div className="menu-icon">
-        {userData &&
-          <>
-            <NavPrincipal profesorData={profesorData} onClick={onClick} goBack={goBack} userData={userData} />
-          </>
-        }
+        {userData && <NavPrincipal profesorData={profesorData} onClick={onClick} goBack={goBack} userData={userData} />}
         <Notificare userData={userData} />
-
         <MeniuIcon className="menu-icon" toggleMenu={toggleMenu} />
-
       </div>
       <NavLateral isOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </header>

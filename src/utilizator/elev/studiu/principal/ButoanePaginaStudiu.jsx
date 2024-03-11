@@ -16,7 +16,7 @@ const ButoanePaginaStudiu = ({ onClick, profesorData, userData, elevData }) => {
     const teste = TESTE;
 
     return (
-        <div className="butoane-pagina-studiu">
+        <div className="butoane-pagina-studiu-items">
             {userData.tip_utilizator === "Elev" &&
                 <div className="detalii-profesor">
                     <ImagineProfil userData={profesorData} />
@@ -30,11 +30,13 @@ const ButoanePaginaStudiu = ({ onClick, profesorData, userData, elevData }) => {
                     <TextReutilizabil className="text-normal" text={`Încarcă materiale pentru ${elevData.nume}`} />
                 </>
             }
-            <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Lectii")} text={lectii} />
-            <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Teme")} text={teme} />
-            <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Teste")} text={teste} />
-            <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Note")} text="Note" />
-            <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Premii")} text="Premii" />
+            <div className="butoane-pagina-studiu">
+                <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Lectii")} text={lectii} />
+                <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Teme")} text={teme} />
+                <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Teste")} text={teste} />
+                <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Note")} text="Note" />
+                <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Premii")} text="Premii" />
+            </div>
         </div>
     );
 };

@@ -26,3 +26,24 @@
   align-items: center;
   gap: 30px;
 }
+
+@media (max-width: 500px) {
+  .header-items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    height: auto;
+    gap: 0;
+  }
+
+  .header-titlu {
+    width: 100%;
+    gap: 0;
+  }
+
+  .text-titlu-header {
+    display: none;
+  }
+}
