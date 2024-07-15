@@ -78,8 +78,6 @@ export const Login = () => {
       <div className="error">{errorMessages.message}</div>
     );
 
-  console.log("bbbb" + userData);
-
   return (
     <>
       {isLoading && <div>Loading...</div>}

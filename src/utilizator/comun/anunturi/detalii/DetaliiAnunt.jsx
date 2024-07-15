@@ -19,6 +19,7 @@ const DetaliiAnunt = ({ email, idUtilizator }) => {
       <div className="detalii-container">
         <DetaliiProfil userData={profesorSelectatData} />
         <ButonReutilizabil className="buton-inregistrare" onClick={handleTrimiteSolicitare} text="Solicita colaborare" />
+       
       </div>
     </div>
   );

@@ -1,0 +1,29 @@
+
+  .medalii-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+  
+  .medalie-item {
+    width: 110px;
+    height: 150px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .medalie-item img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    background-color: transparent;
+  }
+  

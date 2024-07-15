@@ -20,8 +20,7 @@
     justify-content: flex-start;
     flex-direction: column;
     width: 100%;
-    height: 2250px;
-    padding-left: 30px;
+    padding: 30px;
 }
 
 @media only screen and (max-width: 600px) {

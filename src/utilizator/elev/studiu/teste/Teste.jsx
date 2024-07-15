@@ -8,7 +8,7 @@ const Teste = () => {
     return (
         <div className='lectii-items'>
             <StudiuLayout titlu={titluPagina}/>
-        </div >
+        </div>
     );
 };
 

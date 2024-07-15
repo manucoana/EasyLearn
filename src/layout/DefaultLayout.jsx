@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./DefaultLayout.css";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import NavigarePagina from "../navigare/NavigarePagina";
@@ -21,11 +20,11 @@ const DefaultLayout = ({ userData, children, hideHeaderFooter, profesorData }) =
 
   return (
     <div className="default-layout">
-      {!hideHeaderFooter && <Header goBack={goBack} onClick={onClick} userData={userData} titlu={titlu} />}
+      {!hideHeaderFooter && <Header profesorData={profesorData} goBack={goBack} onClick={onClick} userData={userData} titlu={titlu} />}
       {activePage ? (
         <NavigarePagina userData={userData} profesorData={profesorData} activePage={activePage} />
-      ) : (       
-          <div className="homepage-container">{children}</div>
+      ) : (
+        <div className="homepage-container">{children}</div>
       )}
       {!hideHeaderFooter && <Footer />}
     </div>

@@ -3,17 +3,23 @@ import "./ButoanePaginaStudiu.css"
 import {
     LECTII,
     TEME,
-    TESTE
+    TESTE,
+    NOTE,
+    MEDALII
 } from "../../../../elemente/constante/TitluConstant";
 import ButonReutilizabil from "../../../../elemente/butoane/ButonReutilizabil";
 import ImagineProfil from "../../../comun/profil/imagine/ImagineProfil";
 import TextReutilizabil from "../../../../elemente/text/TextReutilizabil";
+import Note from "../note/Note";
+
 
 const ButoanePaginaStudiu = ({ onClick, profesorData, userData, elevData }) => {
 
     const lectii = LECTII;
     const teme = TEME;
     const teste = TESTE;
+    const note = NOTE;
+    const medalii = MEDALII;
 
     return (
         <div className="butoane-pagina-studiu-items">
@@ -21,7 +27,7 @@ const ButoanePaginaStudiu = ({ onClick, profesorData, userData, elevData }) => {
                 <div className="detalii-profesor">
                     <ImagineProfil userData={profesorData} />
                     <p>Profesorul meu este:</p>
-                    <p1>{profesorData?.nume}</p1>
+                    <p>{profesorData?.nume}</p>
                 </div>
             }
             {userData.tip_utilizator === "Profesor" &&
@@ -34,8 +40,8 @@ const ButoanePaginaStudiu = ({ onClick, profesorData, userData, elevData }) => {
                 <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Lectii")} text={lectii} />
                 <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Teme")} text={teme} />
                 <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Teste")} text={teste} />
-                <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Note")} text="Note" />
-                <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Premii")} text="Premii" />
+                <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Note")} text={note} />
+                <ButonReutilizabil className="buton-studiu" onClick={() => onClick("Medalii")} text={medalii} />
             </div>
         </div>
     );

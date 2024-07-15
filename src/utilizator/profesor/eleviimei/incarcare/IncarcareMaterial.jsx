@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextReutilizabil from "../../../../elemente/text/TextReutilizabil";
 import "./IncarcareMaterial.css";
 import ButoanePaginaStudiu from "../../../elev/studiu/principal/ButoanePaginaStudiu";
@@ -6,88 +6,57 @@ import NavigarePagina from "../../../../navigare/NavigarePagina";
 import ButonReutilizabil from "../../../../elemente/butoane/ButonReutilizabil";
 import CitesteMaterial from "../../../elev/studiu/material/CitesteMaterial";
 import useFetchUserDataId from "../../../user-data/useFetchUserDataId";
+import SectiuneUpload from "./SectiuneUpload";
+import { fetchLessons } from "../../../elev/studiu/material/functii/functiiDescarcare";
+import SelecteazaLectie from "./SelecteazaLectie";
 
 const IncarcareMaterial = ({ email, idElev, numeProfesor, userData }) => {
-
   const [activePage, setActivePage] = useState("");
-  const [material, setMaterial] = useState(null);
-  const [uploadError, setUploadError] = useState(null);
-  const [materialTitle, setMaterialTitle] = useState("");
+  const [buttons, setButtons] = useState([]);
+  const [files, setFiles] = useState({});
+  const [uploadErrors, setUploadErrors] = useState({});
   const { userDataID: elevData } = useFetchUserDataId(idElev);
+  const [activeLesson, setActiveLesson] = useState(null);
+  const [lessons, setLessons] = useState([]);
+  const [downloadError, setDownloadError] = useState("");
 
-  const onClick = (page) => {
-    setActivePage(page);
-  };
+  const onClick = (page) => setActivePage(page);
 
-  const handleFileChange = (event) => {
-    setMaterial(event.target.files[0]);
-    setMaterialTitle(event.target.files[0].name);
-  };
+  const handleAddButton = () => setButtons((prevButtons) => [...prevButtons, prevButtons.length + 1]);
 
-  const handleUpload = async () => {
-    setUploadError(null);
-
-    if (material) {
-
-      const formData = new FormData();
-      formData.append("file", material);
-      formData.append("nume_elev", elevData.nume);
-      formData.append("active_page", activePage);
-
-      try {
-        const response = await fetch("http://localhost:3001/api/incarcare-media/uploads", {
-          method: "POST",
-          body: formData,
-        });
-
-        if (!response.ok) {
-          setUploadError(`Eroare la incarcarea materialului: ${response.statusText}`);
-          return;
-        }
-
-        const result = await response.json();
-        const cale = result.imageUrl;
-
-        const data = {
-          nume_profesor: numeProfesor,
-          nume_elev: elevData.nume,
-          tip_material: activePage,
-          cale: cale,
-          titlu: materialTitle,
-        };
-
-        const insertDateMaterial = await fetch("http://localhost:3001/api/material-didactic/insertMaterial", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
-
-        if (!insertDateMaterial.ok) {
-          setUploadError(`Eroare la inserarea datelor: ${insertDateMaterial.statusText}`);
-        } else {
-          console.log(cale)
-          console.log("Materialul si datele au fost incarcate cu succes!");
-        }
-      } catch (error) {
-        setUploadError(`Eroare la incarcarea materialului: ${error.message}`);
-      }
-    } else {
-      console.warn("Nu a fost selectat niciun fisier pentru incarcare.");
+  useEffect(() => {
+    if (elevData && userData && activePage && activePage !== "medalii") {
+      fetchLessons(elevData.nume, userData.nume, activePage, setLessons, setDownloadError);
     }
-  };
+  }, [elevData, userData, activePage]);
 
   return (
     <div className="incarcare-material-items">
       <ButoanePaginaStudiu elevData={elevData} userData={userData} onClick={onClick} />
       <div className="panou-studiu">
-        <TextReutilizabil className="text-test" text={`Încarcă materiale pentru ${elevData.nume}`} />
-        <input type="file" onChange={handleFileChange} />
-        <ButonReutilizabil className="buton-descarca" onClick={handleUpload} text={`Încarcă`} />
-        {uploadError && <p style={{ color: "red" }}>{uploadError}</p>}
-        <NavigarePagina userData={userData} activePage={activePage} email={email} />
-        <CitesteMaterial numeElev={elevData.nume} activePage={activePage} />
+        {activePage !== "Medalii" && activePage !== "Note" && (
+          <div className="adaugare-incarca">
+            <TextReutilizabil className="text-test" text={`Încarcă materiale pentru ${elevData?.nume}`} />
+            {buttons.map((button, index) => (
+              <SectiuneUpload key={index} index={index} activePage={activePage} files={files} setFiles={setFiles} elevData={elevData} numeProfesor={numeProfesor} setUploadErrors={setUploadErrors} uploadErrors={uploadErrors} idElev={idElev}/>
+            ))}
+            <ButonReutilizabil className="buton-adauga" onClick={handleAddButton} text="Adaugă un material" />
+          </div>
+        )}
+        <NavigarePagina userData={userData} elevData={elevData} activePage={activePage} email={email} />
+        {activePage !== "Medalii" && activePage !== "Note" && (
+          <SelecteazaLectie buttons={lessons} activePage={activePage} setActiveLesson={setActiveLesson} />
+        )}
+        {activePage !== "Medalii" && activePage !== "Note" && (
+          <CitesteMaterial
+            userData={userData}
+            elevData={elevData}
+            numeElev={elevData?.nume}
+            numeProfesor={numeProfesor}
+            activePage={activePage}
+            lessonNumber={activeLesson}
+          />
+        )}
       </div>
     </div>
   );

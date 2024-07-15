@@ -2,6 +2,7 @@ import React from "react";
 import "./IntrebariFrecvente.css"
 import TextReutilizabil from "../../../elemente/text/TextReutilizabil";
 import { SUBTITLU_INTREBARI } from "../../../elemente/constante/TitluConstant";
+import Clasament from "../../../utilizator/comun/clasament/Clasament";
 
 const IntrebariFrecvente = () => {
   
@@ -9,7 +10,7 @@ const IntrebariFrecvente = () => {
 
   return (
     <div className="intrebari-frecvente">
-        <TextReutilizabil className="text-subtitlu-albastru" text={subtitluIntrebari}/>
+<Clasament></Clasament>
     </div>
   );
 };

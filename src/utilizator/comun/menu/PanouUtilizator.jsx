@@ -3,21 +3,17 @@ import Titlu from "../../../elemente/text/Titlu";
 import SferaUtilizator from "../../../layout/sfera/SferaUtilizator";
 import "./PanouUtilizator.css"
 
-const PanouUtilizator = ({ userData, children, profesorData }) => {
+const PanouUtilizator = ({ userData, children }) => {
     if (!userData) {
         return null;
     }
 
     return (
-        <>
-        <div userData={userData} className="utilizator-items">
-            <div profesorData={profesorData} userData={userData} className={`panou ${userData.tip_utilizator}`}>
-                <Titlu />
-                {children}
-            </div>
+        <div className="utilizator-items">
+            <Titlu />
+            {children}
             <SferaUtilizator userData={userData} />
         </div>
-        </>
     );
 };
 

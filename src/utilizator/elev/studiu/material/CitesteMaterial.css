@@ -1,9 +1,16 @@
-.container {
+.container-material {
     display: flex;
     align-items: flex-start;
     text-align: flex-start;
     flex-direction: column;
     width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
 }
 
 .heading {
@@ -33,4 +40,11 @@
 
 .error-message {
     color: red;
+}
+
+.butoane-document{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
 }

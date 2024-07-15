@@ -21,24 +21,6 @@
     align-items: flex-start;
 }
 
-.deschide-anunt-items {
-    background: var(--alb-pur);
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 60%;
-    position: fixed;
-    top: 70px;
-    z-index: 999;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeInUp 0.3s ease-in-out forwards;
-    border-radius: 10px;
-}
-
 @keyframes fadeInUp {
     from {
         opacity: 0;

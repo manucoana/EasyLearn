@@ -7,7 +7,7 @@ const handleImagineProfilUpload = async (file, userData, activePage) => {
     formData.append('active_page', activePage);
   
     try {
-      const response = await fetch("http://localhost:3001/api/incarcare-media/uploads", {
+      const response = await fetch("http://localhost:3001/api/incarcare-media/profil_uploads", {
         method: "POST",
         body: formData,
       });
@@ -18,7 +18,7 @@ const handleImagineProfilUpload = async (file, userData, activePage) => {
       }
   
       const result = await response.json();
-      const cale = result.imageUrl;
+      const cale = result.docUrl;
   
       console.log("Cale imagine:", cale);
   
@@ -27,7 +27,7 @@ const handleImagineProfilUpload = async (file, userData, activePage) => {
         cale: cale,
         titlu: titlu,
       };
-  
+
       const insertResponse = await fetch("http://localhost:3001/api/profil/info-poza", {
         method: "POST",
         headers: {

@@ -36,6 +36,7 @@
 
 .text-titlu-secundar {
     font-size: 2em;
+    color: var(--culoare-secundara);
 
 }
 

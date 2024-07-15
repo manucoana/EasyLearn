@@ -1,0 +1,28 @@
+.pagina-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 100px 600px 100px;
+}
+
+.pagina-empty .logo-container {
+    animation: spin 5s infinite linear, scale 2s infinite alternate ease-in-out;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scale {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}

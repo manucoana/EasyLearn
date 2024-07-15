@@ -16,7 +16,7 @@ const ImagineProfil = ({ userData }) => {
         setNume(data.nume || "");
         setTitlu(data.titlu || "");
       } catch (error) {
-        console.error(error);
+        console.log("Nu exista poza");
       }
     };
 

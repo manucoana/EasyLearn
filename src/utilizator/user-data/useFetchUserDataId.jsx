@@ -11,7 +11,7 @@ const useFetchUserDataId = (id) => {
                 const user = response.data;
                 setUserDataID(user);
             } catch (error) {
-                console.error({ message: "Error fetching user data" });
+                console.log("Error fetching user data");
             }
         };
 

@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--padding-principal);
+  margin-bottom: 300px;
 }
 
 @media (max-width: 500px) {

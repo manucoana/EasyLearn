@@ -1,0 +1,16 @@
+.list-profesori-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: flex-start;
+    border: 2px solid var(--gri);
+    background-color: #ddd;
+}
+
+.list-profesori {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #ddd;
+    cursor: pointer;    
+}

@@ -22,7 +22,7 @@ router.get("/:nume/:profil/:titlu", (req, res) => {
       }
 
       const fileDetails = results[0];
-      const filePath = path.join(__dirname, '../uploads', nume, 'Profil', titlu).replace(/\\/g, '/');
+      const filePath = path.join(__dirname, '../server_uploads', nume, 'Profil', titlu).replace(/\\/g, '/');
 
       res.sendFile(filePath, (sendFileErr) => {
         if (sendFileErr) {

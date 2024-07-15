@@ -39,6 +39,23 @@
     font-size: 0.9em;
 }
 
+.buton-adauga {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--text);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 0.9em;
+}
+
+.buton-adauga:hover {
+    color: var(--albastru-deschis);
+}
+
 .buton-studiu:hover {
     background-color: var(--albastru-deschis);
     color: white;
@@ -79,7 +96,7 @@
 
 .buton-descarca {
     background-color: #4caf50;
-    border-radius: 4px;
+    border: transparent;
 }
 
 .buton-login:hover {
@@ -88,4 +105,15 @@
 
 .buton-inregistrare:hover {
     animation: pulse 1s infinite;
+}
+
+.buton-transparent {
+    background-color: transparent;
+    border: transparent;
+}
+
+.buton-transparent:hover {
+    background-color: transparent;
+    border: transparent;
+    color: blue;
 }

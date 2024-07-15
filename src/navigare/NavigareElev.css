@@ -1,0 +1,4 @@
+.navi-elev{
+    display: flex;
+    flex-direction: row;
+}

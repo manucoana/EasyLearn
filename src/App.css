@@ -7,11 +7,16 @@
 body {
   line-height: 1.5;
   background-color: var(--culoare-fundal-deschis);
+  zoom: 90%;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+li {
+  list-style: none;
 }
 
 @keyframes pulse {

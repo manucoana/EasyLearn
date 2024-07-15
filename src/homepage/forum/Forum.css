@@ -1,0 +1,78 @@
+.forum-container {
+    max-width: 70%;
+    height: 1750px;
+    padding: 20px;
+    background-color: var(--alb-pur);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forum-layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elemente-forum{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-form {
+    padding: 60px;
+}
+
+.question-form textarea,
+.question-form input {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.question-form textarea {
+    height: 200px;
+    resize: none;
+}
+
+.question-form input {
+    height: 60px;
+}
+
+.question-form button:hover {
+    background: #0056b3;
+}
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.question-item {
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    border: 0.5px solid rgb(222, 222, 222);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: start;
+    width: 100%;
+}
+
+.question-item:hover {
+    background: #f0f0f0;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}

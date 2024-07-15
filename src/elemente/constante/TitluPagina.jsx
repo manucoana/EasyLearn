@@ -6,6 +6,8 @@ const TitluPagina = {
     Lectii: "Lecții",
     Teme: "Teme",
     Teste: "Teste",
+    Note: "Note",
+    Medalii: "Medalii",
 };
 
 export default TitluPagina;

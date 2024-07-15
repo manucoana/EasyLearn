@@ -15,16 +15,17 @@
 }
 
 .list-item {
-    background-color: var(--alb-pur);
-    border: 1px solid var(--tabel-gri);
+    background-color: #f9f9f9;
+    border: 1px solid #ddd; 
     cursor: pointer;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start; 
     justify-content: flex-start;
-    padding: 30px;
+    border-radius: 10px;
+    padding: 20px; 
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-}
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
 .list-item:hover {
     background-color: var(--alb);

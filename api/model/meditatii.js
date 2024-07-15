@@ -6,7 +6,12 @@ const getProfesorId = (id_elev) => {
     return `SELECT id_elev, id_profesor FROM meditatii WHERE id_elev = '${id_elev}'`;
 };
 
+const getProfesoriiElevului = (id_elev) => {
+    return `SELECT id_profesor FROM meditatii WHERE id_elev = '${id_elev}'`;
+};
+
 module.exports = {
     getElevInscrisId,
-    getProfesorId
+    getProfesorId,
+    getProfesoriiElevului
 };

@@ -1,0 +1,44 @@
+.note-page {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.note-container {
+    border-radius: 5px;
+    width: 100%;
+    padding-bottom: 400px;
+}
+
+.note-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.note-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.note-table th,
+.note-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.note-table th {
+    background-color: #f2f2f2;
+}
+
+.note-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.note-table tbody tr:hover {
+    background-color: #e2f4ff;
+}

@@ -1,0 +1,59 @@
+.clasament-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 300px;
+}
+
+
+.clasament-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 60px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 80%;
+  padding-bottom: 300px;
+
+}
+
+.clasament-container h1 {
+  font-size: 24px;
+  margin: 20px;
+  text-align: center;
+}
+
+
+.clasament-table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.clasament-table th,
+.clasament-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.clasament-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.clasament-table tbody tr:nth-child(even) {
+  background-color: #e9e9e9;
+}
+
+.clasament-table tbody tr:hover {
+  background-color: #e2f4ff;
+}

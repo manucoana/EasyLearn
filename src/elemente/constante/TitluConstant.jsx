@@ -20,3 +20,6 @@ export const PAGINA_STUDIU = "Pagina de studiu";
 export const LECTII = "Lectii";
 export const TEME = "Teme";
 export const TESTE = "Teste";
+export const NOTE = "Note";
+export const MEDALII = "Medalii";
+

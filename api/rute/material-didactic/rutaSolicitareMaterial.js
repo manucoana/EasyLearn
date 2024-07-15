@@ -2,40 +2,38 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const connection = require('../../db');
-const { getMaterial } = require('../../model/materialDidactic');
+const { getMaterial, insertMaterial, getMaterialsByLesson, getAllLessons } = require('../../model/materialDidactic');
 
-router.get("/:nume_elev/:active_page/:titlu", async (req, res) => {
-
-  const { nume_elev, active_page, titlu } = req.params;
-  const sql = getMaterial();
-  const values = [nume_elev, active_page, titlu ];
+router.get("/documents/:nume_elev/:nume_profesor/:active_page/:lesson_number", (req, res) => {
+  const { nume_elev, nume_profesor, active_page, lesson_number } = req.params;
+  const sql = getMaterialsByLesson();
+  const values = [nume_elev, nume_profesor, active_page, lesson_number];
 
   connection.query(sql, values, (error, results) => {
     if (error) {
+      console.error("Database error:", error);
       res.status(500).send("Internal Server Error");
     } else {
-      if (results.length === 0) {
-        res.status(404).send("No files found");
-      } else {
-        const fileDetails = results[0];
-        const filePath = path.join(__dirname, '../uploads', nume_elev, active_page, titlu);
-
-        res.sendFile(filePath, (sendFileErr) => {
-          if (sendFileErr) {
-            res.status(500).send("Internal Server Error");
-          } else {
-            console.log(`Document trimis cu succes pentru ${nume_elev}/${active_page}/${titlu}`);
-          }
-        });
-      }
+      res.json({ documents: results });
     }
   });
 });
 
+router.get("/lessons/:nume_elev/:nume_profesor/:active_page", (req, res) => {
+  const { nume_elev, nume_profesor, active_page } = req.params;
+  const sql = getAllLessons();
+  const values = [nume_elev, nume_profesor, active_page];
+
+  connection.query(sql, values, (error, results) => {
+    if (error) {
+      console.error("Database error:", error);
+      res.status(500).send("Internal Server Error");
+    } else {
+      const lessons = results.map(row => row.lesson_number);
+      res.json({ lessons });
+    }
+  });
+});
+
+
 module.exports = router;
-
-
-
-
-
-

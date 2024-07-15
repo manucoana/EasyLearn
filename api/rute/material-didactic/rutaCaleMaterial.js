@@ -3,12 +3,12 @@ const router = express.Router();
 const connection = require('../../db');
 const { getTitluCale } = require('../../model/materialDidactic');
 
-router.get("/:nume_elev/:active_page", async (req, res) => {
+router.get("/:nume_elev/:nume_profesor/:active_page/:lesson_number", async (req, res) => {
   try {
-    const { nume_elev, active_page } = req.params;
+    const { nume_elev, nume_profesor, active_page, lesson_number } = req.params;
 
-    const sql = getTitluCale(nume_elev, active_page);
-    const values = [nume_elev, active_page];
+    const sql = getTitluCale(nume_elev, nume_profesor, active_page, lesson_number);
+    const values = [nume_elev, nume_profesor, active_page, lesson_number];
 
     connection.query(sql, values, (error, results) => {
       if (error) {

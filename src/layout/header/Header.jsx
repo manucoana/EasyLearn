@@ -6,6 +6,7 @@ import TextReutilizabil from '../../elemente/text/TextReutilizabil';
 import Notificare from '../notificare/Notificare';
 import NavPrincipal from '../nav/NavPrincipal';
 import LogoComponent from '../../imagini/logo/LogoComponent';
+import ButonReutilizabil from '../../elemente/butoane/ButonReutilizabil';
 
 const Header = ({ titlu, userData, profesorData, onClick, goBack }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -26,10 +27,16 @@ const Header = ({ titlu, userData, profesorData, onClick, goBack }) => {
       </div>
       <div className="menu-icon">
         {userData && <NavPrincipal profesorData={profesorData} onClick={onClick} goBack={goBack} userData={userData} />}
+        {!userData && (
+          <>
+            <ButonReutilizabil className="buton-nav-principal" onClick={() => onClick("Forum")} text="Forum" />
+          </>
+        )}
         <Notificare userData={userData} />
         <MeniuIcon className="menu-icon" toggleMenu={toggleMenu} />
       </div>
       <NavLateral isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+
     </header>
   );
 };

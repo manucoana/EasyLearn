@@ -5,9 +5,9 @@ const connection = require('../../db');
 
 router.post('/', async (req, res) => {
   try {
-    const { nume_profesor, nume_elev, tip_material, titlu, cale } = req.body;
-    const sql = insertMaterial(nume_profesor, nume_elev, tip_material, titlu, cale);
-    const values = [nume_profesor, nume_elev, tip_material, titlu, cale];
+    const { nume_profesor, nume_elev, tip_material, titlu, cale, lesson_number } = req.body;
+    const sql = insertMaterial(nume_profesor, nume_elev, tip_material, titlu, cale, lesson_number);
+    const values = [nume_profesor, nume_elev, tip_material, titlu, cale, lesson_number];
 
     connection.query(sql, values, (error, result) => {
       if (error) {
